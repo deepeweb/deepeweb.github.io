@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Activity and Activity Lifecycle in Hindi (Android)</title>
+<meta name="description" content="Activity Android app का एक screen होता है, जिस पर user interaction होता है।">
+<meta name="keywords" content="Activity and Activity Lifecycle in hindi, Activity and Activity Lifecycle hindi notes, Activity and Activity Lifecycle in Android in hindi">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://darkhindi.github.io/Android/activity-and-activity-lifecycle.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Activity and Activity Lifecycle in Hindi (Android)" />
+<meta property="og:description" content="Activity Android app का एक screen होता है, जिस पर user interaction होता है।" />
+<meta property="og:image" content="https://darkhindi.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://darkhindi.github.io/Android/activity-and-activity-lifecycle.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://darkhindi.github.io/" />
+<meta property="article:modified_time" content="2025-07-10T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Activity and Activity Lifecycle in Hindi (Android)" />
+<meta name="twitter:description" content="Activity Android app का एक screen होता है, जिस पर user interaction होता है।" />
+<meta name="twitter:image" content="https://darkhindi.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Activity and Activity Lifecycle in Hindi (Android)",
+  "description": "Activity Android app का एक screen होता है, जिस पर user interaction होता है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DarkHindi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://darkhindi.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-10",
+  "datePublished": "2025-07-10",
+  "image": "https://darkhindi.github.io/favicon.png",
+  "url": "https://darkhindi.github.io/Android/activity-and-activity-lifecycle.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://darkhindi.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: red;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">darkhindi.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapper">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            Ads Will Show here
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+<div id="searchResults">
+  <!-- Results will be injected here by your existing JS -->
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+       <br>
+  <h1>Activity and Activity Lifecycle in Hindi</h1><br>
+  <h2>Activiy:</h2>
+  
+  <ul><li>Activity Android app का एक screen होता है, जिस पर user interaction होता है।</li>
+
+    <li>हर app में कम से कम एक activity जरूर होती है, जिसे MainActivity कहा जाता है।</li>
+ <div id="ad-wrapper">
+  <div id="ad-label">
+    <span id="ad-badge">Ad</span>
+  </div>
+  Ads will show here
+</div>
+    <li>Activity user interface (UI) दिखाती है, जैसे layout, buttons, text आदि।</li>
+
+    <li>Activity का lifecycle होता है, यानी वह कब start, pause, resume या destroy होती है – इसे manage करना जरूरी होता है।</li>
+
+    <li>Activity को launch करने के लिए Intent का use किया जाता है।</li>
+
+    <li>एक app में multiple activities हो सकती हैं, जैसे LoginActivity, HomeActivity, ProfileActivity आदि।</li>
+
+    <li>Activity एक Java/Kotlin class होती है, जो android.app.Activity को extend करती है।</li>
+
+    <li>Activity का UI XML file से जुड़ा होता है, जैसे setContentView(R.layout.activity_main);</li>
+
+    <li>Activity को हम यूज़र के लिए visible बनाते हैं, ताकि वह app के साथ interact कर सके।</li></ul>
+  <hr>
+  <h2>Activity Lifecycle:</h2>
+  <div id="ad-wrapper">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+  </div>
+ads will show here
+</div>
+  <ul><li>Activity Lifecycle वह process है जो बताता है कि एक Activity कब शुरू होती है, कब background में जाती है और कब बंद होती है।</li>
+
+    <li>Android system कुछ predefined methods provide करता है, जिन्हें override करके हम activity की हर stage पर control रख सकते हैं।</li>
+
+    <li>मुख्य 7 lifecycle methods होते हैं:</li>
+
+    <p>onCreate()</p>
+
+    <p>onStart()</p>
+
+    <p>onResume()</p>
+
+    <p>onPause()</p>
+
+    <p>onStop()</p>
+
+    <p>onRestart()</p>
+
+    <p>onDestroy()</p>
+<li><b style="color: blue">onCreate()</b> method तब call होता है जब activity पहली बार बनाई जाती है, इसमें हम UI set करते हैं।</li>
+
+<li><b style="color: blue">onStart()</b> method तब call होता है जब activity user को दिखाई देने लगती है।</li>
+
+<li><b style="color: blue">onResume()</b> तब call होता है जब activity foreground में आ जाती है और user interaction के लिए तैयार होती है।</li>
+
+<li><b style="color: blue">onPause()</b> तब call होता है जब activity partially invisible होती है, जैसे कोई नई activity आ जाए।</li>
+<div id="ad-wrapper">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+  </div>
+ads will show here
+</div>
+
+<li><b style="color: blue">onStop()</b> तब call होता है जब activity पूरी तरह invisible हो जाती है।</li>
+
+<li><b style="color: blue">onRestart()</b> तब call होता है जब activity को फिर से foreground में लाना होता है।</li>
+
+<li><b style="color: blue">onDestroy()</b> तब call होता है जब activity पूरी तरह बंद हो जाती है और memory से हटाई जाती है।</li></ul><hr>
+<br>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+                <a href="#">IMED Notes in Hindi</a>
+                <a href="#">Introduction to Android in Hindi</a>
+                <a href="#">Dalvik Vartual Machine in Hindi</a>
+                <a href="#">Basic Building Blocks in Android in Hindi</a>
+                <a href="#">Fundamentals of android in Hindi</a>
+                <a href="#">apk file extension in Hindi</a>
+                <a href="#">UI components in Hindi</a>
+                <a href="#">Components for communication in Android in Hindi</a>
+                <a href="#">Android API Levels in Hindi</a>
+                <a href="#">Setting up development environment in Hindi</a>
+                <a href="#">Manifest.xml in Hindi</a>
+                <a href="#">Resources & R.java in Hindi</a>
+           </div>
+        </aside>
+   </div>
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+    <footer>
+      <p><small>&copy; 2025 darkhindi.github.io All rights reserved.</small></p>
+    </footer>
+    <script src="../w3study.js"></script>
+  
+</body>
+</html>
