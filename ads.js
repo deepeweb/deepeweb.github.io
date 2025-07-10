@@ -1,17 +1,17 @@
 (function(){
   var ads = [
     {
-      img: "https://darkhindi.github.io/assets/insta-add.gif",
+      img: "https://deepstudyweb.github.io/assets/insta-add.gif",
       url: "https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi",
       text: "Follow Me!"
     },
     {
-      img: "https://darkhindi.github.io/assets/fb-pic-deepanshu.jpg",
+      img: "https://deepstudyweb.github.io/assets/fb-pic-deepanshu.jpg",
       url: "https://www.facebook.com/share/19MEJCU9fj/",
       text: "🔥 Deal 2 - Limited Time!"
     },
     {
-       img: "https://darkhindi.github.io/assets/images/fb-pic-deepanshu.jpg",
+       img: "https://deepstudyweb.github.io/assets/insta-dp.jpg",
       url: "https://www.facebook.com/share/19MEJCU9fj/",
       text: "🔥 Deal 2 - Limited Time!"
     }
