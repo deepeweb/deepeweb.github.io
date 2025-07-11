@@ -384,6 +384,7 @@
     }
 .img {
   width: 70%;
+  background: white;
   max-width: 500px;
   height: 16rem;
   margin: 10px auto;
