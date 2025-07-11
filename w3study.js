@@ -116,3 +116,22 @@ searchBox.addEventListener('input', function() {
 function closeAd() {
     document.getElementById("footerAd").style.display = "none";
 }
+
+// is code se content ke niche le links dynamic load ho rhe hai
+fetch('../dynamic-containers.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('dynamic-container').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+
+// IWT side nav 
+  fetch('side-nav-iwt.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('side-nav-iwt').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+  
+  
+  
