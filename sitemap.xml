@@ -1,51 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://deepeweb.github.io/</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/notes.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/Android/activity-and-activity-lifecycle.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/IWT/iwt-syllabus.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/IWT/introduction-to-internet.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/IWT/introduction-to-www.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/IWT/browser-search-engine.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/IWT/client-server-model.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://deepeweb.github.io/IWT/url-web-pages.html</loc>
-    <lastmod>2025-07-12</lastmod>
-    <priority>0.80</priority>
-  </url>
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+<loc>https://deepeweb.github.io/</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/notes.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/Android/activity-and-activity-lifecycle.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/iwt-syllabus.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/introduction-to-internet.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/introduction-to-www.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/browser-search-engine.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/client-server-model.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/url-web-pages.html</loc>
+<lastmod>2025-07-12</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/websites-and-web-services.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/types-of-websites.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/cyber-security-and-it-laws.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/html-and-html-document.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/html-structure.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/html-syntax.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/html-tags.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/html-attributes.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/IWT/types-of-html-tags.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/Blogs/top-jobs-in-india.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/Blogs/top-courses-after-12th.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/Blogs/top-collage-for-b-tech-in-india.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/Blogs/top-gov-polytechnic-college.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
+<url>
+<loc>https://deepeweb.github.io/Blogs/how-to-make-software-engineer.html</loc>
+<lastmod>2025-07-15</lastmod>
+<priority>0.75</priority>
+</url>
 </urlset>
