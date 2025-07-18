@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>HTML Lists in Hindi</title>
+<meta name="description" content="HTML में lists का इस्तेमाल एक जैसे items को क्रमबद्ध (ordered) या बिंदु रूप (unordered) में दिखाने के लिए किया जाता है। यह content को clear और समझने में आसान बनाता है।">
+<meta name="keywords" content="html list in hindi, creating html lists in hindi, how to create html list in hindi, creating list in html in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/IWT/html-list.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="HTML Lists in Hindi" />
+<meta property="og:description" content="HTML में lists का इस्तेमाल एक जैसे items को क्रमबद्ध (ordered) या बिंदु रूप (unordered) में दिखाने के लिए किया जाता है। यह content को clear और समझने में आसान बनाता है।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/IWT/html-list.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-18T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HTML Lists in Hindi" />
+<meta name="twitter:description" content="HTML में lists का इस्तेमाल एक जैसे items को क्रमबद्ध (ordered) या बिंदु रूप (unordered) में दिखाने के लिए किया जाता है। यह content को clear और समझने में आसान बनाता है।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "HTML Lists in Hindi",
+  "description": "HTML में lists का इस्तेमाल एक जैसे items को क्रमबद्ध (ordered) या बिंदु रूप (unordered) में दिखाने के लिए किया जाता है। यह content को clear और समझने में आसान बनाता है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-18",
+  "datePublished": "2025-07-18",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/IWT/html-list.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapper">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+<h1>HTML Lists in Hindi</h1>
+<p>HTML में lists का इस्तेमाल एक जैसे items को क्रमबद्ध (ordered) या बिंदु रूप (unordered) में दिखाने के लिए किया जाता है। यह content को clear और समझने में आसान बनाता है।</p>
+
+<h2>Ordered List (&lt;ol>)</h2>
+<p>Ordered List उन items को दिखाने के लिए use होती है जिन्हें किसी particular sequence या numbering में दिखाना होता है। इसमें numbers (1, 2, 3...) या letters (a, b, c...) use होते हैं।</p>
+<div class="text">
+<pre><code id="code" class="language-html">&lt;ol>
+  &lt;li>HTML&lt;/li>
+  &lt;li>CSS&lt;/li>
+  &lt;li>JavaScript&lt;/li>
+&lt;/ol></pre></code>
+</div>
+<p>यह output में numbered list दिखाएगा।</p>
+
+<h2>Unordered List (&lt;ul>)</h2>
+<p>Unordered List ऐसे items के लिए use होती है जिन्हें किसी order में नहीं दिखाना होता। इसमें bullets (●) का use होता है।</p>
+<div class="text">
+<pre><code id="code" class="language-html">&lt;ul>
+  &lt;li>Apples&lt;/li>
+  &lt;li>Bananas&lt;/li>
+  &lt;li>Oranges&lt;/li>
+&lt;/ul></pre></code>
+</div>
+<p>यह output में एक bullet-style list दिखाता है।</p>
+
+<h2>Description List (&lt;dl>)</h2>
+<p>Description List का use definition-type content के लिए किया जाता है, जैसे dictionary style में terms और उनके meaning.</p>
+<div class="text">
+<pre><code id="code" class="language-html">&lt;dl>
+  &lt;dt>HTML&lt;/dt>
+  &lt;dd>HyperText Markup Language&lt;/dd>
+  &lt;dt>CSS&lt;/dt>
+  &lt;dd>Cascading Style Sheets&lt;/dd>
+&lt;/dl></pre></code>
+</div>
+<p>इसमें &lt;dt> (definition term) और &lt;dd> (definition detail) tags होते हैं।</p>
+
+<h2>List Item (&lt;li>)</h2>
+<p>Ordered और Unordered दोनों lists में हर एक item को &lt;li> tag में लिखा जाता है। &lt;li> का मतलब होता है List Item.</p>
+
+<h2>Nesting of Lists</h2>
+<p>HTML में आप एक list के अंदर दूसरी list भी बना सकते हैं, जिसे nested list कहते हैं। यह तब useful होता है जब किसी item के अंदर sub-items दिखाने हों।</p>
+<div class="text">
+<pre><code id="code" class="language-html">&lt;ul>
+  &lt;li>Fruits
+    &lt;ul>
+      &lt;li>Mango&lt;/li>
+      &lt;li>Banana&lt;/li>
+    &lt;/ul>
+  &lt;/li>
+  &lt;li>Vegetables&lt;/li>
+&lt;/ul></pre></code>
+</div>
+<br><hr><br>
+<div class="request">
+      <h4>HTML List Example</h4>
+      <div class="text">
+<pre><code id="code" class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>HTML Lists Demo&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;h1>HTML Lists Demo&lt;/h1>
+  &lt;!-- Ordered List --&gt;
+  &lt;h2>1. Ordered List&gt;/h2>
+  &lt;ol>
+    &lt;li>HTML&lt;/li>
+    &lt;li>CSS&lt;/li>
+    &lt;li>JavaScript&lt;/li>
+  &lt;/ol>
+
+  &lt;!-- Unordered List --&gt;
+  &lt;h2>2. Unordered List&gt;/h2>
+  &lt;ul>
+    &lt;li>Apples&lt;/li>
+    &lt;li>Bananas&lt;/li>
+    &lt;li>Oranges&lt;/li>
+  &lt;/ul>
+
+  &lt;!-- Description List --&gt;
+  &lt;h2>3. Description List&gt;/h2>
+  &lt;dl>
+    &lt;dt>HTML&lt;/dt>
+    &lt;dd>HyperText Markup Language&lt;/dd>
+    &lt;dt>CSS&lt;/dt>
+    &lt;dd>Cascading Style Sheets&lt;/dd>
+    &lt;dt>JS&lt;/dt>
+    &lt;dd>JavaScript&lt;/dd>
+  &lt;/dl>
+
+  &lt;!-- Nested List --&gt;
+  &lt;h2>4. Nested List&lt;/h2>
+  &lt;ul>
+    &lt;li>Frontend
+      &lt;ul>
+        &lt;li>HTML&lt;/li>
+        &lt;li>CSS&lt;/li>
+        &lt;li>JavaScript&lt;/li>
+      &lt;/ul>
+    &lt;/li>
+    &lt;li>Backend
+      &lt;ul>
+        &lt;li>PHP&lt;/li>
+        &lt;li>Python&lt;/li>
+      &lt;/ul>
+    &lt;/li>
+  &lt;/ul>
+&lt;/body>
+&lt;/html></pre></code>
+</div>
+</div>
+
+
+
+    
+  <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+<div id="dynamic-container"></div>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+               <div id="side-nav-iwt"></div>
+           </div>
+        </aside>
+   </div>
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+    <footer>
+      <p><small>&copy; 2025 deepeweb.github.io All rights reserved.</small></p>
+    </footer>
+    <script src="../w3study.js"></script>
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  
+</body>
+</html>
