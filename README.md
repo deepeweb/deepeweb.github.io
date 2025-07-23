@@ -1,1 +1,1 @@
-darkhindi.github.io
+deepeweb.github.io
