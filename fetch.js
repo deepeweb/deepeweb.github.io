@@ -14,6 +14,14 @@ fetch('../dynamic-containers.html')
     document.getElementById('footer').innerHTML = data;
   })
   .catch(error => console.error('Error loading container:', error));
+  
+  // home about etc pages ke liye
+  fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
 
 fetch('../dynamic-containers.html')
   .then(response => response.text())
@@ -44,6 +52,14 @@ fetch('../dynamic-containers.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('side-nav-blog').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+  
+    // Advanced Java side nav 
+  fetch('side-nav-advanced-java.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('side-nav-advanced-java').innerHTML = data;
   })
   .catch(error => console.error('Error loading container:', error));
   
