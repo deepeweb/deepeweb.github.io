@@ -44,7 +44,7 @@
       height: 100%;
     }
    #ad-badge {
-      font-size: 8px;
+      font-size: 9px;
    }
   }    
 
@@ -100,10 +100,8 @@
   padding: 0;
   width:70%;
   max-width: 355px;
-  height: 3.5rem;
   margin: 5px;
-  margin-left: 20px;
-  align-content: left;
+  height: 3.1rem;
 }
 
 #ad-labels {
@@ -112,7 +110,7 @@
   top: 0;
   display: flex;
   align-items: left;
-  z-index: 999;
+  z-index: 200;
 }
 
 #ad-badges {
