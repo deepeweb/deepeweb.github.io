@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>CRUD Operation Using JDBC API in Hindi</title>
+<meta name="description" content="JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।">
+<meta name="keywords" content="crud operation using jdbc api in hindi, crud operation in hindi, advanced java crud operation in hindi, crud operation using jdbc api in advanced java in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Advanced-Java/crud-operation-using-jdbc-api.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="CRUD Operation Using JDBC API in Hindi" />
+<meta property="og:description" content="JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Advanced-Java/crud-operation-using-jdbc-api.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CRUD Operation Using JDBC API in Hindi" />
+<meta name="twitter:description" content="JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "CRUD Operation Using JDBC API in Hindi",
+  "description": "JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Advanced-Java/crud-operation-using-jdbc-api.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+  <h1>CRUD Operation Using JDBC API in Hindi</h1>
+
+  <h2>CRUD Operation Using JDBC API</h2>
+  <p>JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।</p>
+  <p>JDBC driver का उपयोग करके Java application को database से जोड़ा जाता है।</p>
+  <p>database connection के लिए DriverManager.getConnection(url, username, password) का उपयोग किया जाता है।</p>
+  <p>Statement/PreparedStatement का उपयोग SQL query को run कराने के लिए किया जाता है।</p>
+
+<h3>Create Operation</h3>
+  <p>Create (Insert Operation) के लिए INSERT INTO table_name (columns) VALUES (values) SQL Query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java"></pre>String query = "INSERT INTO students (id, name, age) VALUES (?, ?, ?)";
+PreparedStatement ps = con.prepareStatement(query);
+ps.setInt(1, 101);
+ps.setString(2, "Rahul");
+ps.setInt(3, 21);
+ps.executeUpdate();</code></pre>
+</div>
+
+<h3>Read Operaton</h3>
+<p>Read (Select Operation) के लिए SELECT * FROM table_name SQL query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">String query = "SELECT * FROM students";
+Statement st = con.createStatement();
+ResultSet rs = st.executeQuery(query);
+while (rs.next()) {
+    System.out.println(rs.getInt("id") + " " + rs.getString("name") + " " + rs.getInt("age"));
+}</code></pre>
+</div>
+
+<h3>Update Operation</h3>
+<p>Update Operation के लिए UPDATE table_name SET column=value WHERE condition SQL query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">String query = "UPDATE students SET age = ? WHERE id = ?";
+PreparedStatement ps = con.prepareStatement(query);
+ps.setInt(1, 22);
+ps.setInt(2, 101);
+ps.executeUpdate();</code></pre>
+</div>
+
+<h3>Delete Operation</h3>
+<p>Delete (Delete Operation) के लिए DELETE FROM table_name WHERE condition SQL query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">String query = "DELETE FROM students WHERE id = ?";
+PreparedStatement ps = con.prepareStatement(query);
+ps.setInt(1, 101);
+ps.executeUpdate();</code></pre>
+</div>
+<p>Exception Handling के लिए try-catch का उपयोग किया जाता है ताकि SQL और कनेक्शन error को handle किया जा सके।</p>
+
+<p>Connection Close करना ज़रूरी होता है ताकि resources free हो जाएं।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">con.close();</code></pre>
+</div>
+<p>JDBC steps में सबसे पहले driver load करना, connection बनाना, statements तैयार करना, SQL execute करना और connection बंद करना शामिल होता है।</p>
+ 
+  
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-advanced-java"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>JDBC API in Hindi (Advanced Java)</title>
+<meta name="description" content="JDBC (Java Database Connectivity) API एक Java API है, जो Java applications को databases के साथ connect, query execute, और data manipulate करने की सुविधा देता है">
+<meta name="keywords" content="what is jdbc api in hindi, jdbc api in hindi, introduction to jdbc api in hindi, jdbc api explain in hindi, jdbc api, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Advanced-Java/jdbc-api.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="JDBC API in Hindi (Advanced Java)" />
+<meta property="og:description" content="JDBC (Java Database Connectivity) API एक Java API है, जो Java applications को databases के साथ connect, query execute, और data manipulate करने की सुविधा देता है" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Advanced-Java/jdbc-api.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JDBC API in Hindi (Advanced Java)" />
+<meta name="twitter:description" content="JDBC (Java Database Connectivity) API एक Java API है, जो Java applications को databases के साथ connect, query execute, और data manipulate करने की सुविधा देता है" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "JDBC API in Hindi (Advanced Java)",
+  "description": "JDBC (Java Database Connectivity) API एक Java API है, जो Java applications को databases के साथ connect, query execute, और data manipulate करने की सुविधा देता है",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Advanced-Java/jdbc-api.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+  <h1>JDBC API in Hindi, JDBC API Components in Hindi</h1><br>
+
+  <h2>JDBC API</h2>
+<p>JDBC (Java Database Connectivity) API एक Java API है, जो Java applications को databases के साथ connect, query execute, और data manipulate करने की सुविधा देता है। यह RDBMS (Relational Database Management Systems) जैसे MySQL, Oracle, PostgreSQL, SQL Server आदि के साथ communication करने के लिए standard interface प्रदान करता है।</p>
+<p>JDBC API को Java.sql और javax.sql packages में provide किया गया है। JDBC API का उपयोग करके Java applications database में data insert, update, delete, और retrieve कर सकते हैं।</p>
+<p>JDBC API का उपयोग करने के लिए Java application में database-specific JDBC driver (JAR file) को शामिल करना होता है, जैसे MySQL के लिए mysql-connector-java.jar</p>
+<p>JDBC API platform-independent होती है, जिससे Java applications किसी भी database के साथ work कर सकते हैं। JDBC API prepared statements और callable statements को support करती है, जिससे performance और security improve होती है।</p>
+<p>JDBC API batch processing, connection pooling, और transaction management को भी support करता है, जिससे large-scale applications में efficiency बढ़ती है।</p>
+<p>JDBC API का उपयोग web applications, desktop applications, और enterprise applications में किया जाता है, जहां database interaction की आवश्यकता होती है।</p>
+
+  <h2>Components of JDBC API in Hindi</h2>
+<ol><li><b style="color: green">DriverManager –</b> यह JDBC API का core component है, जो Java application और database के बीच connection establish करने के लिए responsible होता है। यह सही JDBC driver को load और manage करता है।</li>
+<li><b style="color: green">Connection –</b> यह database से connection establish करने और manage करने के लिए उपयोग किया जाता है। इसके द्वारा database में transactions (commit, rollback) को भी handle किया जा सकता है।</li>
+<li><b style="color: green">Statement –</b> यह SQL queries को execute करने के लिए उपयोग किया जाता है। JDBC API तीन प्रकार के statements प्रदान करता है:
+<p><b style="color: orange">(i) Statement –</b> Simple SQL queries को execute करने के लिए।</p>
+<p><b style="color: orange">(ii) PreparedStatement –</b> Precompiled SQL queries को execute करने के लिए, जिससे performance improve होती है।</p>
+<p><b style="color: orange">(iii) CallableStatement –</b> Stored procedures को execute करने के लिए।</p>
+<li><b style="color: green">ResultSet –</b> यह SQL query के execution के बाद आने वाले data को retrieve और navigate करने के लिए उपयोग किया जाता है। यह rows और columns के रूप में database से fetched data को store करता है।</li>
+<li><b style="color: green">SQLException –</b> यह JDBC operations के दौरान होने वाली errors और exceptions को handle करने के लिए उपयोग किया जाता है।</li>
+<li><b style="color: green">DataSource –</b> यह Connection pooling और distributed transactions को manage करने के लिए उपयोग किया जाता है, जिससे performance और scalability बेहतर होती है।</li>
+<li><b style="color: green">RowSet –</b> यह JDBC API में एक advanced feature है, जो ResultSet का एक flexible version प्रदान करता है। यह serializable होता है और disconnected mode में भी data store कर सकता है।</li>
+<li><b style="color: green">Transaction Management –</b> यह database में commit और rollback operations को manage करने के लिए उपयोग किया जाता है, जिससे data consistency बनी रहती है।</li>
+<li><b style="color: green">Batch Processing –</b> JDBC API में multiple SQL queries को एक साथ execute करने की सुविधा होती है, जिससे performance improve होती है।</li>
+<li><b style="color: green">Metadata (DatabaseMetaData & ResultSetMetaData) –</b> यह database और ResultSet से संबंधित जानकारी प्रदान करता है, जैसे table names, column names, data types, और database capabilities.</li></ol>
+
+  <h2>Features of JDBC API in Hindi</h2>
+<ol><li><b style="color: green">Platform Independent –</b> JDBC API Java में लिखी गई है, जिससे यह किसी भी operating system और database पर काम कर सकती है।</li>
+<li><b style="color: green">Database Independence –</b> JDBC API को इस तरह डिज़ाइन किया गया है कि यह MySQL, Oracle, PostgreSQL, SQL Server जैसे किसी भी RDBMS (Relational Database Management System) के साथ काम कर सके।</li>
+<li><b style="color: green">Easy Connection Establishment –</b> JDBC API का उपयोग करके Java application से database को आसानी से connect और disconnect किया जा सकता है।</li>
+<li><b style="color: green">Standard SQL Support –</b> JDBC API SQL (Structured Query Language) को सपोर्ट करता है, जिससे developers आसानी से queries लिख सकते हैं।</li></p>
+<li><b style="color: green">Multiple Driver Support –</b> JDBC API Type 1, Type 2, Type 3, और Type 4 JDBC drivers को सपोर्ट करता है, जिससे विभिन्न databases से interaction संभव होता है।</li>
+<li><b style="color: green">Secure Transactions –</b> JDBC API ACID (Atomicity, Consistency, Isolation, Durability) properties को follow करता है, जिससे database transactions secure और reliable होते हैं।</li>
+<li><b style="color: green">Connection Pooling –</b> JDBC API connection pooling को सपोर्ट करता है, जिससे performance improve होती है और database connections efficiently manage होते हैं।</li>
+<li><b style="color: green">Batch Processing –</b> JDBC API एक साथ multiple SQL statements को execute करने के लिए batch processing को सपोर्ट करता है, जिससे execution time कम होता है।</li>
+<li><b style="color: green">Prepared Statements Support –</b> JDBC API PreparedStatement को सपोर्ट करता है, जिससे SQL queries को optimize किया जाता है और SQL injection जैसी security vulnerabilities को रोका जाता है।</li>
+<li><b style="color: green">Stored Procedures & Functions Support –</b> JDBC API databases के Stored Procedures और Functions को call करने की सुविधा देता है, जिससे complex database operations को efficiently execute किया जा सकता है।</li>
+<li><b style="color: green">ResultSet Navigation –</b> JDBC API ResultSet के माध्यम से database से retrieved data को navigate करने की सुविधा देता है, जिससे forward, backward, और random access संभव होता है।</li>
+<li><b style="color: green">Exception Handling –</b> JDBC API SQLException class के माध्यम से error handling को manage करता है, जिससे database errors को handle करना आसान होता है।</li>
+<li><b style="color: green">Lightweight & Flexible –</b> JDBC API lightweight होती है और इसे छोटे से बड़े सभी प्रकार के Java applications में integrate किया जा सकता है।</li>
+<li><b style="color: green">Support for Distributed Computing –</b> JDBC API का उपयोग Enterprise Java Applications और Cloud-Based Applications में किया जा सकता है, जिससे distributed database operations perform किए जा सकते हैं।</li></ol>
+ 
+  
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-advanced-java"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+  
+</body>
+</html>
