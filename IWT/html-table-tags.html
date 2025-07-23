@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Introduction to HTML Table Tags, Advantages and Limitations in Hindi</title>
+<meta name="description" content="HTML में जब हम rows और columns में data को दिखाना चाहते हैं, तब हम tables का use करते हैं। Table एक structured format होता है जिसमें information को साफ-साफ arrange किया जा सकता है।">
+<meta name="keywords" content="html table tags in hindi, introduction to html table tags in hindi, html table tag advantage and limitations in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/IWT/html-table-tags.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Introduction to HTML Table Tags, Advantages and Limitations in Hindi" />
+<meta property="og:description" content="HTML में जब हम rows और columns में data को दिखाना चाहते हैं, तब हम tables का use करते हैं। Table एक structured format होता है जिसमें information को साफ-साफ arrange किया जा सकता है।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/IWT/html-table-tags.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-19T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Introduction to HTML Table Tags, Advantages and Limitations in Hindi" />
+<meta name="twitter:description" content="HTML में जब हम rows और columns में data को दिखाना चाहते हैं, तब हम tables का use करते हैं। Table एक structured format होता है जिसमें information को साफ-साफ arrange किया जा सकता है।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Introduction to HTML Table Tags, Advantages and Limitations in Hindi",
+  "description": "HTML में जब हम rows और columns में data को दिखाना चाहते हैं, तब हम tables का use करते हैं। Table एक structured format होता है जिसमें information को साफ-साफ arrange किया जा सकता है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-19",
+  "datePublished": "2025-07-19",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/IWT/html-table-tags.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+         <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+<h1>Introduction to HTML Table Tags, Advantages and Limitations in Hindi</h1>
+<p>HTML में जब हम rows और columns में data को दिखाना चाहते हैं, तब हम tables का use करते हैं। Table एक structured format होता है जिसमें information को साफ-साफ arrange किया जा सकता है।</p>
+
+<div id="ad-wrapper">
+  <div id="ad-label">
+    <span id="ad-badge">Ad</span>
+  </div>
+<script async="async" data-cfasync="false" src="//pl27204093.profitableratecpm.com/cf6b160c3cbc6c6d0ee760af9d33d245/invoke.js"></script>
+<div id="container-cf6b160c3cbc6c6d0ee760af9d33d245"></div>
+</div>
+<p>Table बनाने के लिए HTML में &lt;table> tag का इस्तेमाल होता है। ये पूरा table create करता है।</p>
+<p>Table में हर row को बनाने के लिए &lt;tr> tag (table row) use किया जाता है। और row के अंदर अलग-अलग cells को define करने के लिए &lt;td> tag (table data) या &lt;th> tag (table heading) use किया जाता है।</p>
+<div class="text">
+<pre><code id="code" class="language-html">&lt;table>
+  &lt;tr>
+    &lt;th>Name&lt;/th>
+    &lt;th>Age&lt;/th>
+  &lt;/tr>
+  &lt;tr>
+    &lt;td>Deepanshu&lt;/td>
+    &lt;td>20&lt;/td>
+  &lt;/tr>
+&lt;/table></pre></code>
+</div>
+<p>ऊपर दिए गए example में, पहली row में heading है (&lt;th>), और दूसरी row में actual data (&lt;td>) है।</p>
+<p>&lt;th> tags से जो text लिखा जाता है वो by default bold होता है और center aligned होता है। जबकि &lt;td> में लिखा text normal और left aligned होता है।</p>
+<p>आप table में जितनी चाहें rows और columns add कर सकते हैं। Tables को CSS के साथ design भी किया जा सकता है – जैसे border देना, background color बदलना, padding लगाना वगैरह।</p>
+<p>HTML tables का इस्तेमाल अक्सर schedules, results, reports, pricing tables, या किसी भी structured data को दिखाने के लिए किया जाता है।</p>
+
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+<h2>Advantages of HTML Tables</h2>
+<p>HTML tables का सबसे बड़ा फायदा यह है कि ये data को row और column के रूप में अच्छे से organize कर देती हैं। इससे user को information समझना और compare करना आसान होता है।</p>
+<p>Tables का use करके आप structured data जैसे schedule, result, bill, product list आदि को साफ और readable बना सकते हैं।</p>
+<p>HTML tables में आप text, images, links, और icons भी show कर सकते हैं। इससे table और भी informative और attractive बन जाती है।</p>
+<p>Tables को CSS के जरिए पूरी तरह से customize किया जा सकता है – जैसे border देना, spacing control करना, background colors बदलना और hover effects लगाना।</p>
+<p>Tables responsive भी बनाई जा सकती हैं, जिससे वे छोटे screen जैसे mobile पर भी आसानी से पढ़ी जा सकें।</p>
+<p>HTML tables का use form layout के लिए भी किया जाता है, खासकर जब आपको multiple input fields को align करना हो।</p>
+<p>Table headings (&lt;th>) SEO में भी helpful होते हैं, क्योंकि search engine उन्हें special attention देता है।</p>
+<p>Tables के जरिए हम data को sort, filter और format भी कर सकते हैं – अगर JavaScript या frameworks का use करें तो।</p>
+
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+<p>Complex data जैसे mark sheets, invoice, या stock reports को tables के बिना सही से present करना मुश्किल होता है।</p>
+<p>इसलिए HTML tables simple sites से लेकर बड़ी web applications तक में बहुत उपयोगी होती हैं।</p>
+
+<h2>Limitations of HTML Table Tags</h2>
+<p>HTML tables useful तो हैं, लेकिन इनके कुछ limitations भी होते हैं, खासकर जब हम modern responsive websites की बात करते हैं।</p>
+<p>सबसे पहली समस्या ये होती है कि tables responsive नहीं होतीं। मतलब छोटे screen (जैसे mobile) पर table को देखना और scroll करना मुश्किल हो जाता है।</p>
+
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+<p>HTML tables का structure rigid होता है। अगर आप किसी content को redesign करना चाहें तो table-based layout में flexibility की कमी होती है।</p>
+<p>Tables का use अगर layout design के लिए किया जाए, तो वेबसाइट की loading speed slow हो सकती है, क्योंकि table render करना browser के लिए ज्यादा complex होता है।</p>
+<p>अगर कोई table बहुत बड़ी हो, तो उसमें से content ढूंढना या समझना user के लिए confusing हो सकता है।</p>
+<p>Search engines के लिए भी complex nested tables को समझना थोड़ा मुश्किल हो सकता है, जिससे SEO negatively affect हो सकता है।</p>
+<p>Accessibility के मामले में भी tables सीमित हैं। Screen readers और assistive tools के लिए tables को navigate करना मुश्किल होता है, खासकर अगर proper <thead>, <tbody> और <caption> ना use किया गया हो।</p>
+<p>Layout purpose के लिए tables का use अब outdated माना जाता है। Modern websites में हम CSS Flexbox या CSS Grid का इस्तेमाल करते हैं।</p>
+<p>अगर table में बहुत सारे rows और columns हों, तो वो छोटे स्क्रीन पर scroll करने में मुश्किल पैदा करते हैं, जिससे user experience खराब हो सकता है।</p>
+<p>Tables को style करने में भी परेशानी होती है। हर browser में table elements को थोड़े अलग तरीके से show किया जाता है, जिससे design consistency टूट सकती है।</p>
+<p>इसलिए जरूरी है कि tables का इस्तेमाल सिर्फ वहीं करें जहां data को tabular format में दिखाना हो — layout design के लिए नहीं।</p>
+
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+
+
+<br><hr><br>
+<div class="request">
+  <h4>HTML Example</h4>
+  <div class="text">
+<pre><code id="code" class="language-html">&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>HTML Table Example&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;h2>Student Marks Table&lt;/h2>
+  &lt;table border="1">
+    &lt;tr>
+      &lt;th>Roll No&lt;/th>
+      &lt;th>Name&lt;/th>
+      &lt;th>Subject&lt;/th>
+      &lt;th>Marks&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>101&lt;/td>
+      &lt;td>Deepanshu Ranjan&lt;/td>
+      &lt;td>Python&lt;/td>
+      &lt;td>95&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>102&lt;/td>
+      &lt;td>Sovesh Shakya&lt;/td>
+      &lt;td>Science&lt;/td>
+      &lt;td>88&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>103&lt;/td>
+      &lt;td>Kailash Jha&lt;/td>
+      &lt;td>English&lt;/td>
+      &lt;td>92&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>104&lt;/td>
+      &lt;td>Rishu Kumar&lt;/td>
+      &lt;td>Computer&lt;/td>
+      &lt;td>90&lt;/td>
+    &lt;/tr>
+  &lt;/table>
+&lt;/body>
+&lt;/html></pre></code>
+</div>
+</div>
+
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+  <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+               <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+               <div id="side-nav-iwt"></div><br>
+                  <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+   <footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  
+</body>
+</html>
