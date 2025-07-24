@@ -141,7 +141,7 @@
   <p>Create (Insert Operation) के लिए INSERT INTO table_name (columns) VALUES (values) SQL Query का उपयोग किया जाता है।</p>
 
 <div class="text">
-<pre><code id="code" class="language-java"></pre>String query = "INSERT INTO students (id, name, age) VALUES (?, ?, ?)";
+<pre><code id="code" class="language-java">String query = "INSERT INTO students (id, name, age) VALUES (?, ?, ?)";
 PreparedStatement ps = con.prepareStatement(query);
 ps.setInt(1, 101);
 ps.setString(2, "Rahul");
