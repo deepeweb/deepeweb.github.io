@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Android Layouts & Measurement Units in Hindi</title>
+<meta name="description" content="Layouts का उपयोग करके हम Buttons, TextViews, Images, और अन्य UI Elements को सही तरीके से Arrange कर सकते हैं।">
+<meta name="keywords" content="android layouts, android layouts in hindi, what is layouts in android in hindi, introduction to android layouts in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/layouts.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Android Layouts & Measurement Units in Hindi" />
+<meta property="og:description" content="Layouts का उपयोग करके हम Buttons, TextViews, Images, और अन्य UI Elements को सही तरीके से Arrange कर सकते हैं।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/layouts.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Android Layouts & Measurement Units in Hindi" />
+<meta name="twitter:description" content="Layouts का उपयोग करके हम Buttons, TextViews, Images, और अन्य UI Elements को सही तरीके से Arrange कर सकते हैं।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Android Layouts & Measurement Units in Hindi",
+  "description": "Layouts का उपयोग करके हम Buttons, TextViews, Images, और अन्य UI Elements को सही तरीके से Arrange कर सकते हैं।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/layouts.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Layouts & Measurement Units - Liner layout, relative layout, frame layout, coordinate layout, [dip, dp, sip, sp] versus px in hindi</h1>
+  <h2>Android Layouts & Measurement Units</h2>
+  <p>Android में Layouts का इस्तेमाल UI (User Interface) Design करने के लिए किया जाता है।</p>
+  <ul><li>Layouts का उपयोग करके हम Buttons, TextViews, Images, और अन्य UI Elements को सही तरीके से Arrange कर सकते हैं।</li>
+    <li>Android हमें कई प्रकार के Layouts देता है, जिनका उपयोग हम अपनी App की जरूरत के अनुसार कर सकते हैं।</li></ul>
+
+  <h2>Layouts in Android</h2>
+  <h3>1. Linear Layout</h3>
+  <p>Linear Layout में सभी Elements को एक Line में Arrange किया जाता है।</p>
+  <p>यह दो प्रकार का हो सकता है:</p><ul>
+    <li>Vertical (Top to Bottom)</li>
+    <li>Horizontal (Left to Right)</li></ul>
+  <p><b>Example: Vertical Linear Layout (XML code)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 1"/>
+
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 2"/>
+&lt;/LinearLayout></pre></code>
+</div>
+  <p>ऊपर दिए गए Code में दोनों Buttons एक के नीचे एक आएंगे।</p>
+
+  <p><b>Example: Horizontal Linear Layout (XML code)</b></p>
+ <div class="text">
+<pre><code id="code" class="language-java">&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 1"/>
+
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 2"/>
+&lt;/LinearLayout></pre></code>
+</div>
+  <p>ऊपर दिए गए Code में दोनों Buttons एक Row में आएंगे।</p>
+
+  <h3>2. Relative Layout</h3>
+  <p>Relative Layout में Views को एक-दूसरे के Relative (अनुसार) Set किया जाता है।</p>
+    <p><b>Example:</b></p><ul>
+      <li>किसी View को Parent के Top, Bottom, Left, Right से जोड़ सकते हैं।</li>
+      <li>किसी View को दूसरे View के Above, Below, ToLeft, ToRight रख सकते हैं।</li></ul>
+  <p><b>Example: Relative Layout (XML code)</b></p>
+  <div class="text">
+<pre><code id="code" class="language-java">&lt;RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    &lt;Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 1"
+        android:layout_centerHorizontal="true"/>
+
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 2"
+        android:layout_below="@id/button1"
+        android:layout_centerHorizontal="true"/>
+&lt;/RelativeLayout></pre></code>
+</div>
+  <p>Button 1 Center में होगा, और Button 2 उसके नीचे होगा।</p>
+  <h3>3. Frame Layout</h3>
+  <p>Frame Layout का उपयोग तब किया जाता है जब Views को एक-दूसरे के ऊपर Overlay (Stack) करना हो।</p>
+  <p>Example: Image के ऊपर TextView या Button रखना।</p>
+  <p><b>Example: Frame Layout (XML code)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    &lt;ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_image"/>
+
+    &lt;TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Overlay Text"
+        android:layout_gravity="center"/>
+&lt;/FrameLayout></pre></code>
+</div>
+  <p>ImageView Background में होगा और TextView ऊपर Display होगा।</p>
+  <h3>4. Coordinator Layout</h3>
+  <p>Coordinator Layout एक Advanced Layout है, जो Scrolling Behaviors, Animations, और Material Design Components को Manage करने में मदद करता है।</p>
+  <p>इसका उपयोग Collapsing Toolbar, Floating Action Button (FAB), और Snackbar के साथ किया जाता है।</p>
+  <p><b>Example: Coordinator Layout (XML code)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    &lt;com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:layout_anchor="@id/recyclerView"
+        app:layout_anchorGravity="bottom|end"/>
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout></pre></code>
+</div>
+  <p>यह Layout Floating Action Button (FAB) को Automatically Scroll Behavior देगा।</p>
+  <h2>Measurement Units in Android</h2>
+  <p>Android में UI Components की Size और Spacing को Define करने के लिए Multiple Units होते हैं।</p>
+  <table>
+    <tr>
+      <th>Unit</th>
+      <th>Full Form</th>
+      <th>Use</th>
+    </tr>
+    <tr>
+      <td>px</td>
+      <td>Pixels</td>
+      <td>Screen के Actual Pixels में Measurement करता है (Device पर निर्भर करता है)।</td>
+    </tr>
+    <tr>
+      <td>dp (dip)</td>
+      <td>Density Independedt Pixels</td>
+      <td>Different Screen Sizes पर Consistent UI रखने के लिए।</td>
+    </tr>
+    <tr>
+      <td>sp</td>
+      <td>Scale Independent Pixels</td>
+      <td>Text Size के लिए, जिससे User Font Scaling को Adjust कर सकता है।</td>
+    </tr>
+    <tr>
+      <td>pt</td>
+      <td>Points</td>
+      <td>1/72 inch के बराबर होता है, बहुत कम उपयोग किया जाता है।</td>
+    </tr>
+    <tr>
+      <td>in</td>
+      <td>Inches</td>
+      <td>Screen Size को Inches में Define करता है।</td>
+    </tr>
+  </table>    
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>

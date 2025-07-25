@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Android Advanced UI Components in Hindi</title>
+<meta name="description" content="TimePicker और DatePicker दो advanced UI widgets हैं, जिनका use user से time और date input लेने के लिए किया जाता है।">
+<meta name="keywords" content="advanced ui components in hindi, android advanced ui components in hindi, time and date picker in hindi, list grig card and recycler view in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/advanced-ui-components.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Android Advanced UI Components in Hindi" />
+<meta property="og:description" content="TimePicker और DatePicker दो advanced UI widgets हैं, जिनका use user से time और date input लेने के लिए किया जाता है।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/advanced-ui-components.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Android Advanced UI Components in Hindi" />
+<meta name="twitter:description" content="TimePicker और DatePicker दो advanced UI widgets हैं, जिनका use user से time और date input लेने के लिए किया जाता है।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Android Advanced UI Components in Hindi",
+  "description": "TimePicker और DatePicker दो advanced UI widgets हैं, जिनका use user से time और date input लेने के लिए किया जाता है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/advanced-ui-components.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Android Advanced UI Components in Hindi</h1>
+  <h2>Time and Date Picker:</h2>
+  <ul><li>TimePicker और DatePicker दो advanced UI widgets हैं, जिनका use user से time और date input लेने के लिए किया जाता है।</li>
+
+    <li>DatePicker से user calendar format में तारीख (Date) चुन सकता है।</li>
+
+    <li>TimePicker से user घड़ी (Clock) format में समय (Time) चुन सकता है।</li>
+
+    <li>>इन दोनों components को dialog के रूप में भी दिखाया जा सकता है, जिससे एक popup open होता है।</li>
+
+    <li>DatePickerDialog और TimePickerDialog दो main classes हैं, जिन्हें हम date/time चुनने के लिए इस्तेमाल करते हैं।</li>
+
+    <li>TimePicker में हम 12-hour या 24-hour format सेट कर सकते हैं।</li>
+
+    <li>DatePicker और TimePicker को XML layout में भी इस्तेमाल किया जा सकता है लेकिन dialog ज़्यादा user-friendly होता है।</li>
+
+    <li>इन components की मदद से form filling, alarm set, reminders आदि में easy input possible होता है।</li></ul>
+    
+  <h3>DatePickerDialog का basic code example:</h3>
+  <div class="text">
+  <pre><code class="language-java">DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+    (view, year, month, dayOfMonth) -> {
+        // यहाँ date मिलने के बाद क्या करना है वो लिखते हैं
+    }, 2025, 4, 6);  
+datePickerDialog.show();</code></pre>
+</div>
+    <h3>TimePickerDialog का basic code example:</h3>
+<div class="text">
+  <pre><code class="language-java">TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+    (view, hourOfDay, minute) -> {
+        // यहाँ time मिलने के बाद क्या करना है वो लिखते हैं
+    }, 12, 30, true);  
+timePickerDialog.show();</code></pre>
+</div>
+  <br><hr>
+  <h2>ListView</h2>
+
+  <ul><li>ListView एक UI component है, जिसका इस्तेमाल कई items को एक scrollable list में दिखाने के लिए किया जाता है।</li>
+
+    <li>यह vertical list format में items को display करता है, जैसे नामों की लिस्ट, messages, contacts आदि।</li>
+
+    <li>ListView को data से जोड़ने के लिए Adapter का use किया जाता है।</li>
+
+    <li>Adapter list को data देता है और हर item का layout तय करता है।</li>
+
+    <li>ListView में हर item एक row की तरह दिखाई देता है, जिसे हम XML layout से design कर सकते हैं।</li>
+
+    <li>अगर list बहुत बड़ी हो तो ListView efficient तरीके से सिर्फ visible items को ही load करता है (memory बचती है)।</li>
+
+    <li>आजकल ListView की जगह RecyclerView ज़्यादा use होती है, क्योंकि वो ज़्यादा flexible और powerful होती है।</li></ul>
+  <hr>
+  <h2>GridView</h2>
+  <ul><li>GridView एक advanced UI component है, जिसका use items को rows और columns की grid (जालीनुमा रूप) में दिखाने के लिए किया जाता है।</li>
+
+    <li>यह images, texts या दोनों को grid format में दिखाने के लिए बहुत useful होता है।</li>
+
+    <li>GridView में हर item एक समान size का होता है, और यह scrolling को भी support करता है।</li>
+
+    <li>इसमें items को dynamically load करने के लिए Adapter (जैसे ArrayAdapter या BaseAdapter) का use किया जाता है।</li>
+
+    <li>GridView का use photo gallery, product display, emoji selection आदि जैसी जगहों पर किया जाता है।</li>
+
+    <li>GridView में हम custom layout भी use कर सकते हैं, जिससे हर grid item में image + text भी दिखा सकते हैं।</li>
+
+    <li>GridView पर item click event को handle करने के लिए setOnItemClickListener() method use होता है।</li>
+
+    <li>GridView flexible और visually appealing layout देता है, खासकर जब हमें समान type के multiple items एक साथ दिखाने होते हैं।</li></ul>
+  <hr>
+  <h2>CardView</h2>
+  <ul><li>CardView एक UI component है, जो content को एक card जैसे दिखने वाले container में display करता है।</li>
+
+    <li>CardView का use clean और attractive layout बनाने के लिए किया जाता है, जैसे कि social media posts, product cards आदि।</li>
+
+    <li>CardView को Material Design में introduce किया गया था, जिससे UI modern और responsive लगे।</li>
+
+    <li>CardView में shadow (elevation), corner radius और padding set कर सकते हैं, जिससे यह उभरा हुआ (3D effect) दिखता है।</li>
+
+    <li>CardView के अंदर हम कोई भी layout रख सकते हैं, जैसे TextView, ImageView, Button आदि।</li>
+
+    <li>CardView को हम RecyclerView में बार-बार repeat कर सकते हैं, जिससे list अच्छी और organized दिखती है।</li>
+
+    <li>CardView lightweight होता है और performance friendly होता है, इसलिए ज्यादा बार use किया जाता है।</li>
+
+    <li>CardView का look professional होता है, इसलिए apps में इसे profile card, product item, info box आदि के लिए use किया जाता है।</li></ul>
+  <hr>
+  <h2>RecycleView</h2>
+  
+  <ul><li>RecyclerView एक advanced और flexible UI component है, जिसका इस्तेमाल बड़ी list या data को efficiently दिखाने के लिए किया जाता है।</li>
+
+    <li>यह ListView का upgraded version है, जो ज़्यादा fast, customizable और memory-efficient होता है।</li>
+
+    <li>RecyclerView पुराने views को reuse करता है, जिससे performance बेहतर होती है – इसी वजह से इसका नाम "Recycler" है।</li>
+
+    <li>RecyclerView में 3 main parts होते हैं:</li>
+
+    <ul><li><b>Adapter</b> – जो data को bind करता है।</li>
+
+      <li><b>ViewHolder</b> – जो UI elements को hold करता है।</li>
+
+      <li><b>LayoutManager</b> – जो बताता है कि list कैसे दिखेगी (vertical, horizontal, grid etc.)</li></ul>
+
+    <li>ViewHolder pattern के कारण RecyclerView smooth scrolling देता है, क्योंकि बार-बार views create नहीं होते।</li>
+
+    <li>Custom layouts और animations add करना RecyclerView में आसान होता है।</li>
+
+    <li>Adapter में हम onCreateViewHolder(), onBindViewHolder(), और getItemCount() override करते हैं।</li>
+
+    <li>RecyclerView का use chat apps, shopping apps, contact lists, news feed आदि में किया जाता है।</li></ul>
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>

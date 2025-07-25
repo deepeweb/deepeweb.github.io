@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Logcat usage in android development in Hindi</title>
+<meta name="description" content="Logcat Android Studio का एक बहुत ज़रूरी tool है, जिससे आप real-time logs को देख सकते हैं और debugging कर सकते हैं। अगर आपका app crash हो रहा है या कोई error आ रही है">
+<meta name="keywords" content="android logcat usage in hindi, what is logcat usage in hindi, logcat usage in android in hindi, logcat usage in development of android application in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/logcat-usage.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Logcat usage in android development in Hindi" />
+<meta property="og:description" content="Logcat Android Studio का एक बहुत ज़रूरी tool है, जिससे आप real-time logs को देख सकते हैं और debugging कर सकते हैं। अगर आपका app crash हो रहा है या कोई error आ रही है" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/logcat-usage.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Logcat usage in android development in Hindi" />
+<meta name="twitter:description" content="Logcat Android Studio का एक बहुत ज़रूरी tool है, जिससे आप real-time logs को देख सकते हैं और debugging कर सकते हैं। अगर आपका app crash हो रहा है या कोई error आ रही है" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Logcat usage in android development in Hindi",
+  "description": "Logcat Android Studio का एक बहुत ज़रूरी tool है, जिससे आप real-time logs को देख सकते हैं और debugging कर सकते हैं। अगर आपका app crash हो रहा है या कोई error आ रही है",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/logcat-usage.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+<div id="searchResults">
+  <!-- Results will be injected here by your existing JS -->
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Logcat usage in android development in Hindi</h1>
+  <h2>Logcat:</h2>
+ 
+  <p>Logcat Android Studio का एक बहुत ज़रूरी tool है, जिससे आप real-time logs को देख सकते हैं और debugging कर सकते हैं। अगर आपका app crash हो रहा है या कोई error आ रही है, तो Logcat से आप उसका कारण पता कर सकते हैं।</p>
+
+<h2>Logcat Open करने का तरीका</h2>
+  <p>Logcat को Android Studio में खोलने के लिए:</p>
+  <ul><li>Android Studio में जाएं।</li>
+    <li>View → Tool Windows → Logcat पर click करें।</li>
+    <li>या फिर Alt + 6 (Windows/Linux) | Cmd + 6 (Mac) प्रेस करें।</li></ul>
+  <p>Logcat बहुत ज्यादा लॉग्स दिखाता है, इसलिए इसे Filter करना ज़रूरी होता है।</p>
+  <h2>Logcat के मुख्य Levels</h2>
+<p>Logcat में 5 टाइप के Log Levels होते हैं:</p>
+  <table>
+    <tr>
+      <th>Log Type</th>
+      <th>Description</th>
+      <th>Filter Command</th>
+    </tr>
+    <tr>
+      <td>Verbose</td>
+      <td>सभी Logs दिखाएगा</td>
+      <td>V</td>
+    </tr>
+    <tr>
+      <td>Debug</td>
+      <td>Debugging से जुड़े Logs</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>Info</td>
+      <td>General Information Logs</td>
+      <td>I</td>
+    </tr>
+    <tr>
+      <td>Warning</td>
+      <td>Warnings दिखाएगा</td>
+      <td>W</td>
+    </tr>
+    <tr>
+      <td>Error</td>
+      <td>सिर्फ Errors और Exceptions</td>
+      <td>E</td>
+    </tr>
+  </table>
+  <p><b>Example:</b> अगर आपको सिर्फ Errors और Exceptions देखने हैं, तो Filter को "Error" पर सेट करें।</p><br>
+  <h2>Logcat Commands और Filters</h2>
+  <h3>1. सिर्फ अपने app के Logs देखें</h3>
+  <p>अगर आप सिर्फ अपने ऐप के Logs देखना चाहते हैं:</p>
+<div class="text">
+<pre><code id="code" class="language-html">adb logcat -s "com.example.myapp"</pre></code>
+</div>
+  <p>यहाँ "com.example.myapp" को अपने app के package name से बदलें।</p>
+  <h3>2. सिर्फ Errors देखना</h3>
+  <p>अगर आपको सिर्फ Error messages देखने हैं:</p>
+<div class="text">
+<pre><code id="code" class="language-html">adb logcat *:E  </pre></code>
+</div>
+  <h3>3. सिर्फ Warnings और Errors देखना</h3>
+<div class="text">
+<pre><code id="code" class="language-html">adb logcat *:W </pre></code>
+</div>
+  <h3>4. एक Specific Keyword या Tag से Logs Filter करना</h3>
+<div class="text">
+<pre><code id="code" class="language-html">adb logcat -s MyTag</pre></code>
+</div>
+  <p>MyTag आपके Log.d("MyTag", "message") में use किया गया टैग है।</p>
+  <h4>Logcat को Fast और Useful बनाने के लिए Tips</h4>
+  <ul><li><b>Keyword Search करें:</b> Logcat में ऊपर Search Bar में Keyword डालकर Logs जल्दी ढूंढ सकते हैं।</li>
+    <li><b>Filters इस्तेमाल करें:</b> Error Logs (E) देखने से Debugging तेज़ हो जाती है।</li>
+    <li><b>Tags का सही इस्तेमाल करें:</b> Log.d("MyTag", "message") का इस्तेमाल करें ताकि सही जगह के Logs दिखें।</li>
+    <li><b>Unnecessary Logs को Ignore करें:</b> सिर्फ आपके ऐप के Logs देखने के लिए adb logcat -s "YourAppTag" use करें।</li></ul>
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+</body>
+</html>

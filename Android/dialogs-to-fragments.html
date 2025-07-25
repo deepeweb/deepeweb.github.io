@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Dialogs, Toast, Popup & Fragments in Android in Hindi</title>
+<meta name="description" content="Android में Dialogs, Toasts, Popups और Fragments का उपयोग यूजर इंटरफेस (UI) को बेहतर बनाने और यूजर इंटरैक्शन को बढ़ाने के लिए किया जाता है। आइए इन सभी को विस्तार से समझते हैं।">
+<meta name="keywords" content="dialogs in android in hindi, dialog toast popup and fragments in hindi, android toast and popup in hindi, android fragments in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/dialogs-to-fragments.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Dialogs, Toast, Popup & Fragments in Android in Hindi" />
+<meta property="og:description" content="Android में Dialogs, Toasts, Popups और Fragments का उपयोग यूजर इंटरफेस (UI) को बेहतर बनाने और यूजर इंटरैक्शन को बढ़ाने के लिए किया जाता है। आइए इन सभी को विस्तार से समझते हैं।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/dialogs-to-fragments.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dialogs, Toast, Popup & Fragments in Android in Hindi" />
+<meta name="twitter:description" content="Android में Dialogs, Toasts, Popups और Fragments का उपयोग यूजर इंटरफेस (UI) को बेहतर बनाने और यूजर इंटरैक्शन को बढ़ाने के लिए किया जाता है। आइए इन सभी को विस्तार से समझते हैं।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Dialogs, Toast, Popup & Fragments in Android in Hindi",
+  "description": "Android में Dialogs, Toasts, Popups और Fragments का उपयोग यूजर इंटरफेस (UI) को बेहतर बनाने और यूजर इंटरैक्शन को बढ़ाने के लिए किया जाता है। आइए इन सभी को विस्तार से समझते हैं।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/dialogs-to-fragments.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Dialogs, Toast, Popup & Fragments in Android in Hindi</h1>
+  <p>Android में Dialogs, Toasts, Popups और Fragments का उपयोग यूजर इंटरफेस (UI) को बेहतर बनाने और यूजर इंटरैक्शन को बढ़ाने के लिए किया जाता है। आइए इन सभी को विस्तार से समझते हैं।</p>
+  <h2 id="dialog">1. Dialogs in Android</h2><ul>
+    <li>Dialogs एक छोटा UI Popup Window होता है, जो यूजर से इनपुट लेने या कोई सूचना देने के लिए उपयोग किया जाता है।</li>
+    <li>यह बैकग्राउंड स्क्रीन के ऊपर दिखाई देता है और यूजर को इंटरैक्शन के लिए बाध्य करता है।</li></ul>
+
+  <h3>Types of Dialogs:</h3>
+  <ul><li><b>AlertDialog -</b> User को notification या confirmation दिखाने के लिए।</li>
+    <li><b>ProgressDialog -</b> एक loading screen दिखाने के लिए।</li>
+    <li><b>DatePickerDialog -</b> User से Date इनपुट लेने के लिए।</li>
+    <li><b>TimePickerDialog -</b> User से Time इनपुट लेने के लिए।</li>
+    <li><b>Custom Dialog -</b> अपने अनुसार design किया गया dialog.</li></ul>
+  <h3>Implementation of AlertDialog</h3>
+    <p><b>Step 1: Open AlertDialog on Button Click</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Button btnAlert = findViewById(R.id.btn_alert);
+btnAlert.setOnClickListener(v -> {
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("Exit Confirmation")
+           .setMessage("Are you sure you want to exit?")
+           .setPositiveButton("Yes", (dialog, which) -> finish())
+           .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
+           .show();
+});</pre></code>
+</div>
+<br><hr>
+  <h2 id="toast">2. Toast in Android</h2>
+  <ul><li>Toast एक छोटा सा Popup Message होता है, जो कुछ सेकंड के लिए स्क्रीन पर दिखता है और फिर अपने आप गायब हो जाता है।</li>
+    <li>इसका उपयोग Quick Notifications देने के लिए किया जाता है, जैसे "Message Sent", "Form Submitted", "No Internet Connection" आदि।</li></ul>
+
+  <h3>Features of Toast:</h3>
+  <ul><li>Auto-Dismiss (कुछ सेकंड में गायब हो जाता है)।</li>
+    <li>No User Interaction Required (यूजर को कोई बटन क्लिक नहीं करना पड़ता)।</li>
+    <li>Custom Positioning (Bottom, Center, Top)।</li>
+    <li>Custom Design & Styling किया जा सकता है।</li></ul>
+  <h3>Implementation of Toast</h3>
+<div class="text">
+<pre><code id="code" class="language-java">Button btnToast = findViewById(R.id.btn_toast);
+btnToast.setOnClickListener(v -> {
+    Toast.makeText(getApplicationContext(), "This is a Toast Message!", Toast.LENGTH_SHORT).show();
+});</pre></code>
+</div>
+<br><hr>
+  <h2 id="popup">3. Popup in Android</h2>
+  <ul><li>Popup Window एक छोटा सा Floating Window होता है, जो स्क्रीन के किसी भी हिस्से में दिखाई दे सकता है।</li>
+    <li>इसे Context Menu, Tooltips, Custom Message Box, Drop-downs आदि के रूप में उपयोग किया जाता है।</li></ul>
+
+  <h3>Types of Popup Windows:</h3>
+  <ul><b><li>Popup Menu -</b> यह एक छोटा सा Menu List दिखाता है।</li>
+    <li><b>Popup Window -</b> यह एक custom popup बनाता है जिसमें TextView, Buttons, Images आदि हो सकते हैं।</li></ul>
+  <h3>Implementation of Popup Menu</h3>
+  <p><b>Step 1: Define Menu in res/menu/popup_menu.xml</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;menu xmlns:android="http://schemas.android.com/apk/res/android">
+    &lt;item android:id="@+id/item1" android:title="Option 1"/>
+    &lt;item android:id="@+id/item2" android:title="Option 2"/>
+&lt;/menu></pre></code>
+</div>
+  <p><b>Step 2: Show Popup Menu on Button Click</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Button btnPopup = findViewById(R.id.btn_popup);
+btnPopup.setOnClickListener(v -> {
+    PopupMenu popup = new PopupMenu(this, btnPopup);
+    popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+    popup.setOnMenuItemClickListener(item -> {
+        Toast.makeText(this, "Selected: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+        return true;
+    });
+    popup.show();
+});</pre></code>
+</div>
+<br><hr>
+  <h2 id="fragments">4. Fragments in Android</h2>
+  <ul>
+    <li>Fragments एक Activity के छोटे-छोटे हिस्से (Modular UI Components) होते हैं।</li>
+    <li>ये एक तरह के Reusable UI Components होते हैं, जिन्हें Multiple Activities में Use किया जा सकता है।</li>
+    <li>जब कोई Activity Destroy होती है, तब भी Fragments Manage & Retain हो सकते हैं।</li></ul>
+  <h3>Features of Fragments:</h3>
+  <ul><li>Multiple Fragments in One Activity.</li>
+    <li>Dynamic UI Changes.</li>
+    <li>Better Memory Management.</li>
+    <li>Lifecycle Independent of Activity.</li></ul>
+  <h3>Implementation of Fragments</h3>
+  <p><b>Step 1: Create a Fragment Class</b></p>
+
+<div class="text">
+<pre><code id="code" class="language-java">public class MyFragment extends Fragment {
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_layout, container, false);
+    }
+}</pre></code>
+</div>
+  <p><b>Step 2: Define Fragment Layout (res/layout/fragment_layout.xml)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello from Fragment!"/></pre></code>
+    </div>
+  <p><b>Step 3: Load Fragment in Activity</b></p>
+  <div class="text">
+<pre><code id="code" class="language-java">FragmentManager fragmentManager = getSupportFragmentManager();
+FragmentTransaction transaction = fragmentManager.beginTransaction();
+transaction.replace(R.id.fragment_container, new MyFragment());
+transaction.commit();</pre></code>
+</div>
+  <p><b>Step 4: Add a Fragment Container in Activity XML</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;FrameLayout
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/></pre></code>
+</div>
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Resources, R.java, Assets, Layouts & Drawable Resources in Hindi</title>
+<meta name="description" content="Android app में resources (layouts, images, strings, colors, आदि) का उपयोग करके UI को बेहतर और dynamic बनाया जाता है।">
+<meta name="keywords" content="resources and r.java in hindi, android resources and r java in hindi, android assets layouts and drawable resources in hindi, resources and rjava in android in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/resources-and-r-java.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Resources, R.java, Assets, Layouts & Drawable Resources in Hindi" />
+<meta property="og:description" content="Android app में resources (layouts, images, strings, colors, आदि) का उपयोग करके UI को बेहतर और dynamic बनाया जाता है।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/resources-and-r-java.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Resources, R.java, Assets, Layouts & Drawable Resources in Hindi" />
+<meta name="twitter:description" content="Android app में resources (layouts, images, strings, colors, आदि) का उपयोग करके UI को बेहतर और dynamic बनाया जाता है।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Resources, R.java, Assets, Layouts & Drawable Resources in Hindi",
+  "description": "Android app में resources (layouts, images, strings, colors, आदि) का उपयोग करके UI को बेहतर और dynamic बनाया जाता है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/resources-and-r-java.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+   <h1>Resources, R.java, Assets, Layouts & Drawable Resources in Hindi</h1>
+  <p>Android app में resources (layouts, images, strings, colors, आदि) का उपयोग करके UI को बेहतर और dynamic बनाया जाता है। </p>
+ 
+ <div id="ad-wrapper">
+  <div id="ad-label">
+    <span id="ad-badge">Ad</span>
+  </div>
+<script async="async" data-cfasync="false" src="//pl27204093.profitableratecpm.com/cf6b160c3cbc6c6d0ee760af9d33d245/invoke.js"></script>
+<div id="container-cf6b160c3cbc6c6d0ee760af9d33d245"></div>
+</div>
+ 
+  <h2>1. Resources (res/) क्या होता है?</h2>
+  <p>Android में resources (res/) वह सभी static content होते हैं, जो app के UI और functionality को define करने में मदद करते हैं। ये files hardcoded values को हटाकर ऐप को flexible, scalable, और multi-language supportive बनाती हैं।</p>
+  <p><b>उदाहरण के लिए:</b></p>
+  <ul>
+    <li>UI Layouts (XML files)</li>
+    <li>Images और Icons (PNG, JPEG, SVG, XML Drawables)</li>
+    <li>Strings (Text, Messages)</li>
+    <li>Colors और Styles</li>
+    <li>Dimensions (Padding, Margins)</li>
+    <li>Animation Effects</li></ul>
+  <p>सभी Resources res/ folder में store किए जाते हैं और R.java फाइल के जरिए इन्हें code में access किया जाता है।</p>
+  <h3>Types of Resources</h3>
+  
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+  
+  <table>
+    <tr>
+      <th>Resource Type</th>
+      <th>Location</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Drawable</td>
+      <td>res/drawable/</td>
+      <td>Images, XML graphics (icons, buttons)</td>
+    </tr>
+    <tr>
+      <td>Layout</td>
+      <td>res/layout/</td>
+      <td>XML UI files (Activity, Fragments)</td>
+    </tr>
+    <tr>
+      <td>Mipmap</td>
+      <td>res/mipmap</td>
+      <td>App launcher icons (Adaaptive icons)</td>
+    </tr>
+    <tr>
+      <td>Values</td>
+      <td>res/values/</td>
+      <td>Strings, colors, dimensions, themes</td>
+    </tr>
+    <tr>
+      <td>Raw</td>
+      <td>res/raw/</td>
+      <td>Audio, videos, JSON, other raw files</td>
+    </tr>
+    <tr>
+      <td>XML</td>
+      <td>res/xml/</td>
+      <td>XML-based configurations</td>
+    </tr>
+  </table>
+  <h2>2. R.java (Resource Identifier Class)</h2>
+  <p>R.java एक ऑटो-जेनरेटेड जावा फाइल होती है, जो सभी resources का unique identifier (ID) स्टोर करती है।</p>
+
+  <h3>R.java कैसे काम करता है?</h3>
+  <p>जब भी आप किसी resource को res/ फ़ोल्डर में एड करते हैं, Android Studio उसे R.java फाइल में एक unique ID के रूप में स्टोर करता है। फिर आप उस resource को कोड में आसानी से access कर सकते हैं।</p>
+  <p><b>Example:</b> R.java का उपयोग</p>
+<div class="text">
+<pre><code id="code" class="language-java">int color = getResources().getColor(R.color.primary_color);  // Colors
+String appName = getString(R.string.app_name);  // Strings
+imageView.setImageResource(R.drawable.logo);  // Drawables</code></pre>
+</div>
+
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+  <p><b>Example:</b> R.java की Structure</p>
+<div class="text">
+<pre><code id="code" class="language-java">public final class R {
+    public static final class drawable {
+        public static final int logo = 0x7f010000;
+    }
+    public static final class layout {
+        public static final int activity_main = 0x7f020000;
+    }
+    public static final class string {
+        public static final int app_name = 0x7f030000;
+    }
+}</code></pre>
+</div>
+<p>Note: यह फ़ाइल manually edit नहीं की जाती। यह automatically generate होती है।</p>
+  <h2>3. Assets Folder (assets/)</h2>
+  <p>Android में assets/ folder एक raw file storage location है, जहाँ आप वे files रख सकते हैं जो res/ folder में सीधे store नहीं की जा सकतीं, जैसे कि:</p>
+  <ul><li>Fonts (TTF, OTF)</li>
+    <li>HTML, CSS, JavaScript फ़ाइलें</li>
+    <li>JSON और XML data files</li>
+    <li>SQLite डेटाबेस (.db)</li>
+    <li>PDF, MP3, और वीडियो फ़ाइलें</li></ul>
+    <p>Android का resources system (res/ फ़ोल्डर) assets को directly access नहीं कर सकता। इसके बजाय, हमें AssetManager API का उपयोग करके assets को load करना पड़ता है।</p>
+  
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+  
+    <h2>4. Layouts (UI Design)</h2>
+    <p>Android में layouts XML files के रूप में store होती हैं, जो UI structure को define करती हैं। ये res/layout/ folder में मिलती हैं।</p>
+    <h3>Layout Types</h3>
+  
+    <table>
+      <tr>
+        <th>Layout Types</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>LinearLayout</td>
+        <td>Elements को vertical या horizontal में arrange करता है</td>
+      </tr>
+      <tr>
+        <td>RelativeLayout</td>
+        <td>Views को एक-दूसरे के relation में set करता है</td>
+      </tr>
+      <tr>
+        <td>ConstraintLayout</td>
+        <td>Flexible & optimized layout</td>
+      </tr>
+      <tr>
+        <td>FrameLayout</td>
+        <td>Single child element का उपयोग</td>
+      </tr>
+      <tr>
+        <td>GridLayout</td>
+        <td>Grid-based structure</td>
+      </tr>
+      <tr>
+        <td>TableLayout</td>
+        <td>Rows और Columns में divide</td>
+      </tr>
+    </table>
+  <h2>Drawable Resources</h2>
+  <p>Drawable resources वे graphics होते हैं जिन्हें Android app में UI elements के रूप में उपयोग किया जाता है। ये res/drawable/ folder में store किए जाते हैं और विभिन्न प्रकार के होते हैं।</p>
+
+  <h2>Types of Drawable Resources</h2>
+  
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+  
+  <h3>1. Bitmap Drawables (.png, .jpg, .webp)</h3>
+  <ul><li>Static image files जो app में icons, backgrounds, आदि के लिए उपयोग होते हैं।</li>
+    <li><b>Example:</b> logo.png, background.jpg</li></ul>
+
+  <h3>2. Vector Drawables (.xml)</h3>
+    <ul><li>Scalable और lightweight graphics जो बिना quality खोए resize किए जा सकते हैं।</li>
+      <li><b>Example:</b> Material icons, SVG images</li></ul>
+<h3>3. Nine-Patch Drawables (.9.png)</h3>
+<ul><li>Special PNG images जो dynamically stretch हो सकती हैं।</li>
+  <li><b>Example:</b> Buttons, chat bubbles</li></ul>
+
+  <h3>4. Shape Drawables (.xml)</h3>
+  <ul><li>XML फाइल में defined simple geometric shapes जैसे rectangles, ovals, lines, आदि।</li>
+    <li><b>Example:</b> Rounded buttons, borders, shadows</li></ul>
+
+    <h3>5. State List Drawables (selector.xml)</h3>
+    <ul><li>Different states (normal, pressed, disabled) के लिए अलग-अलग drawables define करता है।</li>
+      <li><b>Example:</b> Button background change on click</li></ul>
+
+      <h3>6. Layer List Drawables (layer-list.xml)</h3>
+      <ul><li>Multiple drawables को layers में stack करता है।</li>
+        <li><b>Example:</b> Image over background</li></ul>
+
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>

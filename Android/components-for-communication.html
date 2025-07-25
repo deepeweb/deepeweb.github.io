@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Components for communication in android in Hindi</title>
+<meta name="description" content="Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं">
+<meta name="keywords" content="Components for communication in android in Hindi, android components for communication in hindi, what ic components for communication in hindi, android notes in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/components-for-communication.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Components for communication in android in Hindi" />
+<meta property="og:description" content="Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/components-for-communication.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Components for communication in android in Hindi" />
+<meta name="twitter:description" content="Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Components for communication in android in Hindi",
+  "description": "Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/components-for-communication.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+<div id="searchResults">
+  <!-- Results will be injected here by your existing JS -->
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+       <h1>Components for communication in android in Hindi</h1>
+    <h2>Android में Communication Components - Intents और Intent Filters</h2>
+      <p>Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं।</p>
+
+<div id="ad-wrapper">
+  <div id="ad-label">
+    <span id="ad-badge">Ad</span>
+  </div>
+<script async="async" data-cfasync="false" src="//pl27204093.profitableratecpm.com/cf6b160c3cbc6c6d0ee760af9d33d245/invoke.js"></script>
+<div id="container-cf6b160c3cbc6c6d0ee760af9d33d245"></div>
+</div>
+
+<h2>1. Intent क्या है?</h2>
+    <p>Intent Android का एक मैकेनिज्म है जो अलग-अलग Components के बीच डेटा पास करने और एक दूसरे को एक्टिवेट (launch) करने में मदद करता है।</p>
+
+    <h2>Intent के प्रकार</h2>
+<p>Android में दो प्रकार के Intents होते हैं:</p>
+
+    <h3>Implicit Intent</h3>
+
+<p>यह तब उपयोग होता है जब हमें यह नहीं पता होता कि कौन सा app या कंपोनेंट कार्य को पूरा करेगा।</p>
+<p>उदाहरण के लिए, अगर हम किसी नंबर पर call करना चाहते हैं, तो हमें यह जानने की जरूरत नहीं कि कौन सा डायलर ऐप यूज होगा।</p>
+    <p><b>उदाहरण:</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Intent intent = new Intent(Intent.ACTION_DIAL);
+intent.setData(Uri.parse("tel:1234567890"));
+startActivity(intent);</code></pre>
+</div>
+
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+        <h3>Explicit Intent </h3>
+
+        <p>जब हमें पहले से ही पता होता है कि हमें किस Activity या Component को लॉन्च करना है, तब हम Explicit Intent का उपयोग करते हैं।</p>
+            <p>उदाहरण के लिए, हम एक Activity से दूसरी Activity को खोलने के लिए इसका उपयोग कर सकते हैं।</p>
+                <p><b>उदाहरण:</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+startActivity(intent);</code></pre>
+</div>
+    <h2>2. Intent Filters क्या हैं?</h2>
+    <p>Intent Filter एक प्रकार का फिल्टर होता है जो यह तय करता है कि कोई विशेष Intent किसी कंपोनेंट (Activity, Service, Broadcast Receiver) द्वारा एक्सेप्ट किया जाएगा या नहीं।</p>
+
+    <h2>Intent Filter के मुख्य भाग:</h2>
+    <p><b>Action:</b> यह वह कार्य को परिभाषित करता है जो Intent करने वाला है (जैसे, android.intent.action.VIEW)।</p>
+    <p><b>Category:</b> यह एक अतिरिक्त फ़िल्टर प्रदान करता है जिससे Intent को और अधिक विशिष्ट बनाया जा सकता है।</p>
+    <p><b>Data:</b> यह दर्शाता है कि कौन सा डेटा टाइप (MIME type, URI) Intent के साथ उपयोग किया जाएगा।</p>
+       <p><b>Example:</b> AndroidManifest.xml में Intent Filter जोड़ना</p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;activity android:name=".SecondActivity">
+    &lt;intent-filter>
+        &lt;action android:name="android.intent.action.VIEW" />
+       &lt;category android:name="android.intent.category.DEFAULT" />
+        &lt;data android:mimeType="text/plain" />
+    &lt;/intent-filter>
+&lt;/activity></code></pre>
+</div>
+
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+
+</body>
+</html>

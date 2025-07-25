@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Android Basic UI Components in Hindi</title>
+<meta name="description" content="Android में UI (User Interface) Components का उपयोग Screen पर Elements (जैसे Button, TextView, ImageView, EditText आदि) को दिखाने और User Interaction को Handle करने के लिए किया जाता है">
+<meta name="keywords" content="basic ui components in hindi, android basic ui components in hindi, what is ui components in android in hindi, android ui componets, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/basic-ui-components.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Android UI Components in Hindi" />
+<meta property="og:description" content="Android में UI (User Interface) Components का उपयोग Screen पर Elements (जैसे Button, TextView, ImageView, EditText आदि) को दिखाने और User Interaction को Handle करने के लिए किया जाता है" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/basic-ui-components.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Android UI Components in Hindi" />
+<meta name="twitter:description" content="Android में UI (User Interface) Components का उपयोग Screen पर Elements (जैसे Button, TextView, ImageView, EditText आदि) को दिखाने और User Interaction को Handle करने के लिए किया जाता है" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Android UI Components in Hindi",
+  "description": "Android में UI (User Interface) Components का उपयोग Screen पर Elements (जैसे Button, TextView, ImageView, EditText आदि) को दिखाने और User Interaction को Handle करने के लिए किया जाता है",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/basic-ui-components.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Android UI Components in Hindi</h1>
+  <p>Android में UI (User Interface) Components का उपयोग Screen पर Elements (जैसे Button, TextView, ImageView, EditText आदि) को दिखाने और User Interaction को Handle करने के लिए किया जाता है।</p>
+  <ul><li>UI Components को XML में Declare किया जाता है और Java/Kotlin Code के जरिए Control किया जाता है।</li>
+    <li>इन Components का उपयोग करके अच्छे और Interactive Android Apps बनाए जा सकते हैं।</li></ul>
+
+  <h2>1. TextView (text दिखाने के लिए)</h2><ul>
+    <li>TextView एक Android UI Component है, जो Screen पर Static Text को Show करता है।</li>
+    <li>इसे User Edit नहीं कर सकता, यह सिर्फ Text Display करने के लिए होता है।</li>
+    <li>यह Labels, Headings, Messages, या Instructions को दिखाने के लिए सबसे ज़्यादा Use होता है।</li>
+    <li>TextView को XML में Declare किया जाता है और Java/Kotlin Code से Modify किया जा सकता है।</li>
+    <li>यह Android के android.widget.TextView Class से आता है।</li></ul>
+  <p><b>Example (TextView in XML)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello, Android!"
+    android:textSize="20sp"
+    android:textColor="#000000" /></pre></code>
+    </div>
+  <p><b>Example (Java Code में Text Set करना)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">TextView textView = findViewById(R.id.textView);
+textView.setText("Welcome to Android!");</pre></code>
+</div>
+  <h2>2. Button (buttom पर click करने के लिए)</h2>
+    <p>Button Android का एक सबसे Common UI Component है, जिसका उपयोग User से Interaction के लिए किया जाता है। जब User किसी Button को Tap या Click करता है, तो एक Action Trigger होता है, जैसे:</p>
+    <ul><li>नई Activity Open करना</li>
+      <li>Message Show करना (Toast/Dialog)</li>
+      <li>Data Submit करना (Form Submission)</li>
+      <li>Image या Text Change करना</li></ul>
+    <p>Android में Button को XML (UI Design) और Java/Kotlin (Event Handling) में Define किया जाता है।</p>
+  <p><b>Example (Button in XML)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;Button
+    android:id="@+id/button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Click Me" /></pre></code>
+    </div>
+  <p><b>Example (Java Code में Button का Event Handle करना)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Button button = findViewById(R.id.button);
+button.setOnClickListener(v -> {
+    Toast.makeText(MainActivity.this, "Button Clicked!", Toast.LENGTH_SHORT).show();
+});</pre></code>
+</div>
+  <h2>3. EditText (User से Text Input लेने के लिए)</h2><ul>
+    <li>  EditText Android में एक UI Component है, जो User से Text Input लेने के लिए इस्तेमाल किया जाता है।</li>
+    <li>यह TextView का Subclass है, लेकिन User इसमें Text को Edit कर सकता है।</li>
+    <li>यह Forms, Search Box, Username & Password Input, Feedback Forms, और Data Entry Fields के लिए उपयोग किया जाता है।</li></ul>
+    <p><b>Example (EditText in XML)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;EditText
+    android:id="@+id/editText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter your name" /></pre></code>
+    </div>
+  <p><b>Example (Java Code में Text को Read करना)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">EditText editText = findViewById(R.id.editText);
+String userInput = editText.getText().toString();
+Toast.makeText(MainActivity.this, "You entered: " + userInput, Toast.LENGTH_SHORT).show();</pre></code>
+</div>
+  <h2>4. RadioButton (Multiple Options में से एक चुनने के लिए)</h2><ul>
+    <li>RadioButton का उपयोग तब किया जाता है जब User को Multiple Options में से केवल एक चुनना हो।</li>
+    <li>RadioButtons हमेशा एक Group में होते हैं और एक समय में केवल एक ही Option Select हो सकता है।</li></ul>
+  <p><b>Example (RadioButton in XML)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;RadioGroup
+    android:id="@+id/radioGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    &lt;adioButton
+        android:id="@+id/radioMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male" />
+
+    &lt;RadioButton
+        android:id="@+id/radioFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female" />
+&lt;/RadioGroup></pre></code>
+</div>
+  <p><b>Example (Java Code में Selection को Read करना)</b></b>
+<div class="text">
+<pre><code id="code" class="language-java">RadioGroup radioGroup = findViewById(R.id.radioGroup);
+int selectedId = radioGroup.getCheckedRadioButtonId();
+RadioButton selectedRadioButton = findViewById(selectedId);
+Toast.makeText(MainActivity.this, "Selected: " + selectedRadioButton.getText(), Toast.LENGTH_SHORT).show();</pre></code>
+</div>
+  <h2>5. CheckBox (Multiple Options Select करने के लिए)</h2><ul>
+    <li>Checkbox का उपयोग तब किया जाता है जब User को एक से अधिक Options चुनने होते हैं।</li>
+      <li>Example: "Terms & Conditions" Accept करने के लिए।</li></ul>
+  <p><b>Example (CheckBox in XML)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;CheckBox
+    android:id="@+id/checkBox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Accept Terms & Conditions" /></pre></code>
+    </div>
+  <p><b>Example (Java Code में CheckBox को Handle करना)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">CheckBox checkBox = findViewById(R.id.checkBox);
+if (checkBox.isChecked()) {
+    Toast.makeText(MainActivity.this, "Checkbox is Checked!", Toast.LENGTH_SHORT).show();
+}</pre></code>
+</div>
+  <h2>6. ImageView (Images को Show करने के लिए)</h2>
+  <p>ImageView का उपयोग Screen पर Images Show करने के लिए किया जाता है।</p>
+
+<p><b>Example (ImageView in XML)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">&lt;ImageView
+    android:id="@+id/imageView"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:src="@drawable/sample_image" /></pre></code>
+    </div>
+  <p><b>Example (Java Code में Image Change करना)</b></p>
+  <div class="text">
+<pre><code id="code" class="language-java">ImageView imageView = findViewById(R.id.imageView);
+imageView.setImageResource(R.drawable.new_image);</pre></code>
+</div>
+  <h2>7. ProgressBar (Loading Show करने के लिए)</h2>
+  <p>ProgressBar का उपयोग तब किया जाता है जब कोई Task (जैसे File Downloading, Data Loading) चल रहा हो।</p>
+  <p>दो प्रकार के ProgressBar होते हैं:</p><ul>
+    <li>Indeterminate (Circular) → जब Task का Duration पता नहीं हो।</li>
+    <li>Determinate (Horizontal) → जब Task का Duration पता हो।</li></ul>
+  <p><b>Example (ProgressBar in XML)</b></p>
+  <div class="text">
+<pre><code id="code" class="language-java">&lt;ProgressBar
+    android:id="@+id/progressBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone" /></pre></code>
+    </div>
+  <p><b>Example (Java Code में ProgressBar Show/Hide करना)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">ProgressBar progressBar = findViewById(R.id.progressBar);
+progressBar.setVisibility(View.VISIBLE);  // Show ProgressBar
+progressBar.setVisibility(View.GONE);     // Hide ProgressBar</pre></code>
+</div>
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Debugging the Android app in hindi</title>
+<meta name="description" content="Debugging का मतलब है bugs को ढूँढना और Fix करना। Android Studio हमें कई tools देता है जिससे हम Errors, Crashes, और Unexpected Behaviors को ठीक कर सकते हैं।">
+<meta name="keywords" content="debbuging the android app, debbuging the android app in hindi, android app debbuging in hindi, how to debug android app in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/debbuging-the-android-app.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Debugging the Android app in hindi" />
+<meta property="og:description" content="Debugging का मतलब है bugs को ढूँढना और Fix करना। Android Studio हमें कई tools देता है जिससे हम Errors, Crashes, और Unexpected Behaviors को ठीक कर सकते हैं।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/debbuging-the-android-app.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Debugging the Android app in hindi" />
+<meta name="twitter:description" content="Debugging का मतलब है bugs को ढूँढना और Fix करना। Android Studio हमें कई tools देता है जिससे हम Errors, Crashes, और Unexpected Behaviors को ठीक कर सकते हैं।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Debugging the Android app in hindi",
+  "description": "Debugging का मतलब है bugs को ढूँढना और Fix करना। Android Studio हमें कई tools देता है जिससे हम Errors, Crashes, और Unexpected Behaviors को ठीक कर सकते हैं।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/debbuging-the-android-app.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Debugging the Android app in hindi</h1>
+  <h2>Android App Debugging -</h2>
+  <p>Debugging का मतलब है bugs को ढूँढना और Fix करना। Android Studio हमें कई tools देता है जिससे हम Errors, Crashes, और Unexpected Behaviors को ठीक कर सकते हैं।</p>
+  <h2>1. Debug Mode में App run करना</h2>
+  <ul><li>Android Studio में अपना project खोलें।</li>
+    <li>"Run" के पास वाले "Debug" buttom पर click करें या Shift + F9 (Windows/Linux) | ⌘ + Option + D (Mac) दबाएं।</li>
+    <li>Emulator या Physical Device चुनें।</li>
+    <li>App Debug Mode में start होगा, जिससे आप Code Execution को step-by-step ट्रैक कर सकते हैं।</li></ul>
+  <h2>2. Breakpoints सेट करना (Step-by-Step Debugging)</h2>
+  <p>Breakpoints ऐसे points होते हैं, जहाँ पर Code Execution रुक जाती है ताकि आप Variable Values को Analyze कर सकें।</p>
+
+  <h3>Breakpoint कैसे लगाएं?</h3>
+  <ul><li>Java/Kotlin Code Editor में किसी भी line के left side पर क्लिक करें।</li>
+    <li>वहाँ लाल गोला (🔴) दिखेगा, इसका मतलब Breakpoint सेट हो गया।</li>
+    <li>अब Debug Mode में रन करें और Execution वहाँ रुक जाएगी।</li></ul>
+  <h3>Step-by-Step Execution</h3>
+  <ul><li><b>Step Over (F8):</b> अगली line पर जाने के लिए।</li>
+    <li><b>Step Into (F7):</b> किसी function के अंदर जाने के लिए।</li>
+    <li><b>Step Out (Shift + F8):</b> Function से बाहर आने के लिए।</li>
+    <li><b>Resume (F9):</b> Debugging को continue करने के लिए।</li></ul>
+
+  <h2>3. Logcat का इस्तेमाल (Errors & Logs track करें)</h2>
+<p>Logcat Android Studio में एक Console है, जहाँ आप Error Messages, Debug Logs, और System Logs देख सकते हैं।</p>
+<p></b>Log Messages print करने के लिए:</b></p>
+<div class="text">
+<pre><code id="code" class="language-html">import android.util.Log;
+
+Log.d("DEBUG_TAG", "यह एक Debug Message है");
+Log.e("ERROR_TAG", "यह एक Error Message है");</pre></code>
+</div>
+<ul><li><b>Logcat को खोलने के लिए:</b> Alt + 6 (Windows/Linux) | Cmd + 6 (Mac) दबाएं।</li>
+  <li><b>Filter लगाएं:</b> सिर्फ Errors या Debug Logs देखने के लिए "Error" या "Debug" से Filter करें।</li></ul>
+
+<h2>4. Exception और Crash को Debug करना</h2>
+<p>अगर App Crash हो रहा है, तो Logcat में Red Color में Error Message दिखेगा।</p>
+<h3>Common Errors:</h3>
+<ul><li><b>NullPointerException:</b> किसी Object को बिना Initialize किए इस्तेमाल करना।</li>
+  <li><b>ArrayIndexOutOfBoundsException:</b> Array के बाहर Index Access करना।</li>
+  <li><b>NetworkOnMainThreadException:</b> Main Thread पर Network Call करना।</li></ul>
+<h3>Solution:</h3>
+<p>Logcat में Exact Error Message और Stack Trace देखें।</p>
+  <h3>Try-Catch Block का इस्तेमाल करें:</h3>
+  <div class="text">
+<pre><code id="code" class="language-java">try {
+    int a = 5 / 0; // Error
+} catch (Exception e) {
+    Log.e("ERROR_TAG", "Exception: " + e.getMessage());
+}</pre></code>
+</div>
+<h2>5. Debugging Using Toast & Snackbar</h2>
+<p>अगर आपको सिर्फ Debugging के लिए छोटे Messages दिखाने हैं, तो:</p>
+<ul><li>Toast Message (Short Debugging Messages)</li></ul>
+<div class="text">
+<pre><code id="code" class="language-java">Toast.makeText(getApplicationContext(), "This is Debug Message", Toast.LENGTH_SHORT).show();</pre></code>
+</div>
+<ul><li>Snackbar (Better UI Debugging Message)</li></ul>
+<div class="text">
+<pre><code id="code" class="language-html">Snackbar.make(view, "This is Debugging Snackbar", Snackbar.LENGTH_LONG).show();</pre></code>
+</div>
+<h2>6. Debugging Using the Android Profiler</h2>
+<p>Android Studio में Android Profiler का इस्तेमाल CPU, Memory, Network Usage और Battery Consumption को Analyze करने के लिए किया जाता है।</p>
+<h3>Android Profiler कैसे खोलें?</h3>
+<ul><li>Run → Profiler को select करें।</li>
+  <li>यहाँ से CPU, Memory, और Network Activity को live monitor कर सकते हैं।</li>
+  <li>अगर कोई Process बहुत ज्यादा Memory खा रही है, तो उसे Optimize कर सकते हैं।</li></ul>
+
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>

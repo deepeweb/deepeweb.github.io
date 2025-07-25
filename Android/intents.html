@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "",
+  "description": "",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://darkhindi.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Intents introduction and importance, types of intents in Hindi</h1>
+  <h2>Introduction to Intents:</h2>
+  <ul>
+    <p><li>Intent Android में एक Messaging Object है, जो Components (Activities, Services, Broadcast Receivers) के बीच Communication के लिए Use होता है।</li></p></ul>
+  <ul><p><li>Intent का उपयोग एक Activity से दूसरी Activity को Start करने, Data Pass करने, और Background Services चलाने के लिए किया जाता है।</li></p>
+    <p><li>यह दो प्रकार के होते हैं: Explicit Intent (जहाँ Target Component Specify किया जाता है) और Implicit Intent (जहाँ System Decide करता है कि कौन-सा Component Handle करेगा)।</li></p>
+    <p><li>Intent के माध्यम से हम Data Transfer कर सकते हैं, जैसे कि String, Integer, Boolean, ArrayList, और Parcelable Objects।</li></p>
+      <p><li>Intent में Extras का उपयोग किया जाता है, जिससे हम Key-Value Pair के रूप में Additional Information भेज सकते हैं।</li></p>
+      <p><li>Intent का उपयोग System Features को Access करने के लिए भी किया जाता है, जैसे कि Camera Open करना, Web Page Load करना, या Call करना।</li></p>
+      <p><li>startActivity() Method का उपयोग Intent से नई Activity Launch करने के लिए किया जाता है।</li></p></ul>
+    <ul><p><li>startActivityForResult() Method से हम किसी Activity से Result वापस प्राप्त कर सकते हैं, जैसे कि Image Picker से चुनी गई Image।</li></p>
+      <p><li>Broadcast Messages भेजने और Receive करने के लिए भी Intent का उपयोग किया जाता है, जैसे कि Battery Low या Airplane Mode Change का Notification।</li></p>
+      <p><li>Intent Filter के माध्यम से App यह Decide कर सकता है कि कौन-सा Intent Handle करना है, जिससे Apps के बीच Interaction आसान हो जाता है।</li></p></ul>
+  <h2>Importance of Intents:</h2>
+  <ul>
+    <p><li>Intent Android में Component Communication का मुख्य जरिया है, जिससे Activities, Services, और Broadcast Receivers आपस में बातचीत कर सकते हैं।</li></p>
+    <p><li>यह एक Activity से दूसरी Activity पर जाने और Navigation को आसान बनाता है।</li></p>
+    <p><li>Intent का उपयोग Data Transfer के लिए किया जाता है, जिससे Apps के अंदर या दूसरी Apps के साथ Information Share की जा सकती है।</li></p></ul>
+  <ul><p><li>यह System Features को Access करने में मदद करता है, जैसे कि Camera Open करना, Web Browser Launch करना, और Call करना।</li></p>
+    <p><li>Implicit Intents की मदद से Apps आपस में Interact कर सकते हैं, जैसे कि किसी App से Image Select कर दूसरी App में Send करना।</li></p>
+    <p><li>Intent Multitasking को Support करता है, जिससे Background में Services को Start और Stop किया जा सकता है।</li></p>
+    <p><li>Broadcast Messages भेजने और Receive करने में मदद करता है, जिससे System Events (जैसे Battery Low, Network Change) को Handle किया जा सकता है।</li></p>
+    <p><li>startActivityForResult() से किसी दूसरी Activity से Data (जैसे User Input, Image) वापस प्राप्त किया जा सकता है।</li></p></ul>
+  <ul><p><li>Intent Filter की मदद से किसी App का कोई Specific Action Handle किया जा सकता है, जिससे Apps के बीच Seamless Integration संभव होता है।</li></p>
+    <p><li>Android के Security और Permissions Model में भी Intent का महत्वपूर्ण योगदान है, जिससे User Control और Privacy बनाए रखी जाती है।</li></p></ul>
+  <h2>Types of Intents:</h2>
+  <h3>1. Explicit Intent</h3>
+  <ul><p><li>जब Intent में सटीक Component (Activity, Service) को Specify किया जाता है, तो उसे Explicit Intent कहते हैं।</li></p>
+    <p><li>इसका उपयोग एक Activity से दूसरी Activity पर जाने या Background Service Start करने के लिए किया जाता है।</li></p></ul>
+  <p><b>Example: (Java code)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+startActivity(intent);</pre></code>
+</div>
+  <h3>2. Implicit Intent</h3>
+  <ul><p><li>जब Intent में Target Component Define नहीं किया जाता, बल्कि Action (जैसे SEND, VIEW, DIAL) के आधार पर System Decide करता है कि कौन-सा Component इसे Handle करेगा, तो उसे Implicit Intent कहते हैं।</li></p>
+    <p><li>इसका उपयोग System Features (जैसे Web Browser, Dialer, Camera) को Open करने या दूसरी Apps के साथ Interaction के लिए किया जाता है।</li></p></ul>
+  <p><b>Example: (Java code)</b></b>
+<div class="text">
+<pre><code id="code" class="language-java">Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setData(Uri.parse("https://www.google.com"));
+startActivity(intent);</pre></code>
+</div>
+
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+</body>
+</html>

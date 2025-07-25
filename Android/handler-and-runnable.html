@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Handler & Runnable in hindi (Development of Android applications)</title>
+<meta name="description" content="Handler Android में एक महत्वपूर्ण class है, जो threads के बीच communication और message handling के लिए उपयोग की जाती है।">
+<meta name="keywords" content="android handler and runnable in hindi, handler and runnable in hindi, what is handler in hindi, android handler and runnable in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/handler-and-runnable.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Handler & Runnable in hindi (Development of Android applications)" />
+<meta property="og:description" content="Handler Android में एक महत्वपूर्ण class है, जो threads के बीच communication और message handling के लिए उपयोग की जाती है।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/handler-and-runnable.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Handler & Runnable in hindi (Development of Android applications)" />
+<meta name="twitter:description" content="Handler Android में एक महत्वपूर्ण class है, जो threads के बीच communication और message handling के लिए उपयोग की जाती है।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Handler & Runnable in hindi (Development of Android applications)",
+  "description": "Handler Android में एक महत्वपूर्ण class है, जो threads के बीच communication और message handling के लिए उपयोग की जाती है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/handler-and-runnable.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Handler & Runnable in hindi (Development of Android applications)</h1>
+  <h2 id="handler">Handler in Hindi</h2>
+<ul><li>Handler Android में एक महत्वपूर्ण class है, जो threads के बीच communication और message handling के लिए उपयोग की जाती है।</li>
+<li>यह message queue और looper के साथ काम करता है, जिससे background threads से main (UI) thread को update किया जा सकता है।</li>
+<li>Handler का उपयोग delayed execution, periodic tasks और asynchronous message processing के लिए किया जाता है।</li>
+<li>यह sendMessage() और post() methods की मदद से tasks को queue में डालता है और उन्हें execute करता है।</li>
+<li>Looper continuously MessageQueue को check करता है और available messages को Handler की मदद से execute करता है।</li>
+<li>HandlerThread एक background thread होता है, जो internally looper को manage करता है और long-running background tasks को efficiently execute करता है।</li>
+<li>यदि कोई background thread सीधे UI thread को update करने की कोशिश करता है, तो android.view.ViewRootImpl$CalledFromWrongThreadException आ सकती है।</li>
+<li>runOnUiThread(), View.post(), और Handler.post() जैसी techniques UI thread को safely update करने के लिए उपयोग की जाती हैं।</li>
+<li>WeakHandler memory leaks को रोकने के लिए इस्तेमाल किया जाता है, ताकि Handler activity या fragment के destroy होने के बाद भी retain न हो।</li>
+<li>WorkManager, LiveData, और Coroutines जैसी modern techniques अब background tasks को handle करने के लिए preferred मानी जाती हैं, लेकिन Handler अब भी lightweight और efficient communication के लिए उपयोग किया जाता है।</li></ul>
+    
+  <h2>Basic Example of Handler in Android (Java)</h2>
+<div class="text">
+<pre><code id="code" class="language-java">import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView textView;
+    private Handler handler = new Handler(Looper.getMainLooper());
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textView = findViewById(R.id.textView);
+
+        // Background Thread
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000); // Simulate long task (3 sec delay)
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                // Update UI using Handler
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        textView.setText("Text Updated After 3 Seconds!");
+                    }
+                });
+            }
+        }).start();
+    }
+}</pre></code>
+</div>
+  <p><b>Code Explanation:</b></p>
+  <ul><li>Handler को Looper.getMainLooper() के साथ initialize किया गया, जिससे यह main thread (UI thread) के साथ काम कर सके।</li>
+    <li>एक background thread (new Thread()) बनाया, जिसमें 3 सेकंड का delay दिया गया (Thread.sleep(3000))।</li>
+    <li>Handler.post() का उपयोग करके UI को background thread से update किया, क्योंकि background thread सीधे UI को update नहीं कर सकता।</li></ul>
+  <p><b>Output:</b></p>
+  <p>जब app launch होगी, तो 3 सेकंड बाद TextView का text "Text Updated After 3 Seconds!" में बदल जाएगा। </p>
+  <h2 id="runnable">Runnable in Hindi</h2>
+<ul><li>Runnable एक functional interface है, जिसका उपयोग threads में background tasks को execute करने के लिए किया जाता है।</li>
+<li>यह java.lang.Runnable interface का हिस्सा है और इसे Thread या ExecutorService के साथ उपयोग किया जाता है।</li>
+<li>Runnable को implement करने के लिए run() method को override करना पड़ता है, जिसमें वह code लिखा जाता है जो background में execute होगा।</li>
+<li>इसे Thread.start() के साथ use किया जाता है, जिससे नया thread create होकर background में execute होता है।</li>
+<li>Anonymous Runnable का उपयोग lambda expressions के साथ करके code को short और readable बनाया जा सकता है।</li>
+<li>Handler.post(Runnable) का उपयोग करके UI thread को safely update किया जा सकता है।</li>
+<li>Executors.newSingleThreadExecutor() का उपयोग Runnable को manage करने और multiple tasks को sequentially execute करने के लिए किया जाता है।</li>
+<li>ScheduledExecutorService का उपयोग Runnable tasks को delay या periodic execution के लिए किया जाता है।</li>
+<li>runOnUiThread() का उपयोग Runnable को main thread पर execute करने के लिए किया जाता है, जिससे UI update किया जा सके।</li>
+<li>अब Kotlin Coroutines को background task execution के लिए preferred माना जाता है, लेकिन Runnable अब भी lightweight और effective solution है।</li></ul>
+  
+  <h3>नीचे Runnable के उपयोग के कुछ उदाहरण दिए गए हैं:</h3>
+  <p><b style="color: #aafa">1. Basic Runnable Example</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Background task is running...");
+    }
+}
+
+// इसे इस तरह use करें:
+Thread thread = new Thread(new MyRunnable());
+thread.start();</pre></code>
+</div>
+    <p><b>Code Explanation:</b></p>
+    <ul><li>MyRunnable class Runnable interface को implement करती है।</li>
+      <li>Thread.start() method इसे नए thread में execute करता है।</li></ul>
+    <p><b style="color: #aafa">2. Anonymous Runnable Example</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Thread thread = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Running in background...");
+    }
+});
+thread.start();</pre></code>
+</div>
+    <p><b>Code Explanation:</b></p>
+    <ul><li>Anonymous class का उपयोग करके Runnable को बिना अलग class बनाए ही execute किया गया।</li></ul>
+  <p><b style="color: #aafa">3. Runnable with Lambda Expression (Java 8+)</b></p>
+<div class="text">
+<pre><code id="code" class="language-java">Thread thread = new Thread(() -> {
+    System.out.println("Lambda Runnable is running...");
+});
+thread.start();</pre></code>
+</div>
+    <p><b>Code Explanation:</b></p>
+    <ul><li>Lambda expression का उपयोग करके code को छोटा और readable बनाया गया।</li></ul>
+
+
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>

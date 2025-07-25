@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Android Permission System in Hindi</title>
+<meta name="description" content="Android में Permissions का इस्तेमाल Apps को Sensitive Features और Data (जैसे Camera, Location, Storage, Contacts) को Access देने के लिए किया जाता है">
+<meta name="keywords" content="android permission system, android permission system in hindi, permission system in android in hindi, what is permission system in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/permission-system.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Android Permission System in Hindi" />
+<meta property="og:description" content="Android में Permissions का इस्तेमाल Apps को Sensitive Features और Data (जैसे Camera, Location, Storage, Contacts) को Access देने के लिए किया जाता है" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/permission-system.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Android Permission System in Hindi" />
+<meta name="twitter:description" content="Android में Permissions का इस्तेमाल Apps को Sensitive Features और Data (जैसे Camera, Location, Storage, Contacts) को Access देने के लिए किया जाता है" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Android Permission System in Hindi",
+  "description": "Android में Permissions का इस्तेमाल Apps को Sensitive Features और Data (जैसे Camera, Location, Storage, Contacts) को Access देने के लिए किया जाता है",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/permission-system.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+   <h1>Android Permission System in Hindi</h1>
+  <h2>Android Permission System क्या है?</h2>
+  <p>Android में Permissions का इस्तेमाल Apps को Sensitive Features और Data (जैसे Camera, Location, Storage, Contacts) को Access देने के लिए किया जाता है.</p>
+  <p>Users की Privacy और Security को Maintain करने के लिए Android में Permission System होता है।</p>
+  <p>जब कोई App Sensitive Information या Hardware Features का Use करना चाहती है, तो पहले User की Permission लेनी पड़ती है।</p>
+
+  <h2>Android Permissions के प्रकार</h2>
+  <p>Android में Permissions को दो मुख्य Categories में बाँटा गया है:</p>
+
+  <h3>1. Normal Permissions (Automatically Granted)</h3>
+  <p>इन Permissions से User की Privacy को ज़्यादा खतरा नहीं होता।</p>
+  <p>Android इन्हें Automatically Approve कर देता है, इसलिए User से Permission मांगने की ज़रूरत नहीं होती।</p>
+  <p><b>Example:</b></p><ul>
+    <li><b>INTERNET –</b> App को Internet Use करने की Permission।</p>
+    <li><b>ACCESS_NETWORK_STATE –</b> App को Network Status check करने की अनुमति।</li>
+    <li><b>SET_WALLPAPER –</b> App को Wallpaper Set करने की अनुमति।</li></ul>
+  <h3>2. Dangerous Permissions (User Approval Required)</h3>
+  <p>⚠ Sensitive Data या Hardware Features को Access करने के लिए User की मंज़ूरी चाहिए।</p>
+  <p>⚠ Android User से Runtime पर Permission मांगता है।</p>
+  <p><b>⚠ Example:</b></p><ul>
+    <li><b>CAMERA –</b> App को Camera Access करने की अनुमति।</li>
+    <li><b>READ_CONTACTS –</b> Contacts पढ़ने की अनुमति।</li>
+    <li><b>ACCESS_FINE_LOCATION –</b> GPS से Location लेने की अनुमति।</li>
+    <li><b>READ_EXTERNAL_STORAGE –</b> Storage से Files पढ़ने की अनुमति।</li></ul>
+  <h2>Permission को Declare करना (AndroidManifest.xml)</h2>
+  <p>अगर किसी App को कोई Permission चाहिए, तो उसे AndroidManifest.xml फाइल में Declare करना ज़रूरी है।</p>
+  <p><b>Example:</b> App को Internet, Location और Camera Access चाहिए</p>
+<div class="text">
+<pre><code class="language-html">&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapp">
+
+    &lt;!-- Normal Permission (Automatically Granted) -->
+    &lt;uses-permission android:name="android.permission.INTERNET" />
+
+    &lt;!-- Dangerous Permissions (User Approval Required) -->
+    &lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    &lt;uses-permission android:name="android.permission.CAMERA" />
+&lt;/manifest></pre></code>
+</div>
+<p>Normal Permission Automatically मिल जाती है, लेकिन Dangerous Permission को Runtime पर मांगना पड़ता है।</p>
+  <h2>Runtime पर Dangerous Permission कैसे मांगें?</h2>
+  <p>Android 6.0 (API Level 23) और उससे ऊपर Dangerous Permissions को Runtime पर Grant करना पड़ता है।</p>
+
+  <h3>Step 1: Check करें कि Permission पहले से Granted है या नहीं</h3>
+<div class="text">
+<pre><code id="code" class="language-html">if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+        != PackageManager.PERMISSION_GRANTED) {
+    // Permission Granted नहीं है, अब इसे Request करेंगे
+}</pre></code>
+</div>
+  <h3>Step 2: Permission Request करें</h3>
+<div class="text">
+<pre><code id="code" class="language-html">ActivityCompat.requestPermissions(this,
+        new String[]{Manifest.permission.CAMERA},
+        100);</pre></code>
+</div>
+  <p>यहाँ 100 एक Request Code है, जिससे हम Response को Identify कर सकते हैं।</p>
+
+  <h3>Step 3: User Response Handle करें</h3>
+<div class="text">
+<pre><code id="code" class="language-html">@Override
+public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    
+    if (requestCode == 100) {
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            Log.d("Permission", "Camera Permission Granted!");
+        } else {
+            Log.d("Permission", "Camera Permission Denied!");
+        }
+    }
+}</pre></code>
+</div>
+  <p>✔ अगर User Permission Grant करता है, तो App को Access मिल जाता है।</p>
+  <p>❌ अगर User Permission Deny कर देता है, तो App को Access नहीं मिलता।</p>
+
+  <h2>Multiple Dangerous Permissions एक साथ मांगना</h2>
+  <p>अगर App को एक से ज्यादा Dangerous Permissions चाहिए, तो एक साथ Request कर सकते हैं।</p>
+  <div class="text">
+<pre><code id="code" class="language-html">ActivityCompat.requestPermissions(this,
+        new String[]{
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.CAMERA,
+            Manifest.permission.READ_CONTACTS
+        }, 
+        101);</pre></code>
+        </div>
+  <h2>Permission Denied होने पर क्या करें?</h2>
+  <p>अगर User Permission Deny कर देता है, तो उसे समझाने के लिए "Why Permission is Required?" Dialog दिखा सकते हैं।</p>
+  <div class="text">
+<pre><code id="code" class="language-html">if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+    new AlertDialog.Builder(this)
+        .setTitle("Camera Permission Required")
+        .setMessage("This app needs Camera access to take photos.")
+        .setPositiveButton("OK", (dialog, which) -> {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA}, 100);
+        })
+        .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+        .create()
+        .show();
+}</pre></code>
+</div>
+  <p>अगर User "Don't Ask Again" पर क्लिक कर देता है, तो उसे Settings में Permission Enable करने के लिए कहना होगा।</p>
+
+  <h2> App Settings से Permission कैसे Open करें?</h2>
+  <p>अगर User ने "Don't Ask Again" को Select कर लिया है, तो उसे Manually Settings में Permission Enable करने को कह सकते हैं।</p>
+<div class="text">
+<pre><code id="code" class="language-html">Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+Uri uri = Uri.fromParts("package", getPackageName(), null);
+intent.setData(uri);
+startActivity(intent);</pre></code>
+</div>
+  <p>इस Code से App के Settings Page Open होंगे, जहाँ User Permission Enable कर सकता है।</p>
+
+  <h2>Android 11 (API Level 30) और ऊपर के Changes</h2>
+  <p>Android 11 और ऊपर में कुछ नए Security और Privacy Updates आए हैं:</p>
+
+  <h3>One-time Permissions:</h3>
+  <p>User "Allow only this time" Option चुन सकता है।</p>
+  <p>अगली बार फिर से Permission मांगनी होगी।</p>
+  <h3>Background Location Permission:</h3>
+  <p>पहले Foreground Permission लेनी होगी, फिर Background Location मांग सकते हैं।</p>
+  <h3>Auto-Reset Permissions:</h3>
+  <p>अगर User लंबे समय तक App को Use नहीं करता, तो Android Automatic Permissions Reset कर देता है।</p>
+
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+</body>
+</html>

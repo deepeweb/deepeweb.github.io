@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Android Emulator की Settings को Edit करने का तरीका</title>
+<meta name="description" content="अगर आपका Android Emulator धीमा चल रहा है, या आप उसका RAM, CPU, Screen Size, Graphics, या Storage बदलना चाहते हैं, तो आपको Emulator Settings को edit करना होगा">
+<meta name="keywords" content="editing emulator settings in hindi, android editing emulator settings in hindi, emulator shortcut in hindi, android emulator shortcut in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Android/editing-emulator-setting-and-shortcut.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Android Emulator की Settings को Edit करने का तरीका" />
+<meta property="og:description" content="अगर आपका Android Emulator धीमा चल रहा है, या आप उसका RAM, CPU, Screen Size, Graphics, या Storage बदलना चाहते हैं, तो आपको Emulator Settings को edit करना होगा" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Android/editing-emulator-setting-and-shortcut.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-25T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Android Emulator की Settings को Edit करने का तरीका" />
+<meta name="twitter:description" content="अगर आपका Android Emulator धीमा चल रहा है, या आप उसका RAM, CPU, Screen Size, Graphics, या Storage बदलना चाहते हैं, तो आपको Emulator Settings को edit करना होगा" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Android Emulator की Settings को Edit करने का तरीका",
+  "description": "अगर आपका Android Emulator धीमा चल रहा है, या आप उसका RAM, CPU, Screen Size, Graphics, या Storage बदलना चाहते हैं, तो आपको Emulator Settings को edit करना होगा",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Android/editing-emulator-setting-and-shortcut.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../advertise_with_us.html">Advertise with Us</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+     <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+          <div id="ad-wrapperss">
+  <div id="ad-labeled">
+    <span id="ad-badge">Ad</span>
+  </div>
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+</div>
+    </div>
+    </div> 
+   
+       
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+
+<div id="searchResults">
+  <!-- Results will be injected here by your existing JS -->
+</div>
+
+
+ <div class="containered">
+     <div class="content">
+  <h1>Android Emulator की Settings को Edit करने का तरीका </h1>
+  <p>अगर आपका Android Emulator धीमा चल रहा है, या आप उसका RAM, CPU, Screen Size, Graphics, या Storage बदलना चाहते हैं, तो आपको Emulator Settings को edit करना होगा। नीचे दिए गए steps को follow करें:</p>
+
+  <h2>Step 1: AVD Manager खोलें</h2>
+  <ul><li>Android Studio खोलें।</li>
+    <li>Tools → AVD Manager पर जाएं।</li>
+    <li>आपके बनाए हुए Virtual Device (Emulator) की list दिखाई देगी।</li></ul>
+  <h2>Step 2: Emulator की Settings Edit करें</h2>
+  <ul><li>जिस Emulator को एडिट करना है, उसके आगे Pencil Icon (✏ Edit Button) पर क्लिक करें।</li>
+    <li>अब आपको Hardware और Performance Settings दिखेंगी।</li></ul>
+    <h2>Step 3: RAM और CPU को Optimize करें</h2>
+    <h3>RAM बढ़ाएं</h3>
+    <ul><li>Default RAM 1536MB (1.5GB) होती है, इसे 2048MB (2GB) या 4096MB (4GB) कर सकते हैं।</li>
+      <li><b>Best Performance:</b> अगर आपके पास ज्यादा RAM है, तो इसे बढ़ा दें।</li></ul>
+    <h3>CPU Cores बढ़ाएं</h3>
+    <ul><li>Performance के लिए CPU को 2 या 4 Cores पर set करें।</li>
+      <li>अगर आपका लैपटॉप या PC ज्यादा Cores सपोर्ट करता है, तो आप इसे बढ़ा सकते हैं।</li></ul>
+
+    <h2>Step 4: Graphics और Rendering को Optimize करें</h2>
+    <h3>Graphics Mode:</h3>
+    <ul><li>Hardware - GLES 2.0/3.0 (अगर आपका system support करता है तो इसे चुनें)</li>
+      <li>Software Rendering (अगर Hardware Rendering से Emulator crash हो रहा हो)</li></ul>
+    <h3>Device Frame को Disable करें</h3>
+    <ul><li>इससे Emulator थोड़ा Fast चल सकता है।</li></ul>
+    <h3>Use Host GPU</h3>
+    <ul><li>इस ऑप्शन को Enable करने से ग्राफिक्स तेज़ी से Render होंगे।</li></ul>
+    <h2>Step 5: Internal Storage और SD Card Space बढ़ाएं</h2>
+    <h3>Internal Storage बढ़ाएं:</h3>
+    <ul><li>Default में 800MB से 2GB तक मिलता है, इसे 4GB या 8GB कर सकते हैं।</li></ul>
+    <h3>SD Card Size सेट करें:</h3>
+    <ul><li>अगर आपको Emulator में ज्यादा Data Save करना है, तो SD Card को 2GB+ पर सेट करें।</li></ul>
+    <h2>Step 6: Screen Resolution और DPI को Edit करें</h2>
+    <h3>Resolution बदलें:</h3>
+    <ul><li>Default में 1080x1920 (xxhdpi) रहता है।</li>
+    <li>अगर आपका सिस्टम Slow है, तो इसे 720x1280 (hdpi) कर दें।</li></ul>
+  <h3>DPI कम करें:</h3>
+  <ul><li>Default 420dpi रहता है, इसे 320dpi या 280dpi कर सकते हैं।</li>
+    <li>Low DPI से Performance बेहतर हो सकता है।</li></ul>
+  <h2>Step 7: Boot Mode को Optimize करें</h2>
+  <h3>Quick Boot को Enable करें:</h3>
+  <ul><li>Cold Boot धीमा होता है, इसे Quick Boot में बदलें।</li>
+    <li>इससे Emulator Fast Load होगा।</li></ul>
+  <h2>Step 8: Save और Restart करें</h2>
+  <ul><li>Apply पर क्लिक करें।</li>
+    <li>Finish दबाएं।</li>
+    <li>Emulator को Restart करें और Check करें कि Performance Improve हुआ या नहीं।</li></ul>
+  <h2>Step 9: Command Line से Emulator Settings बदलें (Optional)</h2>
+  <ul><li>अगर आप Command Line से Emulator Settings बदलना चाहते हैं, तो:</li>
+    <li>SDK Path पर जाएं:</li></ul>
+<div class="text">
+<pre><code id="code" class="language-html">cd ~/Android/Sdk/emulator</pre></code>
+</div>
+  <p>Emulator की RAM और Storage सेट करें:</p>
+<div class="text">
+<pre><code id="code" class="language-html">emulator -avd Pixel_6_API_34 -memory 4096 -partition-size 8192</pre></code>
+</div>
+  <p>(Pixel_6_API_34 को अपने Emulator के नाम से बदलें)</p>
+  
+  <h2>Android Emulator के Useful Shortcuts</h2>
+  <p>अगर आप Android Emulator को तेज़ी से इस्तेमाल करना चाहते हैं, तो ये Keyboard Shortcuts आपकी Productivity बढ़ा सकते हैं!</p>
+  <h2>Basic Emulator Shortcuts</h2>
+  <table>
+    <tr>
+      <th>Function</th>
+      <th>Windows/Linux</th>
+      <th>Mac</th>
+    </tr>
+    <tr>
+      <td>Emulator Start/Stop</td>
+      <td>Ctrl + E</td>
+      <td>Cmd + E</td>
+    </tr>
+    <tr>
+      <td>Power Button (Screen On/Off)</td>
+      <td>Power Key</td>
+      <td>Power Key</td>
+    </tr>
+    <tr>
+      <td>Volume Up</td>
+      <td>Ctrl + ↑</td>
+      <td>Cmd + ↑</td>
+    </tr>
+    <tr>
+      <td>Volume Down</td>
+      <td>Ctrl + ↓</td>
+      <td>Cmd + ↓</td>
+    </tr>
+    <tr>
+      <td>Rotate Left (Counterclockwise)</td>
+      <td>Ctrl + ←</td>
+      <td>Cmd + ←</td>
+    </tr>
+    <tr>
+      <td>Rotate Right (Clockwise)</td>
+      <td>Ctrl + →</td>
+      <td>Cmd + →</td>
+    </tr>
+    <tr>
+      <td>Zoom In</td>
+      <td>Ctrl + =</td>
+      <td>Cmd + =</td>
+    </tr>
+    <tr>
+      <td>Zoom Out</td>
+      <td>Ctrl + -</td>
+      <td>Cmd + -</td>
+    </tr>
+    <tr>
+      <td>Toggle Fullscreen Mode</td>
+      <td>F11</td>
+      <td>Cmd + F</td>
+    </tr>
+    <tr>
+      <td>Take Screenshot</td>
+      <td>Ctrl + S</td>
+      <td>Smd + S</td>
+    </tr>
+    <tr>
+      <td>Open Extended Controls</td>
+      <td>Ctrl + Shift + P</td>
+      <td>Cmd + Shift + P</td>
+    </tr>
+  </table>
+  <h2>Navigation & Gestures</h2>
+  <table>
+    <tr>
+      <th>Action</th>
+      <th>Windows/Linux</th>
+      <th>Mac</th>
+    </tr>
+    <tr>
+      <td>Home Buttom</td>
+      <td>Ctrl + H</td>
+      <td>Cmd + H</td>
+    </tr>
+    <tr>
+      <td>Back Button</td>
+      <td>Esc</td>
+      <td>Esc</td>
+    </tr>
+    <tr>
+      <td>Recent Apps</td>
+      <td>Ctrl + R</td>
+      <td>Cmd + R</td>
+    </tr>
+    <tr>
+      <td>Open Google Assistant</td>
+      <td>Ctrl + Shift + A</td>
+      <td>Cmd + Shift + A</td>
+    </tr>
+  </table>
+  <h2> Developer & Debugging Shortcuts</h2>
+  <table>
+    <tr>
+      <th>Function</th>
+      <th>Windows/Linux</th>
+      <th>Mac</th>
+    </tr>
+    <tr>
+      <td>Open Dev Options</td>
+      <td>Ctrl + Shift + O</td>
+      <td>Cmd + Shift + O</td>
+    </tr>
+    <tr>
+      <td>Toggle FPS Info</td>
+      <td>Ctrl + Shift + F</td>
+      <td>Cmd + Shift + F</td>
+    </tr>
+    <tr>
+      <td>Trigger System UI Demo Mode</td>
+      <td>Ctrl + Shift + U</td>
+      <td>Cmd + Shift + U</td>
+    </tr>
+  </table><br>
+  <h2> Miscellaneous Shortcuts</h2>
+  <table>
+    <tr>
+      <th>Function</th>
+      <th>Windows/Linux</th>
+      <th>Mac</th>
+    </tr>
+    <tr>
+      <td>Toggle Network(WiFi On/Off)</td>
+      <td>Ctrl + Shift + N</td>
+      <td>Cmd + Shift + N</td>
+    </tr>
+    <tr>
+      <td>Toggle GPS Location</td>
+      <td>Ctrl + Shift + G</td>
+      <td>Cmd + Shift + G</td>
+    </tr>
+    <tr>
+      <td>Toggle Dark Mode</td>
+      <td>Ctrl + Shift + D</td>
+      <td>Cmd + Shift + D</td>
+    </tr>
+  </table><br>
+  <p>अगर कोई Shortcut काम नहीं कर रहा है, तो Android Studio → Emulator Settings → Key Mappings में जाकर उसे customize कर सकते हैं!</p><br>
+
+
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-container"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+               <div id="side-nav-android"></div><br>
+               
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+  <br>
+  <div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div>
+<div id="dynamic-containers"></div>
+<div id="ad-wrappers">
+  <div id="ad-labels">
+    <span id="ad-badge">Ad</span>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '09c1521092a941b632e0e4fd9ff09bd7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/09c1521092a941b632e0e4fd9ff09bd7/invoke.js"></script>
+  </div>
+</div><br>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+</body>
+</html>
