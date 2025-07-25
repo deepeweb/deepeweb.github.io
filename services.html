@@ -10,12 +10,7 @@
     <title>Deep E Web Services</title>
    
    <link rel="stylesheet" href="w3study-content.css">
-   <style>
-    body p {
-       padding-left: 10px;
-       padding-right: 20px;
-     }
-   </style>
+   
 </head>
 <body>
     <header>
@@ -35,7 +30,8 @@
         </nav>
     </div>
     <br><br>
-  <h2 id="Services" style="color: yellow; font-size: 30px; text-align: center;">Our Services</h2>
+    <div style="width: 100%; max-width: 800px; margin: auto;">
+  <h1 id="Services">Our Services</h1>
   <p>हम students और web developers के लिए उपयोगी संसाधन और सेवाएँ प्रदान करते हैं। हमारा उद्देश्य हिंदी भाषा में सरल और प्रभावी technology content उपलब्ध कराना है।</p>
 
   <h3>Study Materials for Students</h3>
@@ -49,7 +45,6 @@
   <p>हम वेब डेवलपर्स के लिए उपयोगी गाइड और ट्यूटोरियल्स प्रदान करते हैं, जिससे वे अपने फ्रंटएंड और बैकएंड स्किल्स सुधार सकें।</p>
 
   <p>HTML, CSS, JavaScript – बेसिक से एडवांस ट्यूटोरियल्स</p>
-  <p>GitHub Pages Hosting – वेबसाइट को ऑनलाइन पब्लिश करने की गाइड</p>
 <p>Responsive Design & UI/UX – मॉडर्न वेब डिज़ाइन के टिप्स</p>
 
   
@@ -58,7 +53,7 @@
   <p>छात्रों और डेवलपर्स के लिए मुफ़्त संसाधन</p>
   <p>अपडेटेड और गुणवत्तापूर्ण सामग्री</p>
     <br><br><hr><br><br>
-   
+   </div>
   <section class="about" id="about">
         <h2>Follow Us</h2>
       <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
@@ -79,7 +74,10 @@ function toggleMenu() {
 }
     </script>
     <footer>
-        <p>&copy; 2025 deepeweb.github.io All rights reserved.</p>
+        <div id="footer-copy"></div>
     </footer>
+    
+    <script src="fetch.js"></script>
+    
 </body>
 </html>

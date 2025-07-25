@@ -1,0 +1,116 @@
+.container { 
+    width: 90%; 
+    margin: auto; 
+    padding: 20px; 
+    text-align: center;
+    border: 2px solid #ccc; 
+    border-radius: 5px; 
+    min-height: 300px; 
+    align-content: center;
+    background: #1425;
+}
+  .container h2 {
+    color: orange;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+    .container h3 {
+        color: #ccc;
+        font-size: 25px;
+    }
+        .options button { 
+            display: block; 
+            width: 100%; 
+            margin-bottom: 10px;
+            margin-top: 5px;
+            padding: 10px; 
+            cursor: pointer; 
+            font-weight: bold;
+            text-align: left;
+            border: none;
+        }
+        .selected { 
+            background-color: yellow; 
+        }
+        #nextBtn { 
+            display: none; 
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: green;
+            width: 100%;
+            margin: auto;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 0;
+            cursor: pointer;
+        }
+      #nextBtn:hover {
+        background: orange;
+      }
+    #nextPageBtn { 
+            display: none; 
+            margin-top: 10px; 
+        }
+    #quizContainer { 
+            display: none; 
+            margin-top: 10px; 
+        }
+        #timer { 
+            font-size: 15px; 
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: right;            
+            color: red; 
+        }
+       #questionNumber { 
+           font-size: 18px; 
+       }
+    #startBtn { 
+        padding: 10px; 
+        width: 50%;
+        background-color: skyblue;
+        font-size: 18px; 
+        font-weight: bold;
+        cursor: pointer; 
+        border-radius: 30px;
+        transition: all 0.3s ease; 
+    }
+    #startBtn:hover {
+      background: green;
+    }
+        #startBtn.clicked { 
+            width: 80%; 
+            padding: 20px; 
+            background-color: green; 
+            color: white; 
+        }
+    .result-item { 
+    text-align: left;
+    color: white;    
+    margin: 10px 0; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    background: #222; 
+  }
+.next-btn {
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: none;
+  text-decoration: none;
+  border-radius: 30px;
+  background: skyblue;
+  transition: 0.4s ease;
+  color: black;
+  box-shadow: 0 5px 15px black;
+}
+.next-btn:hover {
+  background: green;
+  color: white;
+  box-shadow: 2px 2px yellow;
+}
+

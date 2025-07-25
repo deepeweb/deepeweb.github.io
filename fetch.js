@@ -15,6 +15,22 @@ fetch('../dynamic-containers.html')
   })
   .catch(error => console.error('Error loading container:', error));
   
+  // home aoubt, services, t and c, page ke liye
+  fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-copy').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+  
+  // home about etc pages ke liye
+  fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footers').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+
 fetch('../dynamic-containers.html')
   .then(response => response.text())
   .then(data => {
@@ -30,13 +46,13 @@ fetch('../dynamic-containers.html')
   })
   .catch(error => console.error('Error loading container:', error));
 
-/* IWT side nav for Android Pages
+// IWT side nav for Android Pages
   fetch('side-nav-android.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('side-nav-android').innerHTML = data;
   })
-  .catch(error => console.error('Error loading container:', error)); */
+  .catch(error => console.error('Error loading container:', error));
 
   
   // blogs side nav 
@@ -47,7 +63,7 @@ fetch('../dynamic-containers.html')
   })
   .catch(error => console.error('Error loading container:', error));
   
-   //  Advanced Java side nav 
+    // Advanced Java side nav 
   fetch('side-nav-advanced-java.html')
   .then(response => response.text())
   .then(data => {
@@ -55,3 +71,18 @@ fetch('../dynamic-containers.html')
   })
   .catch(error => console.error('Error loading container:', error));
   
+  // GK side nav 
+  fetch('side-nav-gk.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('side-nav-gk').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+  
+   // GK container 
+  fetch('../online-tests.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('online-tests').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
