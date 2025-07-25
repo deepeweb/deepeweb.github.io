@@ -7,6 +7,20 @@ fetch('../dynamic-containers.html')
   })
   .catch(error => console.error('Error loading container:', error));
   
+  fetch('../dynamic-containers.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('dynamic-containers').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+  
+  fetch('dynamic-containers.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('dynamic-containeres').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading container:', error));
+  
   // sabhi content page ke liye jo folder ke andar hai, footer ke liye
   fetch('../footer.html')
   .then(response => response.text())
@@ -28,13 +42,6 @@ fetch('../dynamic-containers.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('footers').innerHTML = data;
-  })
-  .catch(error => console.error('Error loading container:', error));
-
-fetch('../dynamic-containers.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('dynamic-containers').innerHTML = data;
   })
   .catch(error => console.error('Error loading container:', error));
 
