@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>CSS Selectors in Hindi</title>
+<meta name="description" content="CSS Selectors का काम होता है HTML elements को identify करना, ताकि उन पर style apply की जा सके। हर selector यह बताता है कि CSS rules किन elements पर लगेंगे।">
+<meta name="keywords" content="CSS Selectors in Hindi, what is css selectors in hindi, introduction to css selectors in hindi, all css selectors in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/IWT/css-selectors.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="CSS Selectors in Hindi" />
+<meta property="og:description" content="CSS Selectors का काम होता है HTML elements को identify करना, ताकि उन पर style apply की जा सके। हर selector यह बताता है कि CSS rules किन elements पर लगेंगे।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/IWT/css-selectors.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-26T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CSS Selectors in Hindi" />
+<meta name="twitter:description" content="CSS Selectors का काम होता है HTML elements को identify करना, ताकि उन पर style apply की जा सके। हर selector यह बताता है कि CSS rules किन elements पर लगेंगे।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "CSS Selectors in Hindi",
+  "description": "CSS Selectors का काम होता है HTML elements को identify करना, ताकि उन पर style apply की जा सके। हर selector यह बताता है कि CSS rules किन elements पर लगेंगे।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-26",
+  "datePublished": "2025-07-26",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/IWT/css-selectors.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../all-page-ot.html">Online Test</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+
+     <div class="SearchContainer">
+  <div class="searchWrapper">
+  <input 
+    type="text" 
+    id="searchBox"
+    placeholder="Search Notes..."
+    onkeyup="searchNotes()" 
+    oninput="handleInputChange()"
+  />
+  <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+</div>
+<div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+<h1>CSS Selectors in Hindi</h1>
+<p>CSS Selectors का काम होता है HTML elements को identify करना, ताकि उन पर style apply की जा सके। हर selector यह बताता है कि CSS rules किन elements पर लगेंगे।</p>
+
+<h2>1. Universal Selector (*)</h2>
+<p>Universal Selector को star * से लिखा जाता है। यह page के सभी HTML elements पर एक साथ style apply करता है।</p>
+<p><b>Example:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">* {
+  margin: 0;
+  padding: 0;
+}</code></pre>
+</div>
+<p>इसका use पूरे web page को reset करने या common style देने के लिए किया जाता है।</p>
+
+<h2>2. Element Selector</h2>
+<p>Element Selector directly HTML tag के नाम से लिखा जाता है। जैसे p, h1, div आदि। इससे उस tag पर style लगती है।</p>
+<p><b>Example:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">p {
+  color: green;
+}</code></pre>
+</div>
+<p>यह सभी &lt;p> elements को green color देगा।</p>
+
+<h2>3. ID Selector (#)</h2>
+<p>ID Selector को # के साथ लिखा जाता है और यह एक unique element को target करता है। हर element का ID अलग होना चाहिए।</p>
+<p><b>Example:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">#header {
+  background-color: blue;
+}</code></pre>
+</div>
+<p><b>HTML में:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">&lt;div id="header">My Website&lt;/div>
+</code></pre>
+</div>
+
+<h2>4. Class Selector (.)</h2>
+<p>Class Selector को . के साथ लिखा जाता है और यह multiple elements पर apply हो सकता है। एक ही class को कई elements में use किया जा सकता है।</p>
+<p><b>Example:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">.box {
+  border: 1px solid black;
+}</code></pre>
+</div>
+<p><b>HTML में:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">&lt;div class="box">Box 1&lt;/div>
+&lt;div class="box">Box 2&lt;/div></code></pre>
+</div>
+
+<h2>5. Grouping Selector</h2>
+<p>Grouping Selector से हम एक ही CSS rule को multiple selectors पर apply कर सकते हैं। इसमें comma , का use होता है।</p>
+<p><b>Example:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">h1, h2, h3 {
+  font-family: Arial;
+  color: navy;
+}</code></pre>
+</div>
+<p>इससे तीनों headings पर एक ही style लगेगा।</p>
+
+<h2>6. Descendant Selector</h2>
+<p>Descendant Selector किसी element के अंदर मौजूद दूसरे element को target करता है। इसमें space का use किया जाता है।</p>
+<p><b>Example:</b></p>
+<div class="text">
+<pre><code id="code" class="language-css">div p {
+  color: red;
+}</code></pre>
+</div>
+<p>यह उन सभी &lt;p> tags को red बनाएगा जो &lt;div> के अंदर हैं।</p>
+<br><hr><br>
+<div class="request">
+<h4>Example HTML and CSS</h4>
+<div class="text">
+<pre><code id="code" class="language-css">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title>CSS Selectors Example&lt;/title&gt;
+  &lt;style&gt;
+    /* Universal Selector */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Element Selector */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      color: darkblue;
+    }
+
+    /* ID Selector */
+    #main-heading {
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    /* Class Selector */
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+
+    /* Grouping Selector */
+    h2, h3, p {
+      margin-bottom: 15px;
+    }
+
+    /* Descendant Selector */
+    .content p {
+      color: green;
+      font-size: 18px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Element + ID Selector -->
+  &lt;h1 id="main-heading">CSS All Selectors Example&lt;/h1>
+
+  &lt;!-- Element + Class -->
+  &lt;h2 class="highlight">This is a highlighted subheading&lt;/h2>
+
+  &lt;!-- Grouped Element -->
+  &lt;h3>This is another subheading&lt;/h3>
+
+  &lt;!-- Descendant Selector -->
+  &lt;div class="content">
+    &lt;p>This paragraph is inside a div with class "content".&lt;/p>
+    &lt;p class="highlight">This is a green paragraph with yellow background.&lt;/p>
+  &lt;/div>
+
+  &lt;!-- Normal Paragraph outside content -->
+  &lt;p>This paragraph is outside the .content div.&lt;/p>
+
+&lt;/body>
+&lt;/html>
+</code></pre>
+</div>
+</div>
+
+  <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div class="text">
+<p>अगर आपको यह article useful या interesting लगा हो, तो please इसे अपने dosto aur family ke साथ जरूर share करें। आपका एक छोटा सा कदम हमें और अच्छा content बनाने के लिए motivate करता है। Thank you! </p>
+
+<p>ध्यान दें कि इस page पर आपको कुछ ads भी देखने को मिल सकते हैं। इसके लिए हम आपसे माफी चाहते हैं।
+हम इस content को तैयार करने में काफी मेहनत और time लगाते हैं, ताकि आपको valuable जानकारी मिल सके। इन्हीं ads की मदद से हम ये काम continue कर पाते हैं।</p>
+<p>आपके support और understanding के लिए दिल से धन्यवाद। </p>
+  </div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+<div id="dynamic-container"></div>
+  </div>
+</div>
+
+        <aside class="side-nav">
+          <div class="uls">
+          <div id="side-nav-iwt"></div><br>
+          </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+<div id="dynamic-containers"></div>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+  
+</body>
+</html>
