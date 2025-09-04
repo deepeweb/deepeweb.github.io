@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Why this Ad? - Deep E Web</title>
+  <link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; margin-top: 50px; line-height: 1.6; color: #333; }
+    .container { max-width: 700px; margin: auto; }
+    h1 { color: #1e90ff; }
+    .box { background: #f9f9f9; padding: 15px; border: 1px solid #ddd; margin: 20px 0; border-radius: 6px; }
+    a { color: #1e90ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { padding:10px; font-size:14px;text-align:center; }
+    .editor-actions-home-btn {
+    margin:2px;
+    margin-bottom:4px;
+      padding:6px 12px;
+      border-radius:2px;
+      cursor:pointer;
+      background:#2c3144;
+      color:#fff;
+      transition:background 0.1s;
+      }
+      .editor-actions-home-btn:hover {
+      	background: #3d425a;
+      }
+      .back-btn-div {
+      	top: 0;
+  left: 0;
+  position: fixed;   /* sticky se fixed me change */
+  z-index: 9999;  
+  height:auto;
+  background:#fff;
+  width:100%;
+      }
+  </style>
+</head>
+<body>
+	<div class="back-btn-div">
+	<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+	</div>
+  <div class="container">
+    <h1>Why this Ad?</h1>
+    <p>आप यह ad क्यों देख रहे हैं?</p>
+    <div class="box">
+      यह ad <b>Deep E Web</b> द्वारा दिखाया जा रहा है।  
+      यह आपके current page के content category (जैसे education, tech, entertainment) से match करता है।  
+      हम आपकी privacy को respect करते हैं और आपके personal data को track नहीं करते।  
+    </div>
+
+    <h2>आपके पास क्या options हैं?</h2>
+    <ul>
+      <li>अगर आप यह ad नहीं देखना चाहते, तो आप इसे <b>Stop seeing this ad</b> पर click करके बंद कर सकते हैं।</li>
+      <li>आप हमारे subscription plan लेकर ad-free experience पा सकते हैं।<br>-  (<b style="color:red;">&#9888;</b> अभी subscription available नहीं है, हम इस पर काम कर रहे है. जल्दी ही subscription भी available हो जाएगा. )</li>
+      <li>अगर आपको लगता है कि यह ad सही नहीं है, तो आप report (deepanshuranjan8057@gmail.com) कर सकते हैं.</li>
+    </ul>
+
+    <h2>Learn More</h2>
+    <p>हमारे <a href="privacy-policy.html">Privacy Policy</a> और <a href="faq.html">FAQ</a> को पढ़ें।</p>
+  </div>
+   <footer>
+        <p>Deep E Web is optimized for learning and training. But we cannot guarantee the complete accuracy of all content. When using Deep E Web, you agree to read and accept our <a href="terms.html">Terms and Contditions</a> and <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        <p>&copy; Copyright <span id="footer-year"></span> - deepeweb.github.io</p>
+   </footer>
+   <script>
+   	function goBack() {
+	window.history.back();
+} 
+lucide.createIcons();
+   </script>
+</body>
+</html>
