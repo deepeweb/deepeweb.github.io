@@ -17,7 +17,7 @@
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#06c1db">
+<meta name="theme-color" content="#06c1db" id="themeColor">
 <title>Deep E Web - Free Notes in Hindi (Polytechnic)</title>
 
 <meta name="description" content="Deep E Web: Free Hindi notes, PDFs, and study material for students. Learn Android, Java, Web Development, CCC, and more!">
@@ -267,5 +267,16 @@
     </footer>
     <script src="deepeweb.js"></script>
     <script src="fetch.js"></script>
+	
+
+<script>
+  // Scroll ke hisaab se gradient effect
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
+    let color = scrollTop > 200 ? "#ff6a00" : "#06c1db"; 
+    document.getElementById("themeColor").setAttribute("content", color);
+  });
+</script>
+
 </body>
 </html>
