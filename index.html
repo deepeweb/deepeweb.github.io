@@ -267,16 +267,24 @@
     </footer>
     <script src="deepeweb.js"></script>
     <script src="fetch.js"></script>
-	
 
 <script>
-  // Scroll ke hisaab se gradient effect
-  window.addEventListener("scroll", () => {
-    let scrollTop = window.scrollY;
-    let color = scrollTop > 200 ? "#ff6a00" : "#06c1db"; 
-    document.getElementById("themeColor").setAttribute("content", color);
-  });
+  // LED colors list
+  const colors = ["#06c1db", "#ff0066", "#33cc33"]; 
+  let i = 0;
+
+  function changeThemeColor() {
+    document.getElementById("themeColor")
+      .setAttribute("content", colors[i]);
+
+    // Index update
+    i = (i + 1) % colors.length;
+  }
+
+  // Har 3 second me color change hoga
+  setInterval(changeThemeColor, 3000);
 </script>
+
 
 </body>
 </html>
