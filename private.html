@@ -1,168 +1,265 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NPHstudy — Private Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Gallery - NPHstudy</title>
   <style>
-    :root{--gap:12px;--thumb-min-w:100px;--thumb-max-w:220px}
-    body{font-family:Arial,Helvetica,sans-serif;background:#111;color:#fff;margin:0;padding:18px}
-    .top{display:flex;gap:12px;align-items:center}
-    button{padding:8px 12px;border-radius:6px;border:none;background:#1e90ff;color:#fff;cursor:pointer}
-    button.secondary{background:#333}
-    .gallerys{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(var(--thumb-min-w),15vw,var(--thumb-max-w)),1fr));gap:var(--gap);padding:16px;align-items:start}
-    .thumb{width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:10px;background:#222;display:flex;align-items:center;justify-content:center;cursor:pointer}
-    .thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}
-    .overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.9);z-index:9999;padding:20px}
-    .overlay.open{display:flex}
-    .overlay .fullimg,.overlay .fullvideo{max-width:95%;max-height:95%;border-radius:8px}
-    .close-btn{position:absolute;top:18px;right:18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
-    .message{color:#ddd;padding:12px}
-    .upload-form{display:flex;gap:8px;align-items:center}
-    input[type="file"]{color:#fff}
-    .hidden{display:none}
-    @media(max-width:520px){.gallerys{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}}
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .login-container, .gallery-container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      margin: 8px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      cursor: pointer;
+      background: #28a745;
+      color: #fff;
+      font-weight: bold;
+    }
+    button:hover { background: #218838; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .tabs button {
+      flex: 1;
+      background: #333;
+    }
+    .tabs button.active { background: #28a745; }
+
+    /* Gallery grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .thumb {
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .thumb img, .thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .no-data {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.8;
+    }
+
+    /* Fullscreen overlay */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .overlay.open { display: flex; }
+    .overlay-content {
+      max-width: 95%;
+      max-height: 95%;
+    }
+    .overlay video, .overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: red;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Upload section */
+    .upload-container {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #2a2a2a;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+      .tabs button { font-size: 14px; }
+    }
   </style>
 </head>
 <body>
-  <h2>Private Gallery — NPHstudy</h2>
-  <div class="top">
-    <div>
-      <button id="btnImages">Images</button>
-      <button id="btnVideos">Videos</button>
-      <button id="btnRefresh">Refresh</button>
-    </div>
 
-    <div style="margin-left:auto">
-      <!-- Admin upload (show only when admin logged in). For demo we keep it visible -->
-      <div class="upload-form">
-        <input id="fileInput" type="file" multiple />
-        <input id="adminPass" placeholder="Admin pass" />
-        <button id="btnUpload">Upload</button>
-      </div>
-    </div>
+  <!-- Login -->
+  <div class="login-container" id="loginBox">
+    <h2>🔒 Private Login</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
   </div>
 
-  <div id="imagesSection" class="gallerys"></div>
-  <div id="videosSection" class="gallerys hidden"></div>
-  <div id="msg" class="message"></div>
+  <!-- Gallery -->
+  <div class="gallery-container" id="galleryBox" style="display:none;">
+    <h2>📸 Private Gallery</h2>
 
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <button class="close-btn" id="cutBtn">✕ Cut</button>
-    <img id="fullimg" class="fullimg" src="" style="display:none" alt="">
-    <video id="fullvideo" class="fullvideo" style="display:none" controls></video>
+    <div class="tabs">
+      <button id="imgTab" class="active" onclick="showTab('images')">Images</button>
+      <button id="vidTab" onclick="showTab('videos')">Videos</button>
+    </div>
+
+    <!-- Image Section -->
+    <div id="imagesSection" class="gallery"></div>
+    <div id="imagesEmpty" class="no-data" style="display:none;">No images available</div>
+
+    <!-- Video Section -->
+    <div id="videosSection" class="gallery" style="display:none;"></div>
+    <div id="videosEmpty" class="no-data" style="display:none;">No videos available</div>
+
+    <!-- Upload (admin only) -->
+    <div class="upload-container" id="uploadBox">
+      <h3>Upload Media</h3>
+      <input type="file" id="uploadFiles" multiple><br>
+      <button onclick="uploadFiles()">Upload</button>
+    </div>
+
+    <br>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- Fullscreen overlay -->
+  <div class="overlay" id="overlay">
+    <button class="close-btn" onclick="closeOverlay()">✕ Cut</button>
+    <div class="overlay-content" id="overlayContent"></div>
   </div>
 
 <script>
-  // ====== CONFIG - change to your InfinityFree domain =======
-  const UPLOAD_URL = 'https://deepeweb.rf.gd/upload.php';   // replace
-  const LIST_URL   = 'https://deepeweb.rf.gd/get_media.php'; // replace
-  const ADMIN_PASS = ''; // optional client-side pass (demo only) - real auth should be server-side
-  // ========================================================
+let currentUser = "";
+const users = {
+  admin: "admin123",  // 🔑 admin credentials
+  user: "user123"     // 🔑 normal user
+};
 
-  const imagesSection = document.getElementById('imagesSection');
-  const videosSection = document.getElementById('videosSection');
-  const msg = document.getElementById('msg');
-
-  const overlay = document.getElementById('overlay');
-  const fullimg = document.getElementById('fullimg');
-  const fullvideo = document.getElementById('fullvideo');
-  const cutBtn = document.getElementById('cutBtn');
-
-  document.getElementById('btnImages').addEventListener('click', ()=>{ showSection('images') });
-  document.getElementById('btnVideos').addEventListener('click', ()=>{ showSection('videos') });
-  document.getElementById('btnRefresh').addEventListener('click', loadGallery);
-
-  function showSection(s){
-    if(s==='images'){
-      imagesSection.classList.remove('hidden');
-      videosSection.classList.add('hidden');
-    } else {
-      imagesSection.classList.add('hidden');
-      videosSection.classList.remove('hidden');
-    }
+function login(){
+  const u = document.getElementById("username").value.trim();
+  const p = document.getElementById("password").value.trim();
+  if(users[u] && users[u] === p){
+    currentUser = u;
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("galleryBox").style.display="block";
+    document.getElementById("uploadBox").style.display = (u === "admin") ? "block" : "none";
+    loadGallery();
+  } else {
+    alert("Invalid login");
   }
+}
+function logout(){
+  currentUser="";
+  document.getElementById("loginBox").style.display="block";
+  document.getElementById("galleryBox").style.display="none";
+}
 
-  async function loadGallery(){
-    try {
-      msg.textContent = 'Loading...';
-      const res = await fetch(LIST_URL);
-      const data = await res.json();
-      imagesSection.innerHTML = '';
-      videosSection.innerHTML = '';
-      let imagesCount = 0, videosCount = 0;
-      data.forEach(item=>{
-        if(item.file_type === 'image'){
-          imagesCount++;
-          const d = document.createElement('div'); d.className='thumb';
-          d.innerHTML = `<img src="${item.file_url}" alt="">`;
-          d.addEventListener('click', ()=> openOverlayImage(item.file_url));
-          imagesSection.appendChild(d);
-        } else if(item.file_type === 'video'){
-          videosCount++;
-          const d = document.createElement('div'); d.className='thumb';
-          d.innerHTML = `<video src="${item.file_url}" muted></video>`;
-          d.addEventListener('click', ()=> openOverlayVideo(item.file_url));
-          videosSection.appendChild(d);
-        }
-      });
-      msg.textContent = (imagesCount?imagesCount+' images':'No images') + ' • ' + (videosCount?videosCount+' videos':'No videos');
-      // default show images
-      showSection('images');
-    } catch(err){
-      console.error(err);
-      msg.textContent = 'Error loading gallery';
-    }
-  }
+function showTab(tab){
+  document.getElementById("imagesSection").style.display = (tab==="images")?"grid":"none";
+  document.getElementById("imagesEmpty").style.display = "none";
+  document.getElementById("videosSection").style.display = (tab==="videos")?"grid":"none";
+  document.getElementById("videosEmpty").style.display = "none";
+  document.getElementById("imgTab").classList.toggle("active", tab==="images");
+  document.getElementById("vidTab").classList.toggle("active", tab==="videos");
+}
 
-  // Fullscreen openers
-  function openOverlayImage(src){
-    fullvideo.pause(); fullvideo.style.display='none'; fullvideo.src='';
-    fullimg.src=src; fullimg.style.display='block';
-    overlay.classList.add('open'); overlay.setAttribute('aria-hidden','false');
-  }
-  function openOverlayVideo(src){
-    fullimg.src=''; fullimg.style.display='none';
-    fullvideo.src=src; fullvideo.style.display='block'; fullvideo.play();
-    overlay.classList.add('open'); overlay.setAttribute('aria-hidden','false');
-  }
+function loadGallery(){
+  fetch("https://deepeweb.rf.gd/load_gallery.php")
+  .then(r=>r.json())
+  .then(data=>{
+    const imgSec = document.getElementById("imagesSection");
+    const vidSec = document.getElementById("videosSection");
+    imgSec.innerHTML=""; vidSec.innerHTML="";
+    let imgCount=0, vidCount=0;
 
-  function closeOverlay(){
-    overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true');
-    fullimg.src=''; fullvideo.pause(); fullvideo.src=''; 
-  }
-  cutBtn.addEventListener('click', closeOverlay);
-  overlay.addEventListener('click', e=> { if(e.target === overlay) closeOverlay(); });
-  document.addEventListener('keydown', e=> { if(e.key === 'Escape') closeOverlay(); });
+    data.forEach(item=>{
+      let div=document.createElement("div");
+      div.className="thumb";
+      if(item.type==="image"){
+        let img=document.createElement("img");
+        img.src=item.url;
+        div.appendChild(img);
+        div.onclick=()=>openOverlay(`<img src="${item.url}" alt="image">`);
+        imgSec.appendChild(div);
+        imgCount++;
+      } else if(item.type==="video"){
+        let vid=document.createElement("video");
+        vid.src=item.url;
+        vid.muted=true;
+        vid.preload="metadata";
+        vid.controls=false;
+        div.appendChild(vid);
+        div.onclick=()=>openOverlay(`<video src="${item.url}" controls autoplay></video>`);
+        vidSec.appendChild(div);
+        vidCount++;
+      }
+    });
+    document.getElementById("imagesEmpty").style.display = imgCount? "none":"block";
+    document.getElementById("videosEmpty").style.display = vidCount? "none":"block";
+  })
+  .catch(err=>console.error(err));
+}
 
-  // UPLOAD form
-  document.getElementById('btnUpload').addEventListener('click', async ()=>{
-    const files = document.getElementById('fileInput').files;
-    const pass = document.getElementById('adminPass').value;
-    if(!files.length){ alert('Choose files'); return; }
-    // optional client-side admin check (not secure). Server does server-side password check if needed.
-    // create formdata
-    const fd = new FormData();
-    for (let f of files) fd.append('files[]', f);
-    // append optional admin pass
-    fd.append('admin_pass', pass);
+function uploadFiles(){
+  const files=document.getElementById("uploadFiles").files;
+  if(files.length===0){ alert("Select files"); return; }
+  const formData=new FormData();
+  for(let f of files){ formData.append("files[]", f); }
 
-    try {
-      msg.textContent = 'Uploading...';
-      const resp = await fetch(UPLOAD_URL, { method:'POST', body:fd });
-      const data = await resp.json();
-      console.log('upload result', data);
-      msg.textContent = 'Upload finished';
-      // refresh list
-      await loadGallery();
-    } catch(err){
-      console.error(err);
-      msg.textContent = 'Upload error';
-    }
-  });
+  fetch("https://deepeweb.rf.gd/upload.php",{method:"POST", body:formData})
+  .then(r=>r.json())
+  .then(d=>{
+    if(d.success){ loadGallery(); }
+    else{ alert("Upload failed: "+(d.error||"")); }
+  })
+  .catch(err=>console.error(err));
+}
 
-  // initial load
-  loadGallery();
+function openOverlay(content){
+  document.getElementById("overlayContent").innerHTML=content;
+  document.getElementById("overlay").classList.add("open");
+}
+function closeOverlay(){
+  document.getElementById("overlayContent").innerHTML="";
+  document.getElementById("overlay").classList.remove("open");
+}
 </script>
+
 </body>
 </html>
