@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Code Editor</title>
+
+  <!-- CodeMirror Base -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+
+  <!-- Themes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css">
+
+  <!-- Python Mode -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+
+  <!-- Pyodide -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="code-editor.css">
+  
+</head>
+<body>
+
+  <!-- 1st Editor -->
+  <div class="editor-wrap">
+    <div class="editor-header">
+    	<div style="display:flex;">
+    	<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+    	<button id="link-btn" class="editor-actions-home-btn" data-link="../index.html"><i data-lucide="home"></i></button>
+    	</div>
+      <div class="editor-title">Code Editor</div>
+      <div class="editor-actions">
+      	<button class="copyBtn"><i data-lucide="copy"></i></button>
+  <button class="outputBtn"><i data-lucide="play"></i></button>
+  <button class="backBtn" style="display:none;"><i data-lucide="arrow-left"></i></button>
+  <button class="themeBtn"><i data-lucide="moon"></i></button>
+  <button class="restoreBtn"><i data-lucide="rotate-ccw"></i></button>
+      </div>
+    </div>
+
+    <textarea class="source">
+print("Hello Python!")
+a = 5
+b = 10
+c = 20
+print("Sum =", a+b),
+print("Sum =", a+b+c)
+    </textarea>
+    <div class="output-frame"></div>
+  </div>
+<div class="footer-ads-for-editors">
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ac115ff08201a38f29b8c5c7bf7199e0',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ac115ff08201a38f29b8c5c7bf7199e0/invoke.js"></script>
+</div>
+  <script src="code-editor.js"></script>
+  <script>
+  	// this code for next and privious btn
+document.querySelectorAll("#link-btn").forEach(function(button) {
+    button.addEventListener("click", function() {
+        window.location.href = this.getAttribute("data-link");
+    });
+});
+function goBack() {
+	window.history.back();
+} 
+  </script>
+</body>
+</html>
