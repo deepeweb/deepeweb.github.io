@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ - Deep E Web Ads</title>
+  <link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; margin-bottom:0;background:#fdfdfd; color:#333; line-height:1.6; }
+    .container { max-width: 800px; margin:auto; }
+    h1 { color:#1e90ff; }
+    h2 { color:green; }
+    .faq-item { margin:15px 0; border-bottom:1px solid #ddd; padding:10px 0; }
+    .faq-item h3 { margin:0; font-size:18px; cursor:pointer; color:#222; }
+    .faq-item p { display:none; margin-top:8px; font-size:15px; color:#555; }
+    footer { padding:10px; font-size:14px;text-align:center; }
+    .editor-actions-home-btn {
+    margin:2px;
+    margin-bottom:4px;
+      padding:6px 12px;
+      border-radius:2px;
+      cursor:pointer;
+      background:#2c3144;
+      color:#fff;
+      transition:background 0.1s;
+      }
+      .editor-actions-home-btn:hover {
+      	background: #3d425a;
+      }
+      .back-btn-div {
+      	top: 0;
+  left: 0;
+  position: fixed;   /* sticky se fixed me change */
+  z-index: 9999;  
+  height:auto;
+  background:#fff;
+  width:100%;
+      }
+  </style>
+</head>
+<body>
+	<div class="back-btn-div">
+	<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+	</div>
+  <div class="container">
+    <h1>Deep E Web FAQs for Ads</h1>
+    <h2>FAQ – Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>Q1: मुझे यह ad क्यों दिख रहा है?</h3>
+      <p>यह ad आपके देखे जा रहे content category (जैसे education, tech, entertainment) से match करता है। हम आपके personal data को track नहीं करते।</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Q2: क्या मैं ads को पूरी तरह हटा सकता हूँ?</h3>
+      <p>हां, अगर आप ads नहीं देखना चाहते, तो आप हमारा Subscription Plan लेकर ad-free experience पा सकते हैं।</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Q3: अगर मुझे कोई ad पसंद नहीं आया तो क्या करूँ?</h3>
+      <p>आप ad पर दिए गए <b>Stop seeing this ad</b> option पर click कर सकते हैं और reason चुन सकते हैं। उस ad को तुरंत बंद कर दिया जाएगा।</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Q4: क्या ये ads सुरक्षित हैं?</h3>
+      <p>हां, हमारे सारे ads manually verify किए जाते हैं ताकि harmful या misleading content न दिखे।</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Q5: Ads बंद करने के बाद क्या ads फिर से दिखाई देंगे?</h3>
+      <p>अगर आप एक specific ad को बंद करते हैं तो वह कुछ time के लिए बंद हो जाएगा, लेकिन ads पूरी तरह हटाने के लिए subscription लेना जरूरी है।<br> (&#9888; अभी subscription available नहीं है, हम इस पर काम कर रहे है. जल्दी ही subscription भी available हो जाएगा. )</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Q6: Subscription लेने के क्या फायदे हैं?</h3>
+      <p>- Ads free experience<br>- Fast loading pages<br>- Premium study materials / features</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Q7: मैं ads को report कैसे कर सकता हूँ?</h3>
+      <p>आप हमें email कर सकते हैं: <b>deepanshuranjan8057@gmail.com</b>. हम आपकी complaint पर तुरंत action लेंगे।</p>
+    </div>
+  </div>
+
+  <script>
+    // Accordion effect
+    document.querySelectorAll(".faq-item h3").forEach(q => {
+      q.addEventListener("click", () => {
+        const p = q.nextElementSibling;
+        p.style.display = (p.style.display === "block") ? "none" : "block";
+      });
+    });
+    function goBack() {
+	window.history.back();
+} 
+lucide.createIcons();
+  </script>
+  <footer>
+        <p>Deep E Web is optimized for learning and training. But we cannot guarantee the complete accuracy of all content. When using Deep E Web, you agree to read and accept our <a href="terms.html">Terms and Contditions</a> and <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        <p>&copy; Copyright <span id="footer-year"></span> - deepeweb.github.io</p>
+  </footer>
+</body>
+</html>

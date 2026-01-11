@@ -1,0 +1,557 @@
+<!-- Save as hacking.html and open in browser -->
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hacking-style Background</title>
+<style>
+  /* Basic reset */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #000; font-family: "Courier New", monospace; }
+
+  /* Container that you can place anywhere; default full-screen */
+  .hacking-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+    color: #00ff6a;
+    isolation: isolate;
+  }
+
+  /* Canvas fills container for matrix rain + particles */
+  canvas.matrix {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Neon grid in background using repeating linear-gradients */
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(0deg, rgba(0,255,150,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,150,0.02) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px;
+    mix-blend-mode: screen;
+    transform: translateZ(0);
+    filter: blur(0.6px) contrast(1.1);
+    opacity: 0.6;
+    animation: gridShift 12s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes gridShift {
+    from { background-position: 0 0, 0 0; }
+    to   { background-position: 300px 0, -300px 0; }
+  }
+
+  /* Scanlines for that retro CRT vibe */
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 100% 3px;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.45;
+  }
+
+  /* Terminal box bottom-left */
+  .terminal {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    width: min(55ch, 48%);
+    max-width: calc(100% - 48px);
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(0,255,128,0.08);
+    padding: 14px 16px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px) saturate(1.2);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7), 0 0 30px rgba(0,255,150,0.02) inset;
+    color: #bfffcf;
+    font-size: 13px;
+    line-height: 1.45;
+    pointer-events: none;
+  }
+
+  .terminal .line { white-space: pre-wrap; overflow-wrap: break-word; }
+  .terminal .prompt { color: #00ff6a; font-weight: 700; }
+  .terminal .cursor {
+    display: inline-block;
+    width: 9px;
+    height: 14px;
+    background: linear-gradient(180deg, #00ff6a, #007f3b);
+    margin-left: 6px;
+    transform-origin: left;
+    animation: blink 0.9s steps(1) infinite;
+    vertical-align: bottom;
+    border-radius: 2px;
+  }
+  @keyframes blink { 50% { opacity: 0 } }
+
+  /* Subtle glitch stripes overlay */
+  .glitch {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0,255,150,0.02) 0 1px,
+      transparent 1px 4px
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.25;
+    animation: glitchShift 6s linear infinite;
+  }
+  @keyframes glitchShift {
+    0% { transform: translateX(0) skewX(0deg); opacity: 0.12; }
+    30% { transform: translateX(-6px) skewX(-0.2deg); opacity: 0.22;}
+    60% { transform: translateX(6px) skewX(0.2deg); opacity: 0.18;}
+    100% { transform: translateX(0) skewX(0deg); opacity: 0.12;}
+  }
+
+  /* occasional flash/flicker to look 'hacked' */
+  .flash {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 10%, rgba(0,255,180,0.06), transparent 8%),
+                radial-gradient(ellipse at 80% 80%, rgba(0,255,150,0.03), transparent 12%);
+    pointer-events: none;
+    animation: flashIt 10s linear infinite;
+    mix-blend-mode: screen;
+  }
+  @keyframes flashIt {
+    0%, 95% { opacity: 0; }
+    96% { opacity: 0.18; }
+    97% { opacity: 0; }
+    99% { opacity: 0.10; }
+    100% { opacity: 0; }
+  }
+
+  /* small info top-right */
+  .meta {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 12px;
+    color: rgba(0,255,150,0.7);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    pointer-events: none;
+    opacity: 0.85;
+  }
+
+  /* make everything responsive */
+  @media (max-width: 720px) {
+    .terminal { left: 12px; bottom: 12px; width: calc(100% - 24px); font-size: 12px; }
+  }
+   /* Radar Animation - Movies jaisa radar detection effect */
+.upload-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.radar-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin-bottom: 30px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-dish {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00ff00;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(0,255,0,0.03) 0%, transparent 70%);
+  box-shadow: 0 0 25px rgba(0,255,0,0.3) inset, 0 0 20px rgba(0,255,0,0.5);
+}
+
+/* rotating sweep */
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    transparent 0deg,
+    rgba(0,255,0,0.2) 10deg,
+    rgba(0,255,0,0.5) 30deg,
+    rgba(0,255,0,0.8) 50deg,
+    rgba(0,255,0,0.3) 70deg,
+    transparent 80deg
+  );
+  animation: radarSweep 2s linear infinite;
+  transform-origin: center;
+}
+
+/* radar grid lines */
+.radar-grid {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at center, transparent 28%, rgba(0,255,0,0.1) 30%, transparent 32%),
+    radial-gradient(circle at center, transparent 58%, rgba(0,255,0,0.1) 60%, transparent 62%),
+    radial-gradient(circle at center, transparent 88%, rgba(0,255,0,0.1) 90%, transparent 92%);
+}
+
+/* glowing center */
+.radar-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: #00ff00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #00ff00, 0 0 40px rgba(0,255,0,0.4);
+}
+
+/* red moving dots */
+.radar-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff0000;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px rgba(255,0,0,0.5);
+  animation: radarDot 3s ease-in-out infinite;
+}
+
+.radar-dot:nth-child(1) { top: 35%; left: 40%; animation-delay: 0s; }
+.radar-dot:nth-child(2) { top: 65%; left: 70%; animation-delay: 1s; }
+.radar-dot:nth-child(3) { top: 20%; left: 80%; animation-delay: 2s; }
+
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes radarDot {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.radar-text {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  color: #00ff00;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  background: rgba(0,255,0,0.15);
+  border-radius: 4px;
+  margin: 20px 0;
+  overflow: hidden;
+  border: 1px solid rgba(0,255,0,0.3);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff00, #00cc66);
+  border-radius: 4px;
+  transition: width 0.3s;
+  width: 0%;
+}
+
+.progress-text {
+  font-family: 'Courier New', monospace;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 0;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.terminal-text {
+  font-family: 'Courier New', monospace;
+  color: #00ff00;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: left;
+  margin: auto;
+  width: 95%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 4px;
+  height: auto;
+  overflow-y: auto;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.terminal-line {
+  margin-bottom: 5px;
+}
+
+</style>
+</head>
+<body>
+  <div class="hacking-container scanlines" id="hacking">
+    <canvas class="matrix" id="matrix"></canvas>
+
+    <div class="grid"></div>
+    <div class="glitch"></div>
+    <div class="flash"></div>
+
+    <div class="meta">ACCESS: <span id="access">AUTHORIZED</span> | HOST: 192.168.1.104</div>
+
+    <div class="terminal" id="terminal" aria-hidden="true">
+      <div class="line"><span class="prompt">root@system:</span> <span id="typed"></span><span class="cursor"></span></div>
+      <div class="line" style="opacity:0.85; margin-top:8px; font-size:12px;" id="log"></div>
+    </div>
+    <!-- Step 3: Upload Progress -->
+    <div id="step3" class="hidden">
+        <div class="header">
+            <div class="header-left">
+                <button class="back-btn" onclick="goToStep(2)">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+                <div class="header-title">Uploading post</div>
+            </div>
+        </div>
+        
+        <div class="upload-progress-container">
+            <!-- Radar Animation - Movies jaisa radar detection -->
+            <div class="radar-container">
+                <div class="radar-dish">
+                    <div class="radar-grid"></div>
+                    <div class="radar-sweep"></div>
+                    <div class="radar-center"></div>
+                    <div class="radar-dot"></div>
+                    <div class="radar-dot"></div>
+                    <div class="radar-dot"></div>
+                </div>
+            </div>
+            
+            <div class="radar-text">UPLOADING POST...</div>
+            
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            
+            <div id="progress-text" class="progress-text">0%</div>
+            
+            <div id="terminal-text" class="terminal-text">
+                <div class="terminal-line">> Initializing upload sequence...</div>
+                <div class="terminal-line">> Establishing secure connection...</div>
+                <div class="terminal-line">> Processing image data...</div>
+                <div class="terminal-line">> Optimizing media files...</div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+
+<script>
+/* MATRIX RAIN + PARTICLES
+   - Draws green falling characters
+   - Adds faint network-like connecting particles
+   - Non-blocking, responsive to resize
+*/
+(() => {
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d', { alpha: true });
+
+  let width = 0, height = 0, cols = 0, fontSize = 16;
+  const particles = [];
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789@#$%^&*(){}[]<>/\\|~:;.,+-';
+
+  // Terminal typing content
+  const typedEl = document.getElementById('typed');
+  const logEl = document.getElementById('log');
+  const lines = [
+    "Initializing packet inspection...",
+    "Decrypting SSH tunnel  (1024 bit) ... OK",
+    "Fetching remote process list...",
+    "Injecting ephemeral micro-proxy...",
+    "Mounting RAM disk: /dev/ram0",
+    "Handshake complete. Channel established."
+  ];
+  let lineIdx = 0, charIdx = 0;
+
+  function resize() {
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    width = canvas.width = Math.floor(canvas.clientWidth * dpr);
+    height = canvas.height = Math.floor(canvas.clientHeight * dpr);
+    ctx.scale(dpr, dpr);
+    // recalc
+    fontSize = Math.max(12, Math.round(Math.min(20, canvas.clientWidth / 80)));
+    cols = Math.floor(canvas.clientWidth / fontSize);
+  }
+
+  function initParticles() {
+    particles.length = 0;
+    const pcount = Math.floor((canvas.clientWidth * canvas.clientHeight) / 25000);
+    for (let i=0;i<pcount;i++){
+      particles.push({
+        x: Math.random()*canvas.clientWidth,
+        y: Math.random()*canvas.clientHeight,
+        vx: (Math.random()-0.5)*0.2,
+        vy: (Math.random()-0.5)*0.2,
+        r: Math.random()*1.6 + 0.4,
+        life: Math.random()*100 + 60
+      });
+    }
+  }
+
+  // columns state for rain
+  let drops = [];
+  function initDrops(){
+    drops = new Array(cols).fill(0).map(()=>Math.round(Math.random()*-100));
+  }
+
+  // draw loop
+  function draw(timestamp) {
+    // fade slightly to create trailing effect
+    ctx.fillStyle = 'rgba(0,0,0,0.15)';
+    ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight);
+
+    ctx.font = `${fontSize}px monospace`;
+
+    // draw matrix chars
+    for (let i=0;i<cols;i++){
+      const x = i * fontSize;
+      let drop = drops[i];
+      const char = chars.charAt(Math.floor(Math.random()*chars.length));
+      // glow
+      ctx.fillStyle = 'rgba(0,255,130,0.04)';
+      ctx.fillText(char, x+1, drop+1);
+      ctx.fillStyle = `rgba(0,255,120,${Math.random()*0.6 + 0.2})`;
+      ctx.fillText(char, x, drop);
+
+      drops[i] = drop > canvas.clientHeight + Math.random()*100 ? Math.random()*-200 : drop + fontSize + Math.random()*6;
+    }
+
+    // particles & connecting faint lines
+    ctx.beginPath();
+    for (let i=0;i<particles.length;i++){
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.life -= 0.12;
+      if (p.life <= 0 || p.x < -10 || p.x > canvas.clientWidth + 10 || p.y < -10 || p.y > canvas.clientHeight + 10) {
+        particles[i] = { x: Math.random()*canvas.clientWidth, y: Math.random()*canvas.clientHeight, vx: (Math.random()-0.5)*0.3, vy: (Math.random()-0.5)*0.3, r: Math.random()*1.6 + 0.4, life: Math.random()*100 + 60 };
+        continue;
+      }
+      ctx.moveTo(p.x, p.y);
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      // connect
+      for (let j=i+1;j<particles.length;j++){
+        const q = particles[j];
+        const dx = p.x - q.x, dy = p.y - q.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 120) {
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+        }
+      }
+    }
+    ctx.strokeStyle = 'rgba(0,255,160,0.035)';
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+
+    // occasionally draw brighter sparks
+    if (Math.random() < 0.02) {
+      const sx = Math.random()*canvas.clientWidth;
+      const sy = Math.random()*canvas.clientHeight;
+      for (let k=0;k<6;k++){
+        const ch = chars.charAt(Math.floor(Math.random()*chars.length));
+        ctx.fillStyle = `rgba(0,255,120,${0.1 + Math.random()*0.6})`;
+        ctx.fillText(ch, sx + (Math.random()-0.5)*40, sy + (Math.random()-0.5)*40);
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  // Terminal typing simulation (non-blocking)
+  function typeLoop(){
+    if (lineIdx >= lines.length) {
+      // cycle logs: shift up and show earlier lines
+      logEl.textContent = Array.from({length:3}, (_,i)=>lines[(lineIdx - 1 - i + lines.length)%lines.length]).join('\n');
+      lineIdx = 0;
+    }
+    const current = lines[lineIdx];
+    charIdx = 0;
+    typedEl.textContent = '';
+    function typeChar() {
+      if (charIdx <= current.length) {
+        typedEl.textContent = current.slice(0, charIdx);
+        charIdx++;
+        setTimeout(typeChar, 30 + Math.random()*60);
+      } else {
+        // hold then advance
+        lineIdx++;
+        setTimeout(typeLoop, 900 + Math.random()*1200);
+      }
+    }
+    typeChar();
+  }
+
+  // resize observer
+  function setup() {
+    resize();
+    initDrops();
+    initParticles();
+    requestAnimationFrame(draw);
+    typeLoop();
+  }
+
+  window.addEventListener('resize', () => {
+    // small debounce
+    clearTimeout(window._h_resize);
+    window._h_resize = setTimeout(() => {
+      // reset canvas scale & things
+      ctx.setTransform(1,0,0,1,0,0);
+      resize();
+      initDrops();
+      initParticles();
+    }, 120);
+  });
+
+  // start after layout
+  requestAnimationFrame(() => {
+    // ensure canvas has correct size values
+    setup();
+  });
+
+  // small helper to toggle ACCESS text color randomly to feel alive
+  const accessEl = document.getElementById('access');
+  setInterval(() => {
+    const ok = Math.random() > 0.08;
+    accessEl.textContent = ok ? 'AUTHORIZED' : 'INTRUSION';
+    accessEl.style.color = ok ? 'rgba(0,255,150,0.95)' : 'rgba(255,80,60,0.95)';
+  }, 3000);
+
+})();
+</script>
+</body>
+</html>

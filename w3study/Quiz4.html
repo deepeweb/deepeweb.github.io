@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Programming Quiz Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .active-screen {
+            display: block;
+        }
+
+        /* Welcome Screen */
+        .language-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .language-card {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .language-card.selected {
+            box-shadow: 0 0 0 3px white, 0 0 0 6px #4a00e0;
+        }
+
+        .language-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .language-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 40px;
+            background: #00b09b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: #96c93d;
+            transform: translateY(-3px);
+        }
+
+        .btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Quiz Screen */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .quiz-title {
+            font-size: 1.8rem;
+            color: #4a00e0;
+        }
+
+        .timer {
+            background: #ff4757;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00b09b, #96c93d);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .question-container {
+            margin-bottom: 25px;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: #4a00e0;
+            color: white;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .question-text {
+            display: inline;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .options-container {
+            margin: 20px 0;
+        }
+
+        .option {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        .option.selected {
+            background: #d0ebff;
+            border-color: #4a00e0;
+        }
+
+        .option.correct {
+            background: #d3f9d8;
+            border-color: #2b8a3e;
+        }
+
+        .option.incorrect {
+            background: #ffe3e3;
+            border-color: #c92a2a;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: #4a00e0;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #8e2de2;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Results Screen */
+        .results-container {
+            text-align: center;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(#00b09b 0%, #96c93d 100%);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .score-inner {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4a00e0;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .results-details {
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .result-value {
+            font-weight: 600;
+            color: #4a00e0;
+        }
+
+        .feedback {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .excellent {
+            background: #d3f9d8;
+            color: #2b8a3e;
+        }
+
+        .good {
+            background: #fff3bf;
+            color: #e67700;
+        }
+
+        .poor {
+            background: #ffe3e3;
+            color: #c92a2a;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .language-card {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .language-icon {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .quiz-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .score-circle {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .score-inner {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .score-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Online Programming Quiz Test</h1>
+            <p class="subtitle">Test your programming knowledge with our interactive quiz</p>
+        </header>
+
+        <!-- Welcome Screen -->
+        <div class="card screen active-screen" id="welcomeScreen">
+            <h2>Select a Programming Language</h2>
+            <p style="text-align: center; margin: 15px 0 30px; color: #666;">
+                Choose a programming language to start the quiz. You will have 10 minutes to answer 10 questions.
+            </p>
+
+            <div class="language-selection">
+                <div class="language-card" data-lang="html">
+                    <div class="language-icon">&lt;/&gt;</div>
+                    <div class="language-name">HTML</div>
+                </div>
+                <div class="language-card" data-lang="css">
+                    <div class="language-icon">#</div>
+                    <div class="language-name">CSS</div>
+                </div>
+                <div class="language-card" data-lang="js">
+                    <div class="language-icon">JS</div>
+                    <div class="language-name">JavaScript</div>
+                </div>
+                <div class="language-card" data-lang="php">
+                    <div class="language-icon">PHP</div>
+                    <div class="language-name">PHP</div>
+                </div>
+            </div>
+
+            <button class="btn" id="startQuizBtn" disabled>Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div class="card screen" id="quizScreen">
+            <div class="quiz-header">
+                <h2 class="quiz-title" id="quizLanguage">HTML Quiz</h2>
+                <div class="timer" id="timer">10:00</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <div class="progress-text" id="progressText">Question 1 of 10</div>
+            </div>
+
+            <div class="question-container">
+                <span class="question-number" id="questionNumber">1</span>
+                <span class="question-text" id="questionText">What does HTML stand for?</span>
+            </div>
+
+            <div class="options-container" id="optionsContainer">
+                <!-- Options will be inserted here -->
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn" id="prevBtn" disabled>Previous</button>
+                <button class="nav-btn" id="nextBtn">Next</button>
+                <button class="nav-btn" id="submitBtn" style="display: none;">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="card screen" id="resultsScreen">
+            <div class="results-container">
+                <h2>Quiz Results</h2>
+                <p id="quizCompletedText" style="margin: 10px 0 30px; color: #666;">You have completed the HTML quiz!</p>
+
+                <div class="score-circle">
+                    <div class="score-inner">
+                        <div class="score-value" id="scoreValue">0%</div>
+                        <div class="score-text">Score</div>
+                    </div>
+                </div>
+
+                <div class="feedback" id="feedbackMessage">
+                    <!-- Feedback will be inserted here -->
+                </div>
+
+                <div class="results-details">
+                    <div class="result-item">
+                        <span class="result-label">Correct Answers:</span>
+                        <span class="result-value" id="correctAnswers">0/10</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time Taken:</span>
+                        <span class="result-value" id="timeTaken">0:00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Language:</span>
+                        <span class="result-value" id="resultLanguage">HTML</span>
+                    </div>
+                </div>
+
+                <button class="btn" id="restartQuizBtn">Take Another Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz questions database
+        const quizData = {
+            html: [
+                {
+                    question: "What does HTML stand for?",
+                    options: [
+                        "Hyper Text Markup Language",
+                        "High Tech Modern Language",
+                        "Hyper Transfer Markup Language",
+                        "Home Tool Markup Language"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which HTML element is used for the largest heading?",
+                    options: [
+                        "<h1>",
+                        "<head>",
+                        "<h6>",
+                        "<heading>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "What is the correct HTML element for inserting a line break?",
+                    options: [
+                        "<br>",
+                        "<break>",
+                        "<lb>",
+                        "<newline>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which HTML attribute specifies an alternate text for an image?",
+                    options: [
+                        "alt",
+                        "src",
+                        "title",
+                        "href"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "In HTML, which attribute is used to specify that an input field must be filled out?",
+                    options: [
+                        "required",
+                        "validate",
+                        "placeholder",
+                        "important"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which HTML element is used to specify a footer for a document?",
+                    options: [
+                        "<footer>",
+                        "<bottom>",
+                        "<section>",
+                        "<div>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "What is the correct HTML for creating a hyperlink?",
+                    options: [
+                        "<a href='http://example.com'>Example</a>",
+                        "<link>http://example.com</link>",
+                        "<a url='http://example.com'>Example</a>",
+                        "<a>http://example.com</a>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which HTML element defines the title of a document?",
+                    options: [
+                        "<title>",
+                        "<head>",
+                        "<meta>",
+                        "<header>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which HTML element is used to define important text?",
+                    options: [
+                        "<strong>",
+                        "<important>",
+                        "<b>",
+                        "<i>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which HTML element is used to define emphasized text?",
+                    options: [
+                        "<em>",
+                        "<italic>",
+                        "<emphasis>",
+                        "<strong>"
+                    ],
+                    correct: 0
+                }
+            ],
+            css: [
+                {
+                    question: "What does CSS stand for?",
+                    options: [
+                        "Cascading Style Sheets",
+                        "Creative Style System",
+                        "Computer Style Sheets",
+                        "Colorful Style Sheets"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which CSS property is used to change the background color?",
+                    options: [
+                        "background-color",
+                        "bgcolor",
+                        "color",
+                        "background"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you add a comment in CSS?",
+                    options: [
+                        "/* This is a comment */",
+                        "// This is a comment",
+                        "<!-- This is a comment -->",
+                        "' This is a comment"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which CSS property controls the text size?",
+                    options: [
+                        "font-size",
+                        "text-style",
+                        "text-size",
+                        "font-style"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you make each word in a text start with a capital letter?",
+                    options: [
+                        "text-transform: capitalize",
+                        "text-transform: uppercase",
+                        "text-style: capital",
+                        "font-variant: small-caps"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which property is used to change the font of an element?",
+                    options: [
+                        "font-family",
+                        "font-style",
+                        "font-weight",
+                        "text-font"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you make a list that lists its items with squares?",
+                    options: [
+                        "list-style-type: square",
+                        "list-type: square",
+                        "list-style: square",
+                        "list: square"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which property is used to change the left margin of an element?",
+                    options: [
+                        "margin-left",
+                        "padding-left",
+                        "indent",
+                        "left-margin"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you select an element with id 'demo'?",
+                    options: [
+                        "#demo",
+                        ".demo",
+                        "demo",
+                        "*demo"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you select elements with class name 'test'?",
+                    options: [
+                        ".test",
+                        "#test",
+                        "test",
+                        "*test"
+                    ],
+                    correct: 0
+                }
+            ],
+            js: [
+                {
+                    question: "Inside which HTML element do we put the JavaScript?",
+                    options: [
+                        "<script>",
+                        "<javascript>",
+                        "<js>",
+                        "<scripting>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "What is the correct syntax for referring to an external script called 'script.js'?",
+                    options: [
+                        "<script src='script.js'>",
+                        "<script href='script.js'>",
+                        "<script name='script.js'>",
+                        "<script link='script.js'>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you create a function in JavaScript?",
+                    options: [
+                        "function myFunction()",
+                        "function:myFunction()",
+                        "function = myFunction()",
+                        "create myFunction()"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you call a function named 'myFunction'?",
+                    options: [
+                        "myFunction()",
+                        "call myFunction()",
+                        "call function myFunction()",
+                        "execute myFunction()"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How to write an IF statement in JavaScript?",
+                    options: [
+                        "if (i == 5)",
+                        "if i = 5 then",
+                        "if i == 5 then",
+                        "if i = 5"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How does a WHILE loop start?",
+                    options: [
+                        "while (i <= 10)",
+                        "while i = 1 to 10",
+                        "while (i <= 10; i++)",
+                        "while i <= 10"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How can you add a comment in JavaScript?",
+                    options: [
+                        "// This is a comment",
+                        "<!-- This is a comment -->",
+                        "' This is a comment",
+                        "# This is a comment"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "What is the correct way to write a JavaScript array?",
+                    options: [
+                        "var colors = ['red', 'green', 'blue']",
+                        "var colors = 'red', 'green', 'blue'",
+                        "var colors = (1:'red', 2:'green', 3:'blue')",
+                        "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which event occurs when the user clicks on an HTML element?",
+                    options: [
+                        "onclick",
+                        "onchange",
+                        "onmouseclick",
+                        "onmouseover"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you declare a JavaScript variable?",
+                    options: [
+                        "var carName;",
+                        "variable carName;",
+                        "v carName;",
+                        "let carName = var;"
+                    ],
+                    correct: 0
+                }
+            ],
+            php: [
+                {
+                    question: "What does PHP stand for?",
+                    options: [
+                        "PHP: Hypertext Preprocessor",
+                        "Private Home Page",
+                        "Personal Hypertext Processor",
+                        "Programmable Home Page"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "PHP server scripts are surrounded by delimiters, which?",
+                    options: [
+                        "<?php ... ?>",
+                        "&lt;script> ... &gt;/script>",
+                        "<?php> ... </?>",
+                        "<&> ... </&>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "How do you write 'Hello World' in PHP?",
+                    options: [
+                        "echo 'Hello World';",
+                        "'Hello World';",
+                        "Document.Write('Hello World');",
+                        "print('Hello World')"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "All variables in PHP start with which symbol?",
+                    options: [
+                        "$",
+                        "!",
+                        "&",
+                        "#"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "What is the correct way to end a PHP statement?",
+                    options: [
+                        ";",
+                        ".",
+                        "New line",
+                        "</php>"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which superglobal variable holds information about headers, paths, and script locations?",
+                    options: [
+                        "$_SERVER",
+                        "$_GLOBALS",
+                        "$_SESSION",
+                        "$_ENV"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "What is the correct way to include the file 'time.inc' in PHP?",
+                    options: [
+                        "include 'time.inc';",
+                        "include file='time.inc';",
+                        "import 'time.inc';",
+                        "require 'time.inc.php';"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "What is a correct way to add a comment in PHP?",
+                    options: [
+                        "/* This is a comment */",
+                        "// This is a comment",
+                        "# This is a comment",
+                        "All of the above"
+                    ],
+                    correct: 3
+                },
+                {
+                    question: "Which operator is used to check if two values are equal and of same data type?",
+                    options: [
+                        "===",
+                        "==",
+                        "=",
+                        "!="
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Which of the following is the correct way to create a function in PHP?",
+                    options: [
+                        "function myFunction()",
+                        "create myFunction()",
+                        "new_function myFunction()",
+                        "def myFunction():"
+                    ],
+                    correct: 0
+                }
+            ]
+        };
+
+        // Language names for display
+        const languageNames = {
+            html: "HTML",
+            css: "CSS",
+            js: "JavaScript",
+            php: "PHP"
+        };
+
+        // DOM elements
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const quizScreen = document.getElementById('quizScreen');
+        const resultsScreen = document.getElementById('resultsScreen');
+        const languageCards = document.querySelectorAll('.language-card');
+        const startQuizBtn = document.getElementById('startQuizBtn');
+        const quizLanguage = document.getElementById('quizLanguage');
+        const timer = document.getElementById('timer');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const questionNumber = document.getElementById('questionNumber');
+        const questionText = document.getElementById('questionText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const quizCompletedText = document.getElementById('quizCompletedText');
+        const scoreValue = document.getElementById('scoreValue');
+        const feedbackMessage = document.getElementById('feedbackMessage');
+        const correctAnswers = document.getElementById('correctAnswers');
+        const timeTaken = document.getElementById('timeTaken');
+        const resultLanguage = document.getElementById('resultLanguage');
+        const restartQuizBtn = document.getElementById('restartQuizBtn');
+
+        // Quiz state variables
+        let selectedLanguage = null;
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let quizTimer;
+        let timeLeft = 600; // 10 minutes in seconds
+        let startTime;
+
+        // Language selection
+        languageCards.forEach(card => {
+            card.addEventListener('click', () => {
+                languageCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedLanguage = card.getAttribute('data-lang');
+                startQuizBtn.disabled = false;
+            });
+        });
+
+        // Start quiz
+        startQuizBtn.addEventListener('click', startQuiz);
+
+        // Navigation buttons
+        prevBtn.addEventListener('click', showPreviousQuestion);
+        nextBtn.addEventListener('click', showNextQuestion);
+        submitBtn.addEventListener('click', submitQuiz);
+
+        // Restart quiz
+        restartQuizBtn.addEventListener('click', () => {
+            resultsScreen.classList.remove('active-screen');
+            welcomeScreen.classList.add('active-screen');
+            resetQuiz();
+        });
+
+        function startQuiz() {
+            // Initialize user answers array
+            userAnswers = new Array(quizData[selectedLanguage].length).fill(null);
+            
+            // Set quiz language
+            quizLanguage.textContent = `${languageNames[selectedLanguage]} Quiz`;
+            
+            // Switch to quiz screen
+            welcomeScreen.classList.remove('active-screen');
+            quizScreen.classList.add('active-screen');
+            
+            // Start timer
+            startTime = new Date();
+            startTimer();
+            
+            // Display first question
+            showQuestion(currentQuestionIndex);
+        }
+
+        function startTimer() {
+            quizTimer = setInterval(() => {
+                timeLeft--;
+                
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(quizTimer);
+                    submitQuiz();
+                }
+            }, 1000);
+        }
+
+        function showQuestion(index) {
+            const questions = quizData[selectedLanguage];
+            const question = questions[index];
+            
+            // Update progress
+            progressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
+            progressText.textContent = `Question ${index + 1} of ${questions.length}`;
+            
+            // Update question number and text
+            questionNumber.textContent = index + 1;
+            questionText.textContent = question.question;
+            
+            // Clear previous options
+            optionsContainer.innerHTML = '';
+            
+            // Add options
+            question.options.forEach((option, optionIndex) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                if (userAnswers[index] === optionIndex) {
+                    optionElement.classList.add('selected');
+                }
+                optionElement.textContent = option;
+                optionElement.addEventListener('click', () => selectOption(optionIndex));
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            // Update navigation buttons
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === questions.length - 1;
+            
+            // Show submit button on last question
+            if (index === questions.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        function selectOption(optionIndex) {
+            userAnswers[currentQuestionIndex] = optionIndex;
+            
+            // Update UI to show selected option
+            const options = document.querySelectorAll('.option');
+            options.forEach((option, index) => {
+                if (index === optionIndex) {
+                    option.classList.add('selected');
+                } else {
+                    option.classList.remove('selected');
+                }
+            });
+        }
+
+        function showPreviousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function showNextQuestion() {
+            if (currentQuestionIndex < quizData[selectedLanguage].length - 1) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function submitQuiz() {
+            clearInterval(quizTimer);
+            
+            // Calculate score
+            const questions = quizData[selectedLanguage];
+            let correctCount = 0;
+            
+            for (let i = 0; i < questions.length; i++) {
+                if (userAnswers[i] === questions[i].correct) {
+                    correctCount++;
+                }
+            }
+            
+            const score = (correctCount / questions.length) * 100;
+            
+            // Calculate time taken
+            const endTime = new Date();
+            const timeDiff = Math.floor((endTime - startTime) / 1000); // in seconds
+            const minutesTaken = Math.floor(timeDiff / 60);
+            const secondsTaken = timeDiff % 60;
+            
+            // Display results
+            displayResults(score, correctCount, minutesTaken, secondsTaken);
+            
+            // Switch to results screen
+            quizScreen.classList.remove('active-screen');
+            resultsScreen.classList.add('active-screen');
+        }
+
+        function displayResults(score, correctCount, minutes, seconds) {
+            // Update result elements
+            quizCompletedText.textContent = `You have completed the ${languageNames[selectedLanguage]} quiz!`;
+            scoreValue.textContent = `${Math.round(score)}%`;
+            correctAnswers.textContent = `${correctCount}/${quizData[selectedLanguage].length}`;
+            timeTaken.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            resultLanguage.textContent = languageNames[selectedLanguage];
+            
+            // Set feedback message
+            let feedbackText = '';
+            let feedbackClass = '';
+            
+            if (score >= 80) {
+                feedbackText = 'Excellent! You have a strong understanding of this language.';
+                feedbackClass = 'excellent';
+            } else if (score >= 60) {
+                feedbackText = 'Good job! You have a decent understanding but there is room for improvement.';
+                feedbackClass = 'good';
+            } else {
+                feedbackText = 'Keep practicing! Review the concepts and try again.';
+                feedbackClass = 'poor';
+            }
+            
+            feedbackMessage.textContent = feedbackText;
+            feedbackMessage.className = `feedback ${feedbackClass}`;
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            userAnswers = [];
+            timeLeft = 600;
+            selectedLanguage = null;
+            startQuizBtn.disabled = true;
+            languageCards.forEach(card => card.classList.remove('selected'));
+        }
+    </script>
+</body>
+</html>

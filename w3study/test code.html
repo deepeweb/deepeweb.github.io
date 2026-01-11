@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Private page for nphstudy admins">
+    <meta name="keywords" content="nphstudy private page, private page of nphstudy">
+    <meta name="nphstudy" content="NPHstudy">
+    <title>Private Page of NPHstudy</title>
+    <style>
+    :root{
+      --gap:12px;
+      --thumb-min-w:100px;
+      --thumb-max-w:220px;
+      --thumb-min-h:70px;
+      --thumb-max-h:140px;
+    }
+        body { 
+            font-family: Arial, sans-serif;
+            background-color: #111;  
+            color:#fff;
+            text-align: center; 
+        }
+       .login-container {
+            background: #3333;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: #00ff00;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+    .gallery-container {
+        display: none;
+    }
+    .upload-container {
+        display: none;
+    }
+        .gallery img, .gallery video { 
+            width: 100px; 
+            height: 100px; 
+            cursor: pointer; 
+            margin: 5px; 
+        }
+    .gallery video {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        margin: 5px;
+    }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            top: 20px; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.8); 
+        }
+        .modal-content { 
+            position: relative; 
+            margin: 10px; 
+            padding: 2px; 
+            width: auto;
+            margin-top: 40px;
+            background: none; 
+        }
+        .close { 
+            position: relative;
+            margin: 30px;
+            padding: 30px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-top: 40px;
+            padding-bottom: 20px;
+            color: blue;
+            width: 10px;
+            justify-content: left;
+            background: red;
+            cursor: pointer
+        }
+        .gallerys{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(clamp(var(--thumb-min-w),15vw,var(--thumb-max-w)),1fr));
+      gap:var(--gap);
+      padding:16px;
+      align-items:start;
+    }
+
+    .thumb{
+      width:100%;
+      aspect-ratio:16/10; /* thumbnail box ratio */
+      overflow:hidden;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      cursor:pointer;
+      position:relative;
+      background:linear-gradient(180deg,#eee,#ddd);
+    }
+
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover; /* maintain cover inside the fixed box */
+      display:block;
+      transition:transform .28s ease;
+    }
+
+    .thumb:active img{transform:scale(0.98)}
+
+    /* Fullscreen overlay */
+    .overlay{
+      position:fixed;
+      inset:0;
+      display:none; /* shown when open */
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.88);
+      z-index:9999;
+      padding:20px;
+    }
+
+    .overlay.open{display:flex}
+
+    .overlay .fullimg{
+      max-width:95%;
+      max-height:95%;
+      box-shadow:0 10px 40px rgba(0,0,0,0.6);
+      border-radius:6px;
+      transform-origin:center center;
+      transition:transform .18s ease;
+    }
+
+    /* Top-right cut/close button */
+    .overlay .close-btn{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      color:#fff;
+      padding:8px 10px;
+      border-radius:8px;
+      font-weight:600;
+      backdrop-filter:blur(4px);
+      cursor:pointer;
+      z-index:10001;
+    }
+
+    /* Small label at bottom with optional caption */
+    .caption{
+      position:absolute;
+      left:20px;
+      bottom:20px;
+      color:#fff;
+      font-size:14px;
+      opacity:0.9;
+      z-index:10001;
+      text-shadow:0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* responsive tweaks */
+    @media (max-width:520px){
+      .gallerys{padding:10px;gap:10px}
+      .overlay .close-btn{top:12px;right:12px;padding:6px 8px}
+      .caption{left:12px;bottom:12px;font-size:13px}
+    }
+     #topLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #007bff;
+    transition: width 0.4s ease;
+    z-index: 9999;
+  }
+
+  /* Bottom refresh button */
+  #refreshBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-weight: bold;
+  }
+
+  #refreshBtn:active {
+    transform: scale(0.95);
+  }
+    </style>
+</head>
+<body>
+	<div id="topLoader"></div>
+    <br><br>
+    <div class="login-container">
+        <h1 style="color: red; ">This section only for expected persons</h1>
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button onclick="login()">Login</button>
+        
+<div id="topLoader"></div>
+<button id="refreshBtn">🔄 Refresh</button>
+    </div>
+    
+    <div class="gallery-container">
+        <h2>This Gallery Develop by Deepanshu ranjan. No one can see this gallery.</h2>
+        <div class="gallerys" id="gallerys">
+        <div class="thumb" data-index="0" data-caption="Nature 1"><img src="https://i.ibb.co/tMLzZXZj/1731334166948.jpg"></a></div>
+        <div class="thumb" data-index="1" data-caption="Nature 1"><img src="https://i.ibb.co/gZ6gbd8L/Video-Capture-20241111-195848.jpg"></a></div>
+        <div class="thumb" data-index="2" data-caption="Nature 1"><img src="https://i.ibb.co/YFNyJQqf/IMG-20241117-210007-656.jpg"></a></div>
+        <div class="thumb" data-index="3" data-caption="Nature 1"><img src="https://i.ibb.co/YTLS6GcS/Picsart-24-11-14-14-48-31-068.jpg"></a></div>
+        <div class="thumb" data-index="4" data-caption="Nature 1"><img src="https://i.ibb.co/nNgb0fcy/IMG-20241117-210408-325.jpg"></a></div>
+        <div class="thumb" data-index="5" data-caption="Nature 1"><img src="https://i.ibb.co/Hf3jwHvk/1732522249273.jpg"></a></div>
+        <div class="thumb" data-index="6" data-caption="Nature 1"><img src="https://i.ibb.co/pB6FqL4b/20241123-170324.jpg"></a></div>
+        <div class="thumb" data-index="7" data-caption="Nature 1"><img src="https://i.ibb.co/5h9TH0cW/IMG-20241124-WA0000.jpg"></a></div>
+        <div class="thumb" data-index="8" data-caption="Nature 1"><img src="https://i.ibb.co/PGjJcmZc/IMG-20241124-WA0119.jpg"></a></div>
+        <div class="thumb" data-index="9" data-caption="Nature 1"><img src="https://i.ibb.co/27QrrF5w/IMG-20241124-WA0164.jpg"></a></div>
+        <div class="thumb" data-index="10" data-caption="Nature 1"><img src="https://i.ibb.co/xSZ4WDYw/IMG-20241124-WA0168.jpg"></a></div>
+        <div class="thumb" data-index="11" data-caption="Nature 1"><img src="https://i.ibb.co/MdpYCzR/IMG-20241124-WA0009.jpg"></a></div>
+        <div class="thumb" data-index="12" data-caption="Nature 1"><img src="https://i.ibb.co/XxY9YCVj/1730804131729.jpg"></a></div>
+        <div class="thumb" data-index="13" data-caption="Nature 1"><img src="https://i.ibb.co/7dVc0NDH/IMG-20241103-WA0005.jpg"></a></div>
+        <div class="thumb" data-index="14" data-caption="Nature 1"><img src="https://i.ibb.co/LDhNqg4V/IMG-20241103-WA0006.jpg"></a></div>
+        <div class="thumb" data-index="15" data-caption="Nature 1"><img src="https://i.ibb.co/3b52FcP/1727359435889.jpg"></a></div>
+        <div class="thumb" data-index="16" data-caption="Nature 1"><img src="https://i.ibb.co/zhFWFx2x/IMG-20240914-WA0000-1.jpg"></a></div>
+        <div class="thumb" data-index="17" data-caption="Nature 1"><img src="https://i.ibb.co/Mx8XkrTB/IMG-20240914-WA0003-1.jpg"></a></div>
+        <div class="thumb" data-index="18" data-caption="Nature 1"><img src="https://i.ibb.co/NgzMMsyM/Screenshot-2023-06-28-12-01-23-90.jpg"></a></div>
+        <div class="thumb" data-index="19" data-caption="Nature 1"><img src="https://i.ibb.co/WWHf498Y/Screenshot-2023-06-21-19-24-08-05.jpg"></a></div>
+        <div class="thumb" data-index="20" data-caption="Nature 1"><img src="https://i.ibb.co/H3hytpb/IMG-20240809-WA0005.jpg"></a></div>
+        <div class="thumb" data-index="21" data-caption="Nature 1"><img src="https://i.ibb.co/TBMSb6yS/1725012468963.jpg"></a></div>
+        <div class="thumb" data-index="22" data-caption="Nature 1"><img src="https://i.ibb.co/kgygjFtH/20240916-092646.jpg"></a></div>
+        <div class="thumb" data-index="23" data-caption="Nature 1"><img src="https://i.ibb.co/s9frtbn9/1726415502449.jpg"></a></div>
+        <div class="thumb" data-index="24" data-caption="Nature 1"><img src="https://i.ibb.co/LzYBDSvB/IMG-20240902-WA0002.jpg"></a></div>
+        <div class="thumb" data-index="25" data-caption="Nature 1"><img src="https://i.ibb.co/84YQYggq/IMG-20240731-WA0000.jpg"></a></div>
+        <div class="thumb" data-index="26" data-caption="Nature 1"><img src="https://i.ibb.co/Kc60TDms/IMG-20240822-WA0020.jpg"></a></div>
+        <div class="thumb" data-index="27" data-caption="Nature 1"><img src="https://i.ibb.co/mr9HWZZ2/IMG-20240429-WA0002.jpg"></a></div>
+        <div class="thumb" data-index="28" data-caption="Nature 1"><img src="https://i.ibb.co/xS1pQJv8/1726415348883.jpg"></a></div>
+        <div class="thumb" data-index="29" data-caption="Nature 1"><img src="https://i.ibb.co/8DF7CTpm/1726415859217.jpg"></a></div>
+        <div class="thumb" data-index="30" data-caption="Nature 1"><img src="https://i.ibb.co/3m5f7gNK/1726415615181.jpg"></a></div>
+        <div class="thumb" data-index="31" data-caption="Nature 1"><img src="https://i.ibb.co/v6gDLf1n/1726415720954.jpg"></a></div>
+        <div class="thumb" data-index="32" data-caption="Nature 1"><img src="https://i.ibb.co/tPCRBSdn/1726415227639.jpg"></a></div>
+        <div class="thumb" data-index="33" data-caption="Nature 1"><img src="https://i.ibb.co/0p98YXVN/1726416082736.jpg"></a></div>
+        <div class="thumb" data-index="34" data-caption="Nature 1"><img src="https://i.ibb.co/FbS96jx8/1725034417762.jpg"></a></div>
+        <div class="thumb" data-index="35" data-caption="Nature 1"><img src="https://i.ibb.co/SDYr3pMp/Screenshot-20240915-144336-Gallery.jpg"></a></div>
+        <div class="thumb" data-index="36" data-caption="Nature 1"><img src="https://i.ibb.co/PzjTkmVW/1725342206341.jpg"></a></div>
+        <div class="thumb" data-index="37" data-caption="Nature 1"><img src="https://i.ibb.co/Cph5pYg3/Picsart-24-11-28-15-44-16-761.jpg"></a></div>
+        </div>
+        <div class="overlay" id="overlay" aria-hidden="true">
+      <button class="close-btn" id="closeBtn" aria-label="Close (Cut)">✕ Cut</button>
+      <img class="fullimg" id="fullimg" src="" alt="Full image view">
+      <div class="caption" id="caption"></div>
+    </div>
+    <div class="gallerys" id="gallerys">
+<div class="gallery" id="gallery"></div></div>
+        <button id="adminUpload" onclick="showUploadPrompt()">Upload</button><br>
+        <button onclick="logout()">Logout</button>
+    </div><br>
+
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span><br><br>
+        <div class="modal-content" id="modal-content">close</div>
+        
+    </div>
+
+    <div class="upload-container">
+        <h2>Admin Upload</h2>
+        <input type="password" id="adminPass" placeholder="Admin Password"><br><br>
+        <input type="file" id="uploadFiles" multiple><br><br>
+        <button onclick="uploadFiles()">Upload</button><br><br>
+        <button onclick="cancelUpload()">Cancel</button><br><br>
+    </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".login-container").style.display = "block";
+    });
+</script>
+
+
+    <script>
+        let users = { admin: "shakya80", user: "deepanshu80" };
+        let currentUser = "";
+        
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            if (users[user] && users[user] === pass) {
+                currentUser = user;
+                document.querySelector(".login-container").style.display = "none";
+                document.querySelector(".gallery-container").style.display = "block";
+                document.getElementById("adminUpload").style.display = user === "admin" ? "block" : "none";
+            } else {
+                alert("Invalid credentials");
+            }
+        }
+        
+        function logout() {
+            currentUser = "";
+            document.querySelector(".login-container").style.display = "block";
+            document.querySelector(".gallery-container").style.display = "none";
+        }
+        
+        function showUploadPrompt() {
+            document.querySelector(".upload-container").style.display = "block";
+        }
+        
+        function cancelUpload() {
+            document.querySelector(".upload-container").style.display = "none";
+        }
+        
+        function uploadFiles() {
+            let adminPass = document.getElementById("adminPass").value;
+            if (adminPass !== users["admin"]) {
+                alert("Incorrect admin password");
+                return;
+            }
+            let files = document.getElementById("uploadFiles").files;
+            let gallery = document.getElementById("gallery");
+            for (let file of files) {
+                let element;
+                if (file.type.startsWith("image")) {
+                    element = document.createElement("img");
+                    element.src = URL.createObjectURL(file);
+                } else if (file.type.startsWith("video")) {
+                    element = document.createElement("video");
+                    element.src = URL.createObjectURL(file);
+                    element.controls = true;
+                }
+                element.onclick = function () { openModal(element); };
+                gallery.appendChild(element);
+            }
+            document.querySelector(".upload-container").style.display = "none";
+        }
+        
+        function openModal(element) {
+            let modal = document.getElementById("modal");
+            let modalContent = document.getElementById("modal-content");
+            modalContent.innerHTML = "";
+            let clone = element.cloneNode(true);
+            clone.style.width = "50%";
+            modalContent.appendChild(clone);
+            modal.style.display = "block";
+        }
+        
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    function close() {
+       let model = document.getElementById("close");
+    }
+    (function(){
+      const gallerys = document.getElementById('gallerys');
+      const overlay = document.getElementById('overlay');
+      const fullimg = document.getElementById('fullimg');
+      const closeBtn = document.getElementById('closeBtn');
+      const captionEl = document.getElementById('caption');
+
+      const thumbs = Array.from(gallerys.querySelectorAll('.thumb'));
+
+      let currentIndex = -1;
+
+      // disable page scroll when overlay open
+      function setBodyScroll(off){
+        document.documentElement.style.overflow = off ? 'hidden' : '';
+      }
+
+      function openAt(index){
+        const thumb = thumbs[index];
+        if(!thumb) return;
+        const img = thumb.querySelector('img');
+        const src = img.dataset.full || img.src; // allow data-full override
+        fullimg.src = src;
+        fullimg.alt = img.alt || '';
+        captionEl.textContent = thumb.dataset.caption || '';
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden','false');
+        currentIndex = index;
+        setBodyScroll(true);
+        // small scale animation
+        fullimg.style.transform = 'scale(0.98)';
+        requestAnimationFrame(()=> fullimg.style.transform = 'scale(1)');
+      }
+
+      function closeOverlay(){
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden','true');
+        fullimg.src = '';
+        currentIndex = -1;
+        setBodyScroll(false);
+      }
+
+      gallerys.addEventListener('click', e => {
+        const t = e.target.closest('.thumb');
+        if(!t) return;
+        const idx = Number(t.dataset.index || thumbs.indexOf(t));
+        openAt(idx);
+      });
+
+      closeBtn.addEventListener('click', closeOverlay);
+
+      // click outside image closes
+      overlay.addEventListener('click', e => {
+        if(e.target === overlay) closeOverlay();
+      });
+
+      // keyboard support
+      window.addEventListener('keydown', e => {
+        if(overlay.classList.contains('open')){
+          if(e.key === 'Escape') closeOverlay();
+          else if(e.key === 'ArrowRight') openAt((currentIndex + 1) % thumbs.length);
+          else if(e.key === 'ArrowLeft') openAt((currentIndex - 1 + thumbs.length) % thumbs.length);
+        }
+      });
+
+      // make thumbs focusable and open on Enter / Space
+      thumbs.forEach((t,i)=>{
+        t.tabIndex = 0;
+        t.addEventListener('keydown', ev => {
+          if(ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openAt(i); }
+        });
+      });
+
+    })();
+    
+      const loader = document.getElementById('topLoader');
+  const refreshBtn = document.getElementById('refreshBtn');
+
+  // Function: show loader and refresh page
+  function showLoaderAndRefresh() {
+    loader.style.width = '0%';
+    loader.style.display = 'block';
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 10;
+      loader.style.width = progress + '%';
+      if (progress >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          location.reload();
+        }, 200);
+      }
+    }, 50);
+  }
+
+  // When bottom button clicked
+  refreshBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      showLoaderAndRefresh();
+    }, 600); // wait for scroll to reach top
+  });
+
+  // When user scrolls to top (pull-to-refresh style)
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop <= 0 && lastScrollTop > 0) {
+      // reached top from scroll
+      showLoaderAndRefresh();
+    }
+    lastScrollTop = scrollTop;
+  });
+    </script>
+</body>
+</html>
