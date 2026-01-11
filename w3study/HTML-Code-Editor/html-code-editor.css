@@ -1,0 +1,70 @@
+:root {
+      --editor-height: auto;
+    }
+    .editor-wrap {
+      border:1px solid #333;
+      border-radius:6px;
+      overflow:hidden;
+      width: 95%;
+      max-width:900px;
+      margin:auto;
+      margin-bottom: 10px;
+    }
+    .editor-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#1a1d29;
+      padding:5px;
+    }
+    .editor-title {
+      font-weight:bold;
+      margin-left: 8px;
+    }
+    .editor-actions button {
+      margin-left:8px;
+      margin:5px;
+      padding:6px 12px;
+      border-radius:2px;
+      cursor:pointer;
+      background:#2c3144;
+      color:#fff;
+      transition:background 0.1s;
+    }
+    .editor-actions button:hover {
+      background:#3d425a;
+    }
+    .CodeMirror {
+      height:var(--editor-height);
+      font-size:14px;
+      border-top:1px solid #666;
+    }
+    .output-frame {
+      height:100%;
+      width:101%;
+      border:0;
+      display:none;
+      background-color: #ffffff;
+    }
+    .source {
+    	overflow: auto;
+    	text-wrap: none;
+    	background: #fff;
+    }
+  
+    .editor-actions button {
+  background: #2d2d2d;
+  
+  border-radius: 1px;
+  padding: 6px 10px;
+  margin-left: 4px;
+  cursor: pointer;
+  
+}
+.editor-actions button:hover {
+  background: #444;
+}
+.editor-actions svg {
+  width: 18px;
+  height: 18px;
+}

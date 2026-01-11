@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multi Code Editors</title>
+
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+  <!-- CodeMirror Themes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css" />
+	<link rel="stylesheet" href="code-editor.css">
+	<script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="editor-wrap">
+    <div class="editor-header">
+    	<div style="display:flex;">
+    	<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+    	<button id="link-btn" class="editor-actions-home-btn" data-link="../index.html"><i data-lucide="home"></i></button>
+    	</div>
+      <div class="editor-title">Code Editor</div>
+      <div class="editor-actions">
+      	<button class="copyBtn"><i data-lucide="copy"></i></button>
+  <button class="outputBtn"><i data-lucide="play"></i></button>
+  <button class="backBtn" style="display:none;"><i data-lucide="arrow-left"></i></button>
+  <button class="themeBtn"><i data-lucide="moon"></i></button>
+  <button class="restoreBtn"><i data-lucide="rotate-ccw"></i></button>
+      </div>
+    </div>
+
+    <textarea class="source">
+ <html>
+ 	<head>
+ 		<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 		<title>Code Editor by Deepanshu Ranjan</title>
+ 		<style>
+ 			body {
+ 				background: #333;
+ 				color: white;
+ 				text-align: center;
+ 			}
+ 			h1 {
+ 				color: green;
+ 				font-size: 40px;
+ 			}
+ 			p {
+ 				color: white;
+ 				font-size: 20px;
+ 			}
+ 		
+ 		</style>
+ 	</head>
+ 	<body>
+ <h1>This is a Heading </h1>
+<p>This is a paragraph</p>
+</body>
+</html>
+</textarea>
+  <iframe class="output-frame"></iframe>
+ </div>
+<div class="footer-ads-for-editors">
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ac115ff08201a38f29b8c5c7bf7199e0',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ac115ff08201a38f29b8c5c7bf7199e0/invoke.js"></script>
+</div>
+  <!-- CodeMirror Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+  <script src="html-code-editor.js"></script>
+  <script>
+  	// this code for next and privious btn
+document.querySelectorAll("#link-btn").forEach(function(button) {
+    button.addEventListener("click", function() {
+        window.location.href = this.getAttribute("data-link");
+    });
+});
+function goBack() {
+	window.history.back();
+} 
+  </script>
+</body>
+</html>
