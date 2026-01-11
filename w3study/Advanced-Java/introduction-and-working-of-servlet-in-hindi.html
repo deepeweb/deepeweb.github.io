@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Advanced-Java/.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Advanced-Java/.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-08-20T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "",
+  "description": "",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-08-20",
+  "datePublished": "2025-08-20",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Advanced-Java/.html",
+  "inLanguage": "hi"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../searchBox.css">
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../all-page-ot.html">Online Test</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+       
+  <div class="SearchContainer">
+  <div class="searchWrapper">
+    <button id="searchIconButton" onclick="searchNotes()" title="Search" aria-label="Search">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 
+             5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 
+             L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 
+             5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+             11.99 14 9.5 14z"
+        />
+      </svg>
+    </button>
+    <input 
+      type="text" 
+      id="searchBox"
+      placeholder="Search Notes..."
+      onkeyup="searchNotes()" 
+      oninput="handleInputChange()"
+    />
+    <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+  </div>
+  <div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+ <h1>Introduction, Working, Advantages, Disadvantages of Servlet in Hindi</h1>
+ <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="jdbc-statements.html">Privious</a>
+<a class="next-privius-button-styles" href="advantages-of-servlet-terminology-in-hindi.html">Next</a>
+</div>
+  <h2>Introduction to Servlet in Hindi</h2>
+<p>Servlet एक server-side Java program होता है, जो web applications में client request को process करता है और response generate करता है। यह Java EE (Jakarta EE) का एक हिस्सा है और इसे dynamic web applications बनाने के लिए उपयोग किया जाता है।</p>
+<p>Servlet को HTTP request-response model पर काम करने के लिए design किया गया है और यह Web Server पर run करता है। यह HTML, XML, JSON जैसे formats में response भेज सकता है और databases से data fetch करने की क्षमता रखता है।</p>
+<p>Servlet को traditional CGI (Common Gateway Interface) की तुलना में अधिक efficient और scalable माना जाता है क्योंकि यह multithreading को support करता है।</p>
+<p>Servlet API के दो मुख्य interface होते हैं: Servlet Interface और GenericServlet, और सबसे अधिक उपयोग होने वाला class HttpServlet होता है। Servlet का lifecycle तीन मुख्य चरणों में divided होता है: Initialization (init method), Service (service method), और Destruction (destroy method)।</p>
+<p>Servlet container, जैसे कि Apache Tomcat, JBoss, और GlassFish, Servlet को manage और execute करते हैं। यह Session Management techniques जैसे Cookies, HttpSession, URL Rewriting को support करता है, जिससे user data को maintain किया जा सकता है।</p>
+<p>Servlet का उपयोग MVC (Model-View-Controller) architecture में किया जाता है, जहां यह controller के रूप में act करता है और user requests को process करता है।</p>
+
+<h2>Working of Servlet in Hindi</h2>
+  <ol><li><b style="color: green">Client Request –</b> जब कोई user web browser में URL enter करता है या किसी web application पर request भेजता है, तो यह request web server तक पहुँचती है।</li>
+
+<li><b style="color: green">Web Server Processing –</b> Web server (जैसे Apache Tomcat, GlassFish) इस request को receive करता है और यह चेक करता है कि requested resource (Servlet) available है या नहीं।</li>
+
+<li><b style="color: green">Servlet Container Execution –</b> Web server request को Servlet Container को भेजता है, जो Servlet को manage और execute करता है। Servlet Container निम्न कार्य करता है:</li>
+
+    <ul><li>यदि Servlet पहली बार call हो रहा है, तो उसका object create किया जाता है।</li>
+    <li>Servlet का init() method call किया जाता है (सिर्फ पहली बार execution पर)।</li>
+    <li>Request को handle करने के लिए service() method call किया जाता है।</li></ul>
+    <li><b style="color: green">Processing Request –</b> Servlet client द्वारा भेजे गए data (GET या POST request) को process करता है, database से data fetch करता है या कोई अन्य logic apply करता है।</li>
+<li><b style="color: green">Generating Response –</b> Servlet response generate करता है, जो HTML, JSON, XML, या कोई अन्य format में हो सकता है।</li>
+<li><b style="color: green">Response भेजना –</b> Servlet generated response को web server को return करता है।</li>
+<li><b style="color: green">Client Display –</b> Web server response को client के browser पर भेज देता है, जहां user को final output दिखाई देता है।</li>
+<li><b style="color: green">Servlet Destroy (Optional) –</b> जब Servlet को अब ज़रूरत नहीं होती, तो Container उसका object destroy कर देता है और destroy() method call करता है।</li></ol>
+  <h2 id="ad">Advantages of Servlet in Hindi</h2>
+  <ol><li><b style="color: green">Better Performance –</b> Servlet, CGI (Common Gateway Interface) की तुलना में बेहतर प्रदर्शन करता है क्योंकि यह multithreading को support करता है और हर request के लिए नया process बनाने के बजाय एक ही thread में request को handle करता है।</li>
+<li><b style="color: green">Platform Independent –</b> Servlet Java-based होता है, इसलिए यह किसी भी operating system और web server पर run कर सकता है जिसमें JVM (Java Virtual Machine) हो।</li>
+<li><b style="color: green">Robust and Secure –</b> Java के exception handling और security features के कारण Servlet अधिक सुरक्षित और मजबूत होता है। इसमें authentication, authorization, और encryption जैसी सुविधाएं होती हैं।</li>
+<li><b style="color: green">Scalability –</b> Servlet आसानी से high-traffic web applications को handle कर सकता है क्योंकि यह lightweight और efficient है।</li>
+<li><b style="color: green">Persistence –</b> Servlet को database, files, या external APIs से connect किया जा सकता है, जिससे dynamic content generate किया जा सकता है।</li>
+<li><b style="color: green">Session Management –</b> Servlet, user session को maintain करने के लिए Cookies, HttpSession, और URL Rewriting जैसी techniques को support करता है।</li>
+<li><b style="color: green">Reusability –</b> एक बार Servlet को develop करने के बाद इसे multiple applications में reuse किया जा सकता है, जिससे development का समय और प्रयास बचता है।</li>
+<li><b style="color: green">Integration with Java Technologies –</b> Servlet को आसानी से JSP, JDBC, Hibernate, Spring, और RESTful Web Services जैसी Java-based technologies के साथ integrate किया जा सकता है।</li>
+<li><b style="color: green">Easy Maintenance –</b> Servlet-based applications को manage और maintain करना आसान होता है क्योंकि code modular और well-structured होता है।</li>
+<li><b style="color: green">Support for MVC Architecture –</b> Servlet, MVC (Model-View-Controller) design pattern को support करता है, जिससे web applications को logically organize करना आसान होता है।</li></ol>
+  <h2 id="dis">Disadvantages of Servlet in Hindi</h2>
+<ol><li><b style="color: green">Complexity –</b> Servlet को manage करना और maintain करना थोड़ा मुश्किल होता है, खासकर जब application बड़ी होती है।</li>
+<li><b style="color: green">Boilerplate Code –</b> Servlet में बहुत ज्यादा boilerplate code लिखना पड़ता है, जिससे development slow हो सकता है।</li>
+<li><b style="color: green">Difficult to Manage UI –</b> HTML और Java code को mix करके dynamic pages बनाना मुश्किल होता है, इसलिए JSP या frameworks जैसे Spring MVC को prefer किया जाता है।</li>
+<li><b style="color: green">No Built-in Template Support –</b> Servlet में कोई template engine नहीं होता, जिससे dynamic content generation मुश्किल हो जाता है।</li>
+<li><b style="color: green">Session Management Complexity –</b> Cookies, URL rewriting, और HttpSession को manage करना manually करना पड़ता है, जिससे development और debugging मुश्किल होती है।</li>
+<li><b style="color: green">Less Productive Compared to Frameworks –</b> Servlet को सीधे use करने की बजाय Spring, Struts, Hibernate जैसे frameworks का उपयोग करना ज्यादा आसान और efficient होता है।</li>
+<li><b style="color: green">Thread Management Issues –</b> Servlet container एक ही instance के multiple threads handle करता है, जिससे concurrency issues आ सकते हैं।</li>
+<li><b style="color: green">Difficult to Scale –</b> बड़े applications के लिए Servlets को manage करना और maintain करना कठिन हो जाता है, जबकि frameworks scalability को आसान बनाते हैं।</li>
+<li><b style="color: green">Not Suitable for RESTful APIs –</b> RESTful services के लिए Servlet उतना efficient नहीं है, इसलिए Spring Boot, Jersey जैसे frameworks ज्यादा use किए जाते हैं।</li>
+<li><b style="color: green">Manual Dependency Management –</b> Servlet में dependency injection की सुविधा नहीं होती, जबकि Spring जैसे frameworks यह feature provide करते हैं।</li></ol>
+   <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="jdbc-statements.html">Privious</a>
+<a class="next-privius-button-styles" href="advantages-of-servlet-terminology-in-hindi.html">Next</a>
+</div>
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div id="user-alert-container"></div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+<div id="dynamic-container"></div>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+               <div id="side-nav-advanced-java"></div><br>
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+<div id="dynamic-containers"></div>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40" style="border-radius: 50%;"></a>
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40" style="border-radius: 50%;"></a>
+        <a href="https://x.com/DeepanshuR857?t=2IPnUBn3RJDFjTtD5qtvKw&s=08" target="_blank"><img src="https://deepeweb.github.io/Images/twitter.webp" alt="Follow Me on twitter" width="40" style="border-radius: 50%;"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+  <script>
+
+function highlightActiveLink(containerId) {
+    const currentPage = window.location.pathname.split("/").pop(); // current file ka naam
+    const container = document.getElementById(containerId);
+    
+    if (container) {
+        const links = container.querySelectorAll("a");
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active-link");
+            }
+        });
+    }
+}
+
+fetch("side-nav-advanced-java.html")
+    .then(res => res.text())
+    .then(html => {
+        const nav = document.getElementById("side-nav-advanced-java");
+        if (nav) {
+            nav.innerHTML = html;
+            highlightActiveLink("side-nav-advanced-java");
+        }
+    });
+    </script>
+</body>
+</html>

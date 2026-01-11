@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Database Connection in Advanced Java in Hindi</title>
+<meta name="description" content="Database Connection का उपयोग Java application और database के बीच communication स्थापित करने के लिए किया जाता है। Java में database से connect करने के लिए JDBC">
+<meta name="keywords" content="advanced java database connection in hindi, database connection in hindi, database connection in java in hindi, java database connection code, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Advanced-Java/database-connection.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Database Connection in Advanced Java in Hindi" />
+<meta property="og:description" content="Database Connection का उपयोग Java application और database के बीच communication स्थापित करने के लिए किया जाता है। Java में database से connect करने के लिए JDBC" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Advanced-Java/database-connection.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-27T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Database Connection in Advanced Java in Hindi" />
+<meta name="twitter:description" content="Database Connection का उपयोग Java application और database के बीच communication स्थापित करने के लिए किया जाता है। Java में database से connect करने के लिए JDBC" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Database Connection in Advanced Java in Hindi",
+  "description": "Database Connection का उपयोग Java application और database के बीच communication स्थापित करने के लिए किया जाता है। Java में database से connect करने के लिए JDBC",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-27",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Advanced-Java/database-connection.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../all-page-ot.html">Online Test</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+
+  <div class="SearchContainer">
+  <div class="searchWrapper">
+    <button id="searchIconButton" onclick="searchNotes()" title="Search" aria-label="Search">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 
+             5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 
+             L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 
+             5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+             11.99 14 9.5 14z"
+        />
+      </svg>
+    </button>
+    <input 
+      type="text" 
+      id="searchBox"
+      placeholder="Search Notes..."
+      onkeyup="searchNotes()" 
+      oninput="handleInputChange()"
+    />
+    <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+  </div>
+  <div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+  <h1>Database Connection in Advanced Java in Hindi</h1><br>
+<div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="crud-operation-using-jdbc-api.html">Privious</a>
+<a class="next-privius-button-styles" href="jdbc-statements.html">Next</a>
+</div>
+  <h2 id="data">Database Connection in Hindi</h2> 
+  <p>Database Connection का उपयोग Java application और database के बीच communication स्थापित करने के लिए किया जाता है। Java में database से connect करने के लिए JDBC (Java Database Connectivity) API का उपयोग किया जाता है।</p>
+  <p>JDBC API के द्वारा SQL queries execute, data retrieve, और update किया जा सकता है।</p>
+  <p>Java application को database से connect करने के लिए JDBC Driver (जैसे MySQL, Oracle, PostgreSQL, SQL Server) की आवश्यकता होती है।</p>
+  <p>Database connection के लिए आवश्यक steps:</p>
+  <ul><li><b style="color: green">JDBC Driver लोड करना –</b> Class.forName("com.mysql.cj.jdbc.Driver");</li>
+    <li><b style="color: green">Connection बनाना –</b> Connection con = DriverManager.getConnection(URL, USER, PASSWORD);</li>
+    <li><b style="color: green">Statement या PreparedStatement बनाना –</b> Statement stmt = con.createStatement();</li>
+    <li><b style="color: green">Query execute करना –</b> ResultSet rs = stmt.executeQuery("SELECT * FROM users");</li>
+    <li><b style="color: green">Connection close करना –</b> con.close();</li></ul>
+    <p>Connection URL database के प्रकार पर निर्भर करता है:</p>
+  <ul><li><b style="color: green">MySQL –</b> "jdbc:mysql://localhost:3306/dbname"</li>
+  <li><b style="color: green">PostgreSQL –</b> "jdbc:postgresql://localhost:5432/dbname"</li>
+  <li><b style="color: green">Oracle –</b> "jdbc:oracle:thin:@localhost:1521:dbname"</li></ul>
+  <p>Database connection secure बनाने के लिए environment variables में credentials store करने चाहिए।</p>
+  
+  <p>नीचे Java का एक simple JDBC Database Connection Example दिया गया है, जिसमें MySQL database से कनेक्शन बनाया गया है और डेटा को retrieve किया गया है।</p>
+  <h2>Steps:</h2>
+  <ul><li>JDBC Driver लोड करें।</li>
+    <li>Database से कनेक्शन बनाएं।</li>
+    <li>SQL Query Execute करें।</li>
+    <li>ResultSet से डेटा प्राप्त करें।</li>
+    <li>Resources को close करें।</li></ul>
+<div class="text">
+<pre><code id="code" class="language-java">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class JDBCExample {
+    public static void main(String[] args) {
+        // Database connection details
+        String url = "jdbc:mysql://localhost:3306/testdb"; // Database URL
+        String user = "root"; // Database Username
+        String password = "password"; // Database Password
+
+        // JDBC Connection, Statement और ResultSet के लिए variables
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            // 1. JDBC Driver Load करें
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 2. Database से कनेक्शन बनाएं
+            con = DriverManager.getConnection(url, user, password);
+            System.out.println("Database connected successfully!");
+
+            // 3. SQL Query तैयार करें और execute करें
+            stmt = con.createStatement();
+            String query = "SELECT id, name, email FROM users";
+            rs = stmt.executeQuery(query);
+
+            // 4. ResultSet से डेटा प्राप्त करें
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+
+                System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email);
+            }
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC Driver not found!");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Database connection error!");
+            e.printStackTrace();
+        } finally {
+            // 5. Resources को close करें
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}</code></pre>
+</div>
+ <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="crud-operation-using-jdbc-api.html">Privious</a>
+<a class="next-privius-button-styles" href="jdbc-statements.html">Next</a>
+</div>
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div id="user-alert-container"></div>
+</div>
+<br><hr><br>
+<div class="extra">
+<div id="dynamic-container"></div>
+    </div>
+    </div>
+        <aside class="side-nav">
+          <div class="uls">
+                <div id="side-nav-advanced-java"></div><br>
+          </div>
+        </aside>
+   </div>
+   <div class="extras">
+<div id="dynamic-containers"></div>
+    </div>
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+  <script>
+      // Side nav load hone ke baad active link set karein
+function highlightActiveLink(containerId) {
+    const currentPage = window.location.pathname.split("/").pop(); // current file ka naam
+    const container = document.getElementById(containerId);
+    
+    if (container) {
+        const links = container.querySelectorAll("a");
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active-link");
+            }
+        });
+    }
+}
+
+// Example: Jab side nav load ho jaye tab call karein
+fetch("side-nav-advanced-java.html")
+    .then(res => res.text())
+    .then(html => {
+        const nav = document.getElementById("side-nav-advanced-java");
+        if (nav) {
+            nav.innerHTML = html;
+            highlightActiveLink("side-nav-advanced-java");
+        }
+    });
+    </script>
+</body>
+</html>

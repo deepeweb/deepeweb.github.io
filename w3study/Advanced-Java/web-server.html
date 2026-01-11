@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Introduction to Web Server in Hindi</title>
+<meta name="description" content="Web Server एक software या hardware system होता है, जो client requests (जैसे web browsers या mobile applications से आने वाले HTTP/HTTPS requests) को handle करता है">
+<meta name="keywords" content="what is web server in hindi, webserver in hindi, web server in hindi, introduction to web server in hindi, web server kya hai, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Advanced-Java/web-server.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Introduction to Web Server in Hindi" />
+<meta property="og:description" content="Web Server एक software या hardware system होता है, जो client requests (जैसे web browsers या mobile applications से आने वाले HTTP/HTTPS requests) को handle करता है" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Advanced-Java/web-server.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-27T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Introduction to Web Server in Hindi" />
+<meta name="twitter:description" content="Web Server एक software या hardware system होता है, जो client requests (जैसे web browsers या mobile applications से आने वाले HTTP/HTTPS requests) को handle करता है" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Introduction to Web Server in Hindi",
+  "description": "Web Server एक software या hardware system होता है, जो client requests (जैसे web browsers या mobile applications से आने वाले HTTP/HTTPS requests) को handle करता है",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-27",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Advanced-Java/web-server.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../all-page-ot.html">Online Test</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+       
+  <div class="SearchContainer">
+  <div class="searchWrapper">
+    <button id="searchIconButton" onclick="searchNotes()" title="Search" aria-label="Search">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 
+             5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 
+             L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 
+             5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+             11.99 14 9.5 14z"
+        />
+      </svg>
+    </button>
+    <input 
+      type="text" 
+      id="searchBox"
+      placeholder="Search Notes..."
+      onkeyup="searchNotes()" 
+      oninput="handleInputChange()"
+    />
+    <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+  </div>
+  <div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+  <h1>Introduction to Web Server in Hindi, Types of Web Server in Hindi</h1>
+  <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="ip-address-port-and-url.html">Privious</a>
+<a class="next-privius-button-styles" href="tomcat-web-server.html">Next</a>
+</div>
+  <h2>Introduction to Web Server</h2>
+    <p>Web Server एक software या hardware system होता है, जो client requests (जैसे web browsers या mobile applications से आने वाले HTTP/HTTPS requests) को handle करता है और उनको सही response भेजता है। यह static और dynamic दोनों प्रकार की web applications को support करता है।</p>
+    <p>Web Server HTTP (Hypertext Transfer Protocol) और HTTPS (Hypertext Transfer Protocol Secure) protocols पर काम करता है। यह HTML, CSS, JavaScript, images, और अन्य resources को store और serve करता है।</p>
+    <p>Web Server client और database/server के बीच एक middleware की तरह काम करता है और request को सही destination तक पहुंचाने में मदद करता है। यह multiple concurrent requests को handle कर सकता है, जिससे एक ही समय में कई users application का उपयोग कर सकते हैं।</p>
+    <p>Load balancing, caching, और request handling जैसे performance optimization techniques को support करता है।</p>
+    <p>Security के लिए SSL/TLS encryption, authentication, और firewall protection जैसे features होते हैं।</p>
+    <p>Cloud-based web servers भी popular हैं, जैसे AWS EC2, Google Cloud Compute Engine, और Microsoft Azure Web Services, जो scalable और distributed hosting provide करते हैं।</p>
+
+  <h2>Types of Web Server in Hindi</h2>
+<ol><li><b style="color: green">Apache HTTP Server –</b> यह सबसे लोकप्रिय open-source web server है, जिसे Apache Software Foundation द्वारा develop किया गया है। यह Linux, Windows, और macOS पर काम करता है और PHP, Python, Perl जैसी scripting languages को support करता है।</li>
+<li><b style="color: green">NGINX –</b> यह high-performance और lightweight web server है, जो reverse proxy, load balancing, और caching जैसी advanced features को support करता है। यह static content serve करने और high traffic websites के लिए बेहतर विकल्प माना जाता है।</li>
+<li><b style="color: green">Microsoft IIS (Internet Information Services) –</b> यह Microsoft द्वारा विकसित web server है, जो Windows OS के साथ आता है। यह ASP.NET, PHP, और अन्य Microsoft technologies को support करता है।</li>
+<li><b style="color: green">LiteSpeed Web Server –</b> यह एक high-performance और scalable web server है, जिसे Apache का बेहतर alternative माना जाता है। यह कम resource consumption के साथ fast processing करता है।</li>
+<li><b style="color: green">Tomcat Server –</b> यह विशेष रूप से Java Servlets और JSP (Java Server Pages) applications को run करने के लिए बनाया गया है। इसे Apache Software Foundation ने develop किया है।</li>
+<li><b style="color: green">Node.js Web Server –</b> यह JavaScript-based runtime environment है, जो asynchronous और non-blocking I/O के कारण high-performance real-time applications को support करता है।</li>
+<li><b style="color: green">Caddy Web Server –</b> यह एक automatic HTTPS-enabled web server है, जो simplicity और security के लिए जाना जाता है। इसे configuration के लिए minimal effort की जरूरत होती है।</li>
+<li><b style="color: green">Jetty Web Server –</b> यह भी Java-based web server है, जो servlets और web services को support करता है और अक्सर lightweight Java applications में उपयोग किया जाता है।</li>
+<li><b style="color: green">GlassFish Server –</b> यह Oracle द्वारा विकसित किया गया है और यह Jakarta EE (पूर्व में Java EE) applications को run करने के लिए उपयोग किया जाता है।</li>
+<li><b style="color: green">OpenLiteSpeed –</b> यह LiteSpeed का open-source version है, जो high-performance और low-resource consumption के लिए बनाया गया है।</li></ol>
+
+<p>इन web servers का चयन requirements के अनुसार किया जाता है, जैसे high-traffic websites के लिए NGINX, Java-based applications के लिए Tomcat और enterprise-level applications के लिए GlassFish.</p>
+
+  <h2>Features of Web Server</h2> 
+<ol><li><b style="color: green">Request Handling –</b> Web Server HTTP/HTTPS requests को process करता है और client (जैसे browser या mobile app) को response भेजता है।</li>
+<li><b style="color: green">Static & Dynamic Content Support –</b> यह HTML, CSS, JavaScript, images जैसी static files को serve कर सकता है और JSP, Servlets, PHP, ASP.NET जैसी dynamic applications को भी handle कर सकता है।</li>
+<li><b style="color: green">Multi-threading & Concurrency –</b> एक ही समय में multiple client requests को efficiently process कर सकता है।</li>
+<li><b style="color: green">Security & Encryption –</b> SSL/TLS encryption, authentication, और firewall integration के साथ secure connections provide करता है।</li>
+<li><b style="color: green">Load Balancing –</b> High traffic websites के लिए multiple servers पर load को distribute करके performance improve करता है।</li>
+<li><b style="color: green">Caching Mechanism –</b> Frequently requested content को cache करके response time कम करता है और server load को optimize करता है।</li>
+<li><b style="color: green">Logging & Monitoring –</b> यह सभी requests और errors को logs में store करता है, जिससे performance analysis और debugging आसान होती है।</li>
+<li><b style="color: green">Scalability –</b> जरूरत के अनुसार horizontally या vertically scale किया जा सकता है, जिससे high traffic को efficiently manage किया जा सके।</li>
+<li><b style="color: green">Cross-Platform Compatibility –</b> Web Servers Linux, Windows, और macOS जैसे multiple operating systems पर चल सकते हैं।</li>
+<li><b style="color: green">Virtual Hosting Support –</b> एक ही server पर multiple domain names और websites को host करने की सुविधा देता है।</li>
+<li><b style="color: green">Reverse Proxy Support –</b> Back-end servers के बीच load को manage करने और security बढ़ाने के लिए reverse proxy के रूप में काम कर सकता है।</li>
+<li><b style="color: green">Integration with Databases & Web Applications –</b> Web Server को MySQL, PostgreSQL, MongoDB जैसे databases और Spring, Hibernate, Django जैसी web frameworks के साथ आसानी से integrate किया जा सकता है।</li></ol>
+
+  <h2>Advantages of Web Server</h2>
+<ol><li><b style="color: green">Fast Content Delivery –</b> Web Server client requests को efficiently process करके HTML, CSS, JavaScript, images, और multimedia files को तेजी से deliver करता है।</li>
+<li><b style="color: green">Supports Static & Dynamic Content –</b> Static pages के अलावा, JSP, Servlets, PHP, ASP.NET जैसी dynamic web applications को भी manage करता है।</li>
+<li><b style="color: green">High Performance & Scalability –</b> Load balancing और caching जैसी techniques के जरिए high traffic को manage करके performance improve करता है।</li>
+<li><b style="color: green">Security & Data Protection –</b> SSL/TLS encryption, authentication, firewall, और DDoS protection जैसी security features provide करता है।</li>
+<li><b style="color: green">Multi-Platform Compatibility –</b> Web Server को Windows, Linux, macOS जैसे अलग-अलग operating systems पर run किया जा सकता है।</li>
+<li><b style="color: green">Concurrency & Multi-threading –</b> Multiple client requests को एक साथ handle कर सकता है, जिससे web applications smooth और responsive बनी रहती हैं।</li>
+<li><b style="color: green">Load Balancing Support –</b> Multiple servers के बीच traffic को distribute करके downtime को कम करता है और reliability बढ़ाता है।</li>
+<li><b style="color: green">Centralized Control & Monitoring –</b> Logging और monitoring tools के जरिए server की performance और errors को track किया जा सकता है।</li>
+<li><b style="color: green">Reverse Proxy & Gateway Support –</b> Backend servers को protect करने और API gateway के रूप में कार्य करने की क्षमता रखता है।</li>
+<li><b style="color: green">Database & Framework Integration –</b> Web Servers को MySQL, PostgreSQL, MongoDB जैसे databases और Spring, Hibernate, Django जैसी web frameworks के साथ आसानी से integrate किया जा सकता है।</li>
+<li><b style="color: green">Virtual Hosting Feature –</b> एक ही server पर multiple domain names और websites को host करने की सुविधा देता है, जिससे cost-saving होती है।</li>
+<li><b style="color: green">Automatic Error Handling & Recovery –</b> यदि server पर कोई issue आता है, तो यह automatically error pages show करके system को stable बनाए रखता है।</li></ol>
+
+  <h2>Disadvantages of Web Server</h2>
+<ol><li><b style="color: green">High Resource Consumption –</b> Web Server को proper functioning के लिए high CPU, RAM और storage की जरूरत होती है, खासकर dynamic content processing के लिए।</li>
+<li><b style="color: green">Security Vulnerabilities –</b> अगर Web Server को सही से configure नहीं किया जाए, तो यह DDoS attacks, SQL injection, और Cross-Site Scripting (XSS) जैसे security threats के लिए vulnerable हो सकता है।</li>
+<li><b style="color: green">Complex Configuration & Maintenance –</b> Large-scale web servers को configure और maintain करना मुश्किल होता है, खासकर जब multiple websites को host किया जाता है।</li>
+<li><b style="color: green">Single Point of Failure (SPOF) –</b> अगर proper load balancing और failover mechanisms नहीं हैं, तो server crash होने पर पूरी website down हो सकती है।</li>
+<li><b style="color: green">Latency Issues –</b> अगर server का response time slow है, तो website की performance खराब हो सकती है, जिससे user experience और SEO ranking पर असर पड़ता है।</li>
+<li><b style="color: green">Scalability Challenges –</b> बढ़ते traffic को manage करने के लिए hardware upgrades, clustering, और CDN integration की जरूरत होती है, जो costly हो सकता है।</li>
+<li><b style="color: green">Dependency on Internet Connection –</b> Web Server की availability पूरी तरह से network और internet connection पर निर्भर करती है, अगर network failure हो जाए तो service down हो सकती है।</li>
+<li><b style="color: green">Regular Updates Required –</b> Security patches, performance improvements और bug fixes के लिए Web Server को frequent updates की जरूरत होती है, जिससे downtime का risk बढ़ सकता है।</li>
+<li><b style="color: green">Data Loss Risk –</b> अगर proper backups और disaster recovery plans नहीं हैं, तो server failure या cyber attacks के कारण data loss हो सकता है।</li>
+<li><b style="color: green">Higher Cost for Advanced Features –</b> Free या basic web servers limited features provide करते हैं, जबकि advanced security, caching, और scalability features के लिए additional cost लगती है।</li></ol>
+  
+   <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="ip-address-port-and-url.html">Privious</a>
+<a class="next-privius-button-styles" href="tomcat-web-server.html">Next</a>
+</div>
+  
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div id="user-alert-container"></div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+<div id="dynamic-container"></div>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+               <div id="side-nav-advanced-java"></div><br>
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+<div id="dynamic-containers"></div>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+         <a href="https://www.facebook.com/share/1Kpe6MYFJT/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40" style="border-radius: 50%;"></a>
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40" style="border-radius: 50%;"></a>
+        <a href="https://x.com/DeepanshuR857?t=2IPnUBn3RJDFjTtD5qtvKw&s=08" target="_blank"><img src="https://deepeweb.github.io/Images/twitter.webp" alt="Follow Me on twitter" width="40" style="border-radius: 50%;"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+  <script>
+      // Side nav load hone ke baad active link set karein
+function highlightActiveLink(containerId) {
+    const currentPage = window.location.pathname.split("/").pop(); // current file ka naam
+    const container = document.getElementById(containerId);
+    
+    if (container) {
+        const links = container.querySelectorAll("a");
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active-link");
+            }
+        });
+    }
+}
+
+// Example: Jab side nav load ho jaye tab call karein
+fetch("side-nav-advanced-java.html")
+    .then(res => res.text())
+    .then(html => {
+        const nav = document.getElementById("side-nav-advanced-java");
+        if (nav) {
+            nav.innerHTML = html;
+            highlightActiveLink("side-nav-advanced-java");
+        }
+    });
+    </script>
+</body>
+</html>

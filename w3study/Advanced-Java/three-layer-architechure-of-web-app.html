@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Three Layer Architecture of Web Application in Hindi</title>
+<meta name="description" content="Three-Layer Architecture एक structured तरीका है, जिससे Web Application को तीन अलग-अलग layers में divide किया जाता है। यह architecture application को modular, scalable और maintainable बनाता है">
+<meta name="keywords" content="three layer architechure of web applications in hindi, three layer architechure of web app in hindi, three layer architechure of web application explain in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Advanced-Java/three-layer-architechure-of-web-app.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="Three Layer Architecture of Web Application in Hindi" />
+<meta property="og:description" content="Three-Layer Architecture एक structured तरीका है, जिससे Web Application को तीन अलग-अलग layers में divide किया जाता है। यह architecture application को modular, scalable और maintainable बनाता है" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Advanced-Java/three-layer-architechure-of-web-app.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-27T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Three Layer Architecture of Web Application in Hindi" />
+<meta name="twitter:description" content="Three-Layer Architecture एक structured तरीका है, जिससे Web Application को तीन अलग-अलग layers में divide किया जाता है। यह architecture application को modular, scalable और maintainable बनाता है" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Three Layer Architecture of Web Application in Hindi",
+  "description": "Three-Layer Architecture एक structured तरीका है, जिससे Web Application को तीन अलग-अलग layers में divide किया जाता है। यह architecture application को modular, scalable और maintainable बनाता है",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-27",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Advanced-Java/three-layer-architechure-of-web-app.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../all-page-ot.html">Online Test</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+       
+  <div class="SearchContainer">
+  <div class="searchWrapper">
+    <button id="searchIconButton" onclick="searchNotes()" title="Search" aria-label="Search">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 
+             5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 
+             L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 
+             5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+             11.99 14 9.5 14z"
+        />
+      </svg>
+    </button>
+    <input 
+      type="text" 
+      id="searchBox"
+      placeholder="Search Notes..."
+      onkeyup="searchNotes()" 
+      oninput="handleInputChange()"
+    />
+    <button id="clearButton" onclick="clearSearch()" title="Clear">✖</button>
+  </div>
+  <div id="searchResults"></div>
+</div>
+
+ <div class="containered">
+     <div class="content">
+  <h1>Three Layer Architecture of Web Application in Hindi</h1><br>
+  <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="dynamic-websites.html">Privious</a>
+<a class="next-privius-button-styles" href="ip-address-port-and-url.html">Next</a>
+</div>
+  <h2>Three Layer Architecture of Web Application</h2>
+  <p>Three-Layer Architecture एक structured तरीका है, जिससे Web Application को तीन अलग-अलग layers में divide किया जाता है। यह architecture application को modular, scalable और maintainable बनाता है।</p>
+  
+  <h3>1. Presentation Layer (Client Layer)</h3>
+  <ul><li>यह layer user interface (UI) को handle करती है और users के साथ interaction करती है।</li>
+    <li>इसमें HTML, CSS, JavaScript, React, Angular, और Vue.js जैसी technologies का उपयोग होता है।</li>
+    <li>User द्वारा किए गए requests को Business Layer को भेजती है और responses को process करके दिखाती है।</li>
+    <li><b>Example:</b> Login Page, Dashboard, Forms, और Buttons.</li></ul>
+ 
+  <h3>2. Business Logic Layer (Application Layer)</h3>
+  <ul><li>यह layer Application की core logic को handle करती है और data processing का काम करती है।</li>
+    <li>इसमें Java (JSP, Servlets, Spring), Python (Django, Flask), PHP, .NET, और Node.js जैसी technologies का उपयोग किया जाता है।</li>
+    <li>यह layer Presentation Layer से data लेकर उसे Database Layer से connect करती है और जरूरी processing करके response return करती है।</li>
+    <li><b>Example:</b> User authentication, Payment processing, और Data validation.</li></ul>
+
+  <h3>3. Data Layer (Database Layer)</h3>
+  <ul><li>यह layer database operations को manage करती है और application का data store करती है।</li>
+    <li>इसमें MySQL, PostgreSQL, MongoDB, Oracle, Firebase जैसी databases का उपयोग होता है।</li>
+    <li>Business Layer से data लेकर उसे store, retrieve, update और delete करने का काम करती है।</li>
+    <li><b>Example:</b> User Information, Product Details, और Transaction Records.</li></ul>
+  
+  <img class="img" src="https://deepeweb.github.io/Images/three-layer-architechure-of-web-app.webp" alt="three layer architecture, deep e web">
+
+  <h2>Three-Layer Architecture के फायदे</h2>
+<ol><li><b style="color: green">Modular Design –</b> Application को तीन अलग-अलग हिस्सों में बांटने से development, testing और debugging आसान हो जाता है।</li>
+<li><b style="color: green">Scalability –</b> Business logic और database अलग होने के कारण application को आसानी से expand किया जा सकता है, जिससे high traffic को manage करना संभव होता है।</li>
+<li><b style="color: green">Security –</b> Data Layer और Business Layer को अलग रखने से database पर direct access नहीं मिलता, जिससे SQL Injection और अन्य security issues कम हो जाते हैं।</li>
+<li><b style="color: green">Code Reusability –</b> Business Logic Layer को बार-बार लिखने की जरूरत नहीं पड़ती, जिससे इसे अन्य applications में भी reuse किया जा सकता है।</li>
+<li><b style="color: green">Easier Maintenance & Updates –</b> यदि किसी एक layer में बदलाव करना हो तो पूरी application को modify किए बिना update किया जा सकता है।</li>
+<li><b style="color: green">Better Performance –</b> Load Balancing और Caching को implement करना आसान होता है, जिससे website की speed और efficiency बढ़ती है।</li>
+<li><b style="color: green">Separation of Concerns –</b> Presentation, Business Logic और Data को अलग-अलग manage करने से development streamlined हो जाता है और errors को जल्दी fix किया जा सकता है।</li>
+<li><b style="color: green">Multiple Frontend Support –</b> एक ही Business Logic Layer का उपयोग करके Web, Mobile, और Desktop Applications को अलग-अलग frontends पर आसानी से integrate किया जा सकता है।</li>
+<li><b style="color: green">Interoperability –</b> Backend को RESTful APIs या Web Services के जरिए expose किया जा सकता है, जिससे इसे अन्य platforms और technologies के साथ आसानी से integrate किया जा सकता है।</li>
+<li><b style="color: green">Database Independence –</b> Application को एक database से दूसरे database पर आसानी से migrate किया जा सकता है, क्योंकि database operations Business Logic Layer से अलग रहते हैं।</li></ol>
+
+  <h2>Three-Layer Architecture के नुकसान</h2>
+<ol><li><b style="color: green">Complexity –</b> Simple applications के लिए यह architecture extra complexity बढ़ा सकता है, क्योंकि तीनों layers को अलग-अलग manage करना पड़ता है।</li>
+<li><b style="color: green">Performance Issues –</b> हर request को तीन layers से होकर गुजरना पड़ता है, जिससे response time बढ़ सकता है, खासकर अगर layers के बीच communication slow हो।</li>
+<li><b style="color: green">Development Time ज्यादा लगता है –</b> तीन अलग-अलग layers को implement और maintain करने में ज़्यादा समय और resources लगते हैं।</li>
+<li><b style="color: green">Debugging मुश्किल हो सकती है –</b> किसी issue को trace करने के लिए developer को तीनों layers को check करना पड़ता है, जिससे troubleshooting और debugging कठिन हो सकती है।</li>
+<li><b style="color: green">High Resource Consumption –</b> हर layer अलग-अलग काम करती है, जिससे ज़्यादा memory, CPU usage और database connections की जरूरत होती है।</li>
+<li><b style="color: green">Latency बढ़ सकती है –</b> अगर layers अलग-अलग servers पर हो, तो network latency की समस्या हो सकती है, जिससे application की speed पर असर पड़ सकता है।</li>
+<li><b style="color: green">Not Suitable for Small Applications –</b> छोटी और simple applications के लिए यह architecture over-engineering हो सकता है, क्योंकि इसमें ज्यादा structure और management की जरूरत होती है।</li>
+<li><b style="color: green">Integration Complexity –</b> External APIs, third-party services या दूसरे applications से integration करते समय यह architecture ज़्यादा configuration और setup मांगता है।</li>
+<li><b style="color: green">Maintenance Cost ज्यादा होती है –</b> तीन layers को अलग-अलग manage करने के लिए अधिक skilled developers और ज्यादा maintenance cost की जरूरत होती है।</li>
+<li><b style="color: green">Scalability Issues in Poor Implementation –</b> अगर architecture सही तरीके से implement नहीं किया गया हो, तो scalability में दिक्कतें आ सकती हैं, जैसे कि database bottlenecks या slow API responses.</li></ol>
+    <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="dynamic-websites.html">Privious</a>
+<a class="next-privius-button-styles" href="ip-address-port-and-url.html">Next</a>
+</div>
+  
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div id="user-alert-container"></div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+ <div id="dynamic-container"></div>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+               <div id="side-nav-advanced-java"></div><br>
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+<div id="dynamic-containers"></div>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../fetch.js"></script>
+  <script>
+      // Side nav load hone ke baad active link set karein
+function highlightActiveLink(containerId) {
+    const currentPage = window.location.pathname.split("/").pop(); // current file ka naam
+    const container = document.getElementById(containerId);
+    
+    if (container) {
+        const links = container.querySelectorAll("a");
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active-link");
+            }
+        });
+    }
+}
+
+// Example: Jab side nav load ho jaye tab call karein
+fetch("side-nav-advanced-java.html")
+    .then(res => res.text())
+    .then(html => {
+        const nav = document.getElementById("side-nav-advanced-java");
+        if (nav) {
+            nav.innerHTML = html;
+            highlightActiveLink("side-nav-advanced-java");
+        }
+    });
+    </script>
+</body>
+</html>

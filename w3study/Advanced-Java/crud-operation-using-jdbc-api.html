@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- SEO Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>CRUD Operation Using JDBC API in Hindi</title>
+<meta name="description" content="JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।">
+<meta name="keywords" content="crud operation using jdbc api in hindi, crud operation in hindi, advanced java crud operation in hindi, crud operation using jdbc api in advanced java in hindi, deep e web">
+<meta name="author" content="Deepanshu Ranjan">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deepeweb.github.io/Advanced-Java/crud-operation-using-jdbc-api.html">
+
+<!-- Open Graph Meta (for Facebook and others) -->
+<meta property="og:title" content="CRUD Operation Using JDBC API in Hindi" />
+<meta property="og:description" content="JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।" />
+<meta property="og:image" content="https://deepeweb.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://deepeweb.github.io/Advanced-Java/crud-operation-using-jdbc-api.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_IN" />
+<meta property="article:author" content="https://deepeweb.github.io/" />
+<meta property="article:modified_time" content="2025-07-27T00:00:00+05:30" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CRUD Operation Using JDBC API in Hindi" />
+<meta name="twitter:description" content="JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।" />
+<meta name="twitter:image" content="https://deepeweb.github.io/favicon.png" />
+<meta name="twitter:site" content="@DeepanshuR857" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "CRUD Operation Using JDBC API in Hindi",
+  "description": "JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।",
+  "author": {
+    "@type": "Person",
+    "name": "Deepanshu Ranjan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Deep E Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deepeweb.github.io/favicon.png"
+    }
+  },
+  "dateModified": "2025-07-27",
+  "datePublished": "2025-07-25",
+  "image": "https://deepeweb.github.io/favicon.png",
+  "url": "https://deepeweb.github.io/Advanced-Java/crud-operation-using-jdbc-api.html",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- Website Favicon -->
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+
+  <link rel="stylesheet" href="../w3study-content.css">
+  <link rel="stylesheet" href="../ad-style.css">
+  <link rel="stylesheet" href="../searchBox.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+  
+  <style>
+    .left-side-nav-web-design {
+      display: flex;
+      background: #00f;
+    }
+    .left-side-nav-web-design h2 {
+      color: #ffffff;
+      font-size: 30px;
+      display:flex;
+      margin: 10px;
+      margin-top: 6px;
+      margin-left: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width:768px) {
+    	.left-side-nav-web-design h2 {
+    		font-size: 25px;
+    	}
+    }
+    .left-side-nav-web-design p {
+      color: #fff;
+      font-size: 13px;
+      margin: 5px;
+      margin-top: 0;
+      padding-top: 0;
+      margin-left: 10px;
+      padding: 0;
+    }
+    .left-side-nav-web-design a {
+      text-decoration: none;
+    }
+    .left-side-nav-web-designs {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      align-content: center;
+      margin: 10px;
+      margin-right: 0;
+      border: none;
+    }
+    .responsive-ad-container {
+    	display:flex; margin:auto; gap:10px; justify-content:center; align-items:center;
+    }
+    @media (max-width:640px) {
+    	.responsive-ad-container {
+    		display:flex;
+    		flex-direction:column;
+    	}
+    }
+    </style>
+  
+</head>
+<body>
+    <header>
+        <div style="height: 3rem; background: #ff9933;"></div>
+        <div style="height: 3rem; background: white;"><h3 style="margin-top: 0;">deepeweb.github.io</h3></div>
+      <div style="height: 3rem; background: green;"></div>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../all-page-ot.html">Online Test</a>
+                <a href="../notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+  <div class="SearchContainer">
+        <div class="searchWrapper">
+            <img src="https://deepeweb.github.io/favicon.png" alt="iwt hindi notes, internet web technology notes in hindi" class="search-box-left-pic">
+            <input type="text" id="searchBox" placeholder="Search Notes..." onkeyup="searchNotes()" oninput="handleInputChange()" />
+            <button id="clearButton" onclick="clearSearch()" title="Clear"></button>
+            <button id="searchIconButton" onclick="searchNotes()" title="Search" aria-label="Search">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 
+             5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 
+             L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 
+             5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+             11.99 14 9.5 14z" />
+                </svg>
+            </button>
+        </div>
+        <div id="searchResults"></div>
+    </div>
+
+ <div class="containered">
+        <aside class="left-side-nav">
+            <div class="uls">
+                <div class="left-side-nav-web-design">
+                    <a href="https://deepeweb.github.io">
+                        <img src="https://deepeweb.github.io/favicon.png" alt="deep e web" class="left-side-nav-web-designs"></a>
+                    <div style="display: flex; flex-direction: column;">
+                        <a href="https://deepeweb.github.io">
+                            <h2>Deep E Web</h2></a>
+                        <a href="https://deepeweb.github.io">
+                            <p>https://deepeweb.github.io</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="ad-slot" data-adsize="9:19-responsive"></div>
+                <img src="https://deepeweb.github.io/favicon.png" alt="deep e web, study in hindi" style="width: 100%; height: auto;">
+                <div class="ad-slot" data-adsize="9:20-responsive"></div>
+            </div>
+        </aside>
+     <div class="content">
+  <h1>CRUD Operation Using JDBC API in Hindi</h1>
+<div class="next-privius-btn-styles">
+<button class="next-privius-button-styles" onclick="window.location.href='jdbc-api.html'">Privious</button>
+<a class="next-privius-button-styles" href="database-connection.html">Next</a>
+</div>
+  <h2>CRUD Operation Using JDBC API</h2>
+  <p>JDBC (Java Database Connectivity) API का उपयोग Java में database से connect करने और CRUD (Create, Read, Update, Delete) operation को perform करने के लिए किया जाता है।</p>
+  <p>JDBC driver का उपयोग करके Java application को database से जोड़ा जाता है।</p>
+  <p>database connection के लिए DriverManager.getConnection(url, username, password) का उपयोग किया जाता है।</p>
+  <p>Statement/PreparedStatement का उपयोग SQL query को run कराने के लिए किया जाता है।</p>
+
+<h3>Create Operation</h3>
+  <p>Create (Insert Operation) के लिए INSERT INTO table_name (columns) VALUES (values) SQL Query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">String query = "INSERT INTO students (id, name, age) VALUES (?, ?, ?)";
+PreparedStatement ps = con.prepareStatement(query);
+ps.setInt(1, 101);
+ps.setString(2, "Rahul");
+ps.setInt(3, 21);
+ps.executeUpdate();</code></pre>
+</div>
+
+<h3>Read Operaton</h3>
+<p>Read (Select Operation) के लिए SELECT * FROM table_name SQL query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">String query = "SELECT * FROM students";
+Statement st = con.createStatement();
+ResultSet rs = st.executeQuery(query);
+while (rs.next()) {
+    System.out.println(rs.getInt("id") + " " + rs.getString("name") + " " + rs.getInt("age"));
+}</code></pre>
+</div>
+
+<h3>Update Operation</h3>
+<p>Update Operation के लिए UPDATE table_name SET column=value WHERE condition SQL query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">String query = "UPDATE students SET age = ? WHERE id = ?";
+PreparedStatement ps = con.prepareStatement(query);
+ps.setInt(1, 22);
+ps.setInt(2, 101);
+ps.executeUpdate();</code></pre>
+</div>
+
+<h3>Delete Operation</h3>
+<p>Delete (Delete Operation) के लिए DELETE FROM table_name WHERE condition SQL query का उपयोग किया जाता है।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">String query = "DELETE FROM students WHERE id = ?";
+PreparedStatement ps = con.prepareStatement(query);
+ps.setInt(1, 101);
+ps.executeUpdate();</code></pre>
+</div>
+<p>Exception Handling के लिए try-catch का उपयोग किया जाता है ताकि SQL और कनेक्शन error को handle किया जा सके।</p>
+
+<p>Connection Close करना ज़रूरी होता है ताकि resources free हो जाएं।</p>
+
+<div class="text">
+<pre><code id="code" class="language-java">con.close();</code></pre>
+</div>
+<p>JDBC steps में सबसे पहले driver load करना, connection बनाना, statements तैयार करना, SQL execute करना और connection बंद करना शामिल होता है।</p>
+ <div class="next-privius-btn-styles">
+<a class="next-privius-button-styles" href="jdbc-api.html">Privious</a>
+<a class="next-privius-button-styles" href="database-connection.html">Next</a>
+</div>
+ <br><hr><br>
+<div class="request">
+  <h4>Request</h4>
+  <div id="user-alert-container"></div>
+</div>
+<br><hr><br>
+
+<div class="extra">
+<div id="dynamic-container"></div>
+    </div>
+    </div>
+  
+        <aside class="side-nav">
+          <div class="uls">
+               <div id="side-nav-advanced-java"></div><br>
+           </div>
+        </aside>
+   </div>
+   
+   <div class="extras">
+<div id="dynamic-containers"></div>
+    </div>
+   
+   <div class="responsive">
+     <div class="radio-links">
+       <a href="../Blogs/top-jobs-in-india.html">Top High Selary Jobs in India</a>
+       <a href="../Blogs/top-courses-after-12th.html">Top Courses After 12th</a>
+       <a href="../Blogs/top-collage-for-b-tech-in-india.html">Top College for B Tech in India</a>
+       <a href="../Blogs/top-gov-polytechnic-college.html">Top Government College in India</a>
+       <a href="../Blogs/how-to-make-software-engineer.html">Expert Software Engineer कैसे बनें</a>
+       </div>
+       <div class="radio-links">
+       <a href="../Blogs/indias-top-10-big-companies.html">India's Top 10 Big Companies in Hindi</a>
+       <a href="../Blogs/how-to-take-job-in-isro.html">ISRO में Job कैसे मिलेगी – पूरी जानकारी हिंदी में</a>
+       <a href="../Blogs/how-to-make-ias.html">IAS कैसे बनें – पूरी जानकारी हिंदी में </a>
+       <a href="../Blogs/world-top-10-big-software-company.html">दुनिया की Top 10 सबसे बड़ी Software Companies</a>
+       <a href="../Blogs/network-of-tata-group.html">Tata Group का Network – भारत का सबसे बड़ा Business Network</a>
+       </div>
+     </div>
+   
+   <section class="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="40"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="40"></a>
+    </section>
+<footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../w3study.js"></script>
+    <script src="../searchbox.js"></script>
+    <script src="../fetch.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+  <script>
+      // Side nav load hone ke baad active link set karein
+function highlightActiveLink(containerId) {
+    const currentPage = window.location.pathname.split("/").pop(); // current file ka naam
+    const container = document.getElementById(containerId);
+    
+    if (container) {
+        const links = container.querySelectorAll("a");
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active-link");
+            }
+        });
+    }
+}
+
+// Example: Jab side nav load ho jaye tab call karein
+fetch("side-nav-advanced-java.html")
+    .then(res => res.text())
+    .then(html => {
+        const nav = document.getElementById("side-nav-advanced-java");
+        if (nav) {
+            nav.innerHTML = html;
+            highlightActiveLink("side-nav-advanced-java");
+        }
+    });
+    </script>
+</body>
+</html>
