@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="long-typing-test.css">
+	  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+	<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+    <div class="container">
+        <h1>Typing Speed Test</h1>
+        
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="story-select">
+                <label for="story-select">Choose a story:</label>
+                <select id="story-select">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            
+            <div class="time-select">
+                <label for="time-select">Select time limit (minutes):</label>
+                <input type="number" id="time-select" min="1" max="10" value="1">
+            </div>
+            
+            <button id="start-btn">Start Test</button>
+        </div>
+        
+        <!-- Countdown Screen -->
+        <div id="countdown-screen" class="screen">
+            <div id="countdown">3</div>
+        </div>
+        
+        <!-- Test Screen -->
+        <div id="test-screen" class="screen">
+            <div class="timer" id="timer">60</div>
+            
+            <div class="story-container" id="story-container">
+                <!-- Story will be populated by JavaScript -->
+            </div>
+            
+            <textarea id="typing-input" placeholder="Start typing here..."></textarea>
+            
+            <button id="complete-btn">Complete Test</button>
+        </div>
+        
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <h2>Test Results</h2>
+            <div class="result-container">
+            <div class="results">
+                <div class="result-item">
+                    <span>Accuracy:</span>
+                    <span id="accuracy" class="result-value">100%</span>
+                </div>
+                
+                <div class="result-item">
+                    <span>Words Per Minute (WPM):</span>
+                    <span id="wpm" class="result-value">0</span>
+                </div>
+                
+                <div class="result-item">
+                    <span>Time Taken:</span>
+                    <span id="time-taken" class="result-value">0s</span>
+                </div>
+                
+                <div class="result-item">
+                    <span>Correct Words:</span>
+                    <span id="correct-words" class="result-value">0</span>
+                </div>
+                
+                <div class="result-item" style="border-bottom:0;">
+                    <span>Incorrect Words:</span>
+                    <span id="incorrect-words" class="result-value">0</span>
+                </div>
+            </div></div>
+            
+            <button id="restart-btn">Restart Test</button>
+        </div>
+    </div>
+<div class="footer-ads-for-editors">
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ac115ff08201a38f29b8c5c7bf7199e0',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ac115ff08201a38f29b8c5c7bf7199e0/invoke.js"></script>
+</div>
+    <script src="long-typing-test.js"></script>
+    <script>
+  	function goBack() {
+	window.history.back();
+} 
+lucide.createIcons();
+  </script>
+</body>
+</html>

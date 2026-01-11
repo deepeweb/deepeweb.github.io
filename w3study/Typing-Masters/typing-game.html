@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Bubble Game</title>
+    <link rel="stylesheet" href="side-nav.css">
+    <link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #888, skyblue, blue);
+            height: 100vh;
+            user-select: none;
+        }
+        
+        #gameContainer {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-shadow: 2px 1px white;
+            font-weight: bold;
+            font-size: 24px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-transform: lowercase;
+            transition: transform 0.1s;
+        }
+       
+        .bubble.popped {
+            animation: pop 0.3s forwards;
+        }
+        
+        @keyframes pop {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+        
+        #scoreDisplay {
+            position: absolute;
+            top: 45px;
+            left: 10px;
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+        
+        #missedDisplay {
+            position: absolute;
+            top: 75px;
+            left: 10px;
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+        
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 2px;
+            text-align: center;
+            display: none;
+            z-index: 200;
+        }
+        
+        #startScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 300;
+        }
+      
+        #startBtn {
+            padding: 15px 30px;
+            background-color: #333;
+            border-color: #666;
+            color: white;
+            border-radius: 1px;
+            font-size: 24px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.4s ease;
+        }
+        
+        #startBtn:hover {
+            background-color: #444;
+        }
+        
+        #restartBtn {
+            padding: 10px 25px;
+            background-color: #444;
+            color: white;
+            border-radius: 1px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.4s ease;
+        }
+        
+        #restartBtn:hover {
+           background-color: #555;
+        }
+        
+        .game-title {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .instructions {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            max-width: 80%;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .keyboard-instruction {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .footer-ads-for-editors {
+	background: #ccc;
+  width: 100%;
+  height: auto;
+  border: 1px solid #2bc;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 640px) {
+	.footer-ads-for-editors {
+		height: 8vh;
+	}
+}
+.editor-actions-home-btn {
+    	position: fixed;
+    	top:0;
+    	left:0;
+      margin:0;
+      z-index: 9999;
+      padding:6px 12px;
+      border-radius:1px;
+      cursor:pointer;
+      background:#2c3144;
+      color:#fff;
+      transition:background 0.1s;
+      }
+      .editor-actions-home-btn:hover {
+      	background: #3d425a;
+      }
+    </style>
+</head>
+<body>
+	<div class="footer-ads-for-editors">
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ac115ff08201a38f29b8c5c7bf7199e0',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ac115ff08201a38f29b8c5c7bf7199e0/invoke.js"></script>
+</div>
+    <div id="gameContainer">
+    	<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+        <div id="scoreDisplay">Score: 0</div>
+        <div id="missedDisplay">Missed: 0/10</div>
+        <div id="gameOver">
+            <h1>Game Over!</h1>
+            <p id="finalScore">Your score: 0</p>
+            <button id="restartBtn">Play Again</button>
+        </div>
+    </div>
+
+    <div id="startScreen">
+        <h1 class="game-title">Keyboard Bubble Game</h1>
+        <p class="instructions">Press the keyboard key matching the letter in the bubbles to pop them!</p>
+        <p class="keyboard-instruction">Use keyboard only - no mouse/touch</p>
+        <p class="instructions">Don't let 10 bubbles reach the top. The more you pop, the faster they come!</p>
+        <button id="startBtn">Start Game</button>
+    </div>
+
+<script>
+    // Game variables
+    let score = 0;
+    let missed = 0;
+    let bubbleSpeed = 1;
+    let spawnSpeed = 2000;
+    let bubbles = [];
+    let gameActive = false;
+    let lastBubbleTime = 0;
+    let consecutiveHits = 0;
+    let baseSize = 50;
+    let colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF', '#40C4FF', '#18FFFF', '#64FFDA', '#69F0AE', '#B2FF59', '#EEFF41', '#FFFF00', '#FFD740', '#FFAB40', '#FF6E40'];
+
+    // Sound variables
+    let bgMusic = new Audio("https://deepeweb.github.io/Sounds/loopable-bg-sound.mp3");
+    bgMusic.loop = true; // background music loop hoga
+
+    let popSound = new Audio("https://deepeweb.github.io/Sounds/tab-sound.mp3");
+
+    // DOM elements
+    const gameContainer = document.getElementById('gameContainer');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const missedDisplay = document.getElementById('missedDisplay');
+    const gameOverScreen = document.getElementById('gameOver');
+    const finalScoreElement = document.getElementById('finalScore');
+    const restartBtn = document.getElementById('restartBtn');
+    const startScreen = document.getElementById('startScreen');
+    const startBtn = document.getElementById('startBtn');
+
+    // Initialize game
+    function init() {
+        score = 0;
+        missed = 0;
+        bubbleSpeed = 1;
+        spawnSpeed = 2000;
+        bubbles = [];
+        gameActive = true;
+        consecutiveHits = 0;
+        baseSize = 50;
+
+        // Clear existing bubbles
+        document.querySelectorAll('.bubble').forEach(bubble => bubble.remove());
+
+        // Update displays
+        scoreDisplay.textContent = `Score: ${score}`;
+        missedDisplay.textContent = `Missed: ${missed}/10`;
+
+        // Hide game over and start screens
+        gameOverScreen.style.display = 'none';
+        startScreen.style.display = 'none';
+
+        // Start background music
+        bgMusic.currentTime = 0; 
+        bgMusic.play();
+
+        // Start game loop
+        requestAnimationFrame(gameLoop);
+
+        // Start bubble spawning
+        lastBubbleTime = Date.now();
+
+        // Focus on game container for keyboard input
+        gameContainer.focus();
+    }
+
+    // Game loop
+    function gameLoop() {
+        if (!gameActive) return;
+
+        const now = Date.now();
+
+        // Spawn new bubble at intervals
+        if (now - lastBubbleTime > spawnSpeed) {
+            createBubble();
+            lastBubbleTime = now;
+        }
+
+        // Move all bubbles
+        bubbles.forEach(bubble => {
+            if (bubble.element) {
+                const currentTop = parseFloat(bubble.element.style.top);
+                const newTop = currentTop - bubbleSpeed;
+                bubble.element.style.top = `${newTop}px`;
+
+                // Check if bubble reached top
+                if (newTop < -parseInt(bubble.element.style.height)) {
+                    bubbleMissed(bubble);
+                }
+            }
+        });
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    // Create a new bubble
+    function createBubble() {
+        const bubbleElement = document.createElement('div');
+        bubbleElement.className = 'bubble';
+
+        // Random letter (a-z)
+        const letter = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+        bubbleElement.textContent = letter;
+
+        // Random size (based on baseSize)
+        const size = baseSize + Math.floor(Math.random() * 20);
+        bubbleElement.style.width = `${size}px`;
+        bubbleElement.style.height = `${size}px`;
+
+        // Random horizontal position
+        const left = Math.floor(Math.random() * (window.innerWidth - size));
+        bubbleElement.style.left = `${left}px`;
+
+        // Start at bottom
+        bubbleElement.style.top = `${window.innerHeight}px`;
+
+        // Random color
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        bubbleElement.style.backgroundColor = color;
+
+        // Add to game container
+        gameContainer.appendChild(bubbleElement);
+
+        // Store bubble data
+        const bubble = {
+            element: bubbleElement,
+            letter: letter,
+            popped: false
+        };
+
+        bubbles.push(bubble);
+    }
+
+    // Handle keyboard input
+    document.addEventListener('keydown', (e) => {
+        if (!gameActive) return;
+
+        const keyPressed = e.key.toLowerCase();
+
+        // Find first bubble with matching letter (from bottom to top)
+        for (let i = bubbles.length - 1; i >= 0; i--) {
+            const bubble = bubbles[i];
+            if (!bubble.popped && bubble.letter === keyPressed) {
+                popBubble(bubble);
+                consecutiveHits++;
+
+                // Increase difficulty after 5 consecutive hits
+                if (consecutiveHits >= 5) {
+                    bubbleSpeed = Math.min(bubbleSpeed + 0.2, 6);
+                    spawnSpeed = Math.max(spawnSpeed - 100, 800);
+                    baseSize = Math.min(baseSize + 2, 70);
+                    consecutiveHits = 0;
+                }
+                return;
+            }
+        }
+
+        // If no bubble was popped and key was a letter, reset consecutive hits
+        if (/^[a-z]$/.test(keyPressed)) {
+            consecutiveHits = 0;
+        }
+    });
+
+    // Pop a bubble
+    function popBubble(bubble) {
+        if (bubble.popped) return;
+
+        bubble.popped = true;
+        bubble.element.classList.add('popped');
+
+        // Play pop sound
+        let sound = popSound.cloneNode(); // clone so multiple sounds overlap
+        sound.play();
+
+        // Increase score
+        score++;
+        scoreDisplay.textContent = `Score: ${score}`;
+
+        // Remove bubble after animation
+        setTimeout(() => {
+            if (bubble.element && bubble.element.parentNode) {
+                bubble.element.parentNode.removeChild(bubble.element);
+            }
+            bubbles = bubbles.filter(b => b !== bubble);
+        }, 600);
+    }
+
+    // Handle missed bubble
+    function bubbleMissed(bubble) {
+        if (bubble.popped) return;
+
+        bubble.popped = true;
+
+        // Remove bubble
+        if (bubble.element && bubble.element.parentNode) {
+            bubble.element.parentNode.removeChild(bubble.element);
+        }
+        bubbles = bubbles.filter(b => b !== bubble);
+
+        // Increase missed count
+        missed++;
+        missedDisplay.textContent = `Missed: ${missed}/10`;
+
+        // Reset consecutive hits counter
+        consecutiveHits = 0;
+
+        // Check game over
+        if (missed >= 10) {
+            endGame();
+        }
+    }
+
+    // End the game
+    function endGame() {
+        gameActive = false;
+
+        // Stop background music
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+
+        // Show game over screen
+        finalScoreElement.textContent = `Your score: ${score}`;
+        gameOverScreen.style.display = 'block';
+    }
+
+    // Event listeners
+    startBtn.addEventListener('click', init);
+    restartBtn.addEventListener('click', () => {
+        gameOverScreen.style.display = 'none';
+        init();
+    });
+
+    // Make game container focusable
+    gameContainer.setAttribute('tabindex', '0');
+
+    // Show start screen initially
+    startScreen.style.display = 'flex';
+</script>
+
+    <script>
+  	function goBack() {
+	window.history.back();
+} 
+lucide.createIcons();
+  </script>
+</body>
+</html>

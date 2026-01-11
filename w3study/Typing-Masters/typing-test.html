@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" name="noindex, follow">
+  <title>Typing Test Online</title>
+  <link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+  <link rel="stylesheet" href="typing-test-css.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  
+<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+  <div class="setup-container" id="setupContainer">
+  	<h1>Typing Test</h1>
+    <label for="testDuration">Select Test Duration:</label>
+    <select class="test-duration" id="testDuration">
+      <option value="1">1 Minute</option>
+      <option value="2">2 Minutes</option>
+      <option value="3">3 Minutes</option>
+      <option value="5">5 Minutes</option>
+      <option value="10">10 Minutes</option>
+    </select>
+    <button id="startBtn">Start Test</button>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown" id="countdown" style="display:none;"></div>
+
+  <!-- Typing area -->
+  <div class="typing-container" id="typingContainer" style="display:none;">
+    <div class="timer" id="timer">00:00</div>
+    <div class="story-container" id="storyContainer"></div>
+    <textarea id="typingArea" placeholder="Start typing here..." disabled></textarea>
+  </div>
+
+  <!-- Results screen -->
+  <div class="results" id="results" style="display:none;">
+    <h2>Test Results</h2>
+    <div class="result-item"><span>Words Per Minute:</span> <span id="wpm">0</span></div>
+    <div class="result-item"><span>Accuracy:</span> <span id="accuracy">0%</span></div>
+    <div class="result-item"><span>Score:</span> <span id="score">0</span></div>
+    <div class="result-item"><span>Time Taken:</span> <span id="timeTaken">0s</span></div>
+    <button id="restartBtn">Restart</button>
+  </div>
+<div class="footer-ads-for-editors">
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ac115ff08201a38f29b8c5c7bf7199e0',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ac115ff08201a38f29b8c5c7bf7199e0/invoke.js"></script>
+</div>
+  <script src="typing-test-stories.js"></script>
+  <script src="typing-test-script.js"></script>
+  <script>
+  	function goBack() {
+	window.history.back();
+} 
+lucide.createIcons();
+  </script>
+</body>
+</html>

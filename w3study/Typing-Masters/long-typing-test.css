@@ -1,0 +1,205 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+           
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .container {
+            background-color:#acf;
+            width: 100%;
+            padding: 30px;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Start Screen Styles */
+        .story-select, .time-select {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #666;
+            color: white;
+            border-color: #fff;
+            padding: 12px 25px;
+            border-radius: 1px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #777;
+        }
+
+        /* Countdown Styles */
+        #countdown {
+            font-size: 5rem;
+            color: #e74c3c;
+            margin: 40px 0;
+        }
+
+        /* Test Screen Styles */
+        .timer {
+            font-size: 1.5rem;
+            color: #e74c3c;
+            text-align: right;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .story-container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+            line-height: 1.6;
+            border: 2px solid #ddd;
+        }
+
+        .word {
+            display: inline-block;
+            margin: 0 3px;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .current {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .correct {
+            color: #27ae60;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 15px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: none;
+            margin-bottom: 20px;
+        }
+
+        /* Results Screen Styles */
+        .results {
+            text-align: left;
+            margin:0;
+        }
+
+        .result-item {
+            margin:0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius:0;
+            border-bottom: 1px solid #111;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+        }
+				.result-container {
+					margin:0 auto;padding:0;border:1px solid #111;width:50%;
+				}
+        .result-value {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .footer-ads-for-editors {
+	background: #ccc;
+	height: auto;
+	width:100%;
+	border: 1px solid #2bc;
+	bottom: 0;
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media (max-width: 640px) {
+	.footer-ads-for-editors {
+		height: 8vh;
+	}
+}
+.editor-actions-home-btn {
+    	position:fixed;
+    	left:0;
+    	top:0;
+      margin:0;
+      padding:6px 12px;
+      border-radius:2px;
+      cursor:pointer;
+      background:#2c3144;
+      color:#fff;
+      transition:background 0.1s;
+      z-index: 9999;
+      }
+      .editor-actions-home-btn:hover {
+      	background: #3d425a;
+      }

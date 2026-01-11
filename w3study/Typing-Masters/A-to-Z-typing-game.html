@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" name="noindex, follow">
+<title>Bubble Typing Game - A to Z Typing Game Online</title>
+<link rel="stylesheet" href="A-to-Z-typing-game.css">
+<link rel="icon" type="image/png" href="https://deepeweb.github.io/favicon.png" />
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+	<button onclick="goBack()" class="editor-actions-home-btn"><i data-lucide="arrow-left"></i></button>
+<div class="game-container">
+
+    <div class="stats">
+        <div id="timer">Time: 0.0s</div>
+        <div id="errors">Errors: 0</div>
+        <div id="score">Score: 0</div>
+    </div>
+    <!-- Start Overlay -->
+    <div class="overlay" id="start-screen">
+        <button class="start-btn" id="start-btn">Start Game</button>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">3</div>
+
+    <!-- Bubble Circle -->
+    <div class="bubble-container" id="bubble-container"></div>
+
+    <!-- Result Screen -->
+    <div class="result-overlay" id="result-screen">
+        <div class="result-box">
+            <h2>Game Over</h2>
+            <h3 id="result-speed" style="color: white;">Score: 0</h3>
+            <p id="result-time" style="color:orange;">Time: 0.0s</p>
+            <p id="result-errors" style="color:red;">Errors: 0</p>
+            <p id="result-accuracy" style="color:green;font-weight:bold;">Accuracy: 100%</p>
+            
+            <button class="restart-btn" id="restart-btn">Restart</button>
+        </div>
+    </div>
+</div>
+<div class="footer-ads-for-editors">
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'ac115ff08201a38f29b8c5c7bf7199e0',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ac115ff08201a38f29b8c5c7bf7199e0/invoke.js"></script>
+</div>
+<script src="A-to-Z-typing-game.js"></script>
+<script>
+  	function goBack() {
+	window.history.back();
+} 
+lucide.createIcons();
+  </script>
+</body>
+</html>
