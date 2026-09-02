@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reaction Reel Studio Pro - Advanced HD</title>
+  <style>
+    :root {
+      --primary: #ff2d55;
+      --secondary: #ff9500;
+      --accent: #00d4ff;
+      --success: #00ff88;
+      --bg-dark: #0a0a12;
+      --bg-card: #1a1a2e;
+      --text-light: #ffffff;
+      --text-muted: #b0b0c0;
+      --border-glow: #ff2d5580;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 50%, #0f0f1a 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    .app-container {
+      max-width: 1400px;
+      width: 100%;
+      background: rgba(15, 15, 25, 0.95);
+      backdrop-filter: blur(20px);
+      border: 2px solid var(--border-glow);
+      box-shadow: 0 0 50px rgba(255, 45, 85, 0.3), 0 0 30px rgba(0, 212, 255, 0.2);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ff2d55, #ff9500, #00d4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 40px rgba(255, 45, 85, 0.5);
+      letter-spacing: 2px;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+
+    /* Steps Indicator */
+    .steps-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .step-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background: #2a2a3e;
+      color: #666;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .step-dot.active {
+      background: var(--primary);
+      color: white;
+      border-color: #ff2d55;
+      box-shadow: 0 0 20px rgba(255, 45, 85, 0.6);
+      transform: scale(1.1);
+    }
+
+    .step-dot.completed {
+      background: #00d4ff;
+      color: #0a0a12;
+      border-color: #00d4ff;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+
+    .step-line {
+      width: 60px;
+      height: 2px;
+      background: #2a2a3e;
+      transition: all 0.3s;
+    }
+
+    .step-line.completed {
+      background: #00d4ff;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Step Content */
+    .step-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .step-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Step 1 - Upload */
+    .upload-area {
+      border: 3px dashed #ff2d55;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: rgba(255, 45, 85, 0.05);
+    }
+
+    .upload-area:hover {
+      background: rgba(255, 45, 85, 0.1);
+      border-color: #ff9500;
+      box-shadow: 0 0 30px rgba(255, 45, 85, 0.3);
+    }
+
+    .upload-area.dragover {
+      background: rgba(255, 45, 85, 0.15);
+      border-color: #00d4ff;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+    }
+
+    .upload-icon {
+      font-size: 4rem;
+      margin-bottom: 15px;
+    }
+
+    .upload-area h3 {
+      color: #ff2d55;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .upload-area p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* Step 2 - Recording with 9:16 grid */
+    .recording-layout {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .grid-container {
+      position: relative;
+      width: 360px;
+      height: 640px; /* 9:16 ratio */
+      background: #000;
+      border: 3px solid #ff2d55;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 45, 85, 0.3);
+    }
+
+    .grid-reel-section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70%; /* 70% for reel */
+      overflow: hidden;
+      background: #111;
+    }
+
+    .grid-camera-section {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30%; /* 30% for camera */
+      overflow: hidden;
+      background: #000;
+      border-top: 2px solid #00d4ff;
+    }
+
+    .grid-reel-section video,
+    .grid-camera-section video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .controls-panel {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+    }
+
+    .customization-controls {
+      background: #1a1a2e;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ff9500;
+    }
+
+    .customization-controls h4 {
+      color: #ff9500;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .control-group {
+      margin-bottom: 15px;
+    }
+
+    .control-group label {
+      display: block;
+      color: #b0b0c0;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+    }
+
+    .control-group input[type="range"] {
+      width: 100%;
+      accent-color: #ff2d55;
+    }
+
+    .recording-controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      margin: 5px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(145deg, #ff2d55, #cc0044);
+      color: white;
+      border: 2px solid #ff99bb;
+    }
+
+    .btn-primary:hover {
+      background: #ff5588;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 45, 85, 0.5);
+    }
+
+    .btn-primary:disabled {
+      background: #333;
+      border-color: #555;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    .btn-warning {
+      background: linear-gradient(145deg, #ff9500, #cc6600);
+      color: white;
+      border: 2px solid #ffcc99;
+    }
+
+    .btn-warning:hover {
+      background: #ffaa55;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 149, 0, 0.5);
+    }
+
+    .btn-warning:disabled {
+      background: #333;
+      border-color: #555;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    .timer-display {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff2d55;
+      text-align: center;
+      margin: 15px 0;
+      text-shadow: 0 0 20px rgba(255, 45, 85, 0.5);
+    }
+
+    /* Step 3 - Preview & Download */
+    .final-preview {
+      text-align: center;
+    }
+
+    .final-video-container {
+      max-width: 360px;
+      margin: 0 auto 25px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 3px solid #00d4ff;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+    }
+
+    .final-video-container video {
+      width: 100%;
+      display: block;
+    }
+
+    .download-actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-success {
+      background: linear-gradient(145deg, #00d4ff, #0099cc);
+      color: #0a0a12;
+      border: 2px solid #99e6ff;
+    }
+
+    .btn-success:hover {
+      background: #33ddff;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Status Messages */
+    .status-message {
+      text-align: center;
+      padding: 12px;
+      margin: 15px 0;
+      border-radius: 10px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid #00d4ff;
+      color: #99e6ff;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* Loading indicator */
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #ff2d55;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      .recording-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+      .grid-container {
+        width: 300px;
+        height: 533px;
+      }
+      .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="app-container">
+  <div class="header">
+    <h1>🎬 REACTION REEL STUDIO PRO</h1>
+    <p>Professional 9:16 Reaction Reels - 70% Reel + 30% Camera</p>
+  </div>
+
+  <!-- Steps Indicator -->
+  <div class="steps-indicator" id="stepsIndicator">
+    <div class="step-dot active" id="step1Dot">1</div>
+    <div class="step-line" id="line1"></div>
+    <div class="step-dot" id="step2Dot">2</div>
+    <div class="step-line" id="line2"></div>
+    <div class="step-dot" id="step3Dot">3</div>
+  </div>
+
+  <!-- STEP 1: Upload Reel -->
+  <div class="step-content active" id="step1Content">
+    <div class="upload-area" id="uploadArea">
+      <div class="upload-icon">📱</div>
+      <h3>UPLOAD YOUR REEL VIDEO</h3>
+      <p>Select a video file for the top section (70%)</p>
+      <input type="file" id="reelFileInput" accept="video/*" style="display: none;">
+    </div>
+    <div class="status-message" id="step1Status">👆 Click above to choose your reel video</div>
+  </div>
+
+  <!-- STEP 2: Recording with 9:16 Grid -->
+  <div class="step-content" id="step2Content">
+    <div class="recording-layout">
+      <div class="grid-container">
+        <div class="grid-reel-section">
+          <video id="gridReelVideo" muted loop playsinline></video>
+        </div>
+        <div class="grid-camera-section">
+          <video id="gridCameraVideo" autoplay muted playsinline></video>
+        </div>
+      </div>
+      <div class="controls-panel">
+        <div class="customization-controls">
+          <h4>🎛️ REEL CUSTOMIZATION</h4>
+          <div class="control-group">
+            <label>Zoom: <span id="zoomValue">100%</span></label>
+            <input type="range" id="zoomControl" min="50" max="200" value="100">
+          </div>
+          <div class="control-group">
+            <label>Horizontal Position: <span id="horizontalValue">0%</span></label>
+            <input type="range" id="horizontalControl" min="-100" max="100" value="0">
+          </div>
+          <div class="control-group">
+            <label>Vertical Position: <span id="verticalValue">0%</span></label>
+            <input type="range" id="verticalControl" min="-100" max="100" value="0">
+          </div>
+        </div>
+        <div class="timer-display" id="timerDisplay">00:00</div>
+        <div class="recording-controls">
+          <button class="btn btn-primary" id="startRecordingBtn">🔴 START RECORDING</button>
+          <button class="btn btn-warning" id="stopRecordingBtn" disabled>⏹️ STOP & PROCESS</button>
+        </div>
+        <div class="status-message" id="step2Status">🎥 Camera ready! Click "Start Recording" to begin</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: Preview & Download -->
+  <div class="step-content" id="step3Content">
+    <div class="final-preview">
+      <h2 style="color: #00d4ff; margin-bottom: 20px;">🎉 YOUR REACTION REEL IS READY!</h2>
+      <div class="final-video-container">
+        <video id="finalVideoPreview" controls autoplay playsinline></video>
+      </div>
+      <div class="download-actions">
+        <button class="btn btn-primary" onclick="downloadFinalVideo()">💾 DOWNLOAD HD VIDEO</button>
+        <button class="btn btn-success" onclick="restartProcess()">🔄 CREATE ANOTHER</button>
+      </div>
+      <div class="status-message" id="step3Status">✅ HD video processed successfully!</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Global variables
+  let currentStep = 1;
+  let reelFile = null;
+  let reelObjectURL = null;
+  let cameraStream = null;
+  let mediaRecorder = null;
+  let recordedChunks = [];
+  let isRecording = false;
+  let recordingTimer = null;
+  let recordingSeconds = 0;
+  let finalVideoURL = null;
+  let finalVideoBlob = null;
+  let finalVideoSize = 0;
+  let isProcessing = false;
+
+  // DOM Elements
+  const step1Content = document.getElementById('step1Content');
+  const step2Content = document.getElementById('step2Content');
+  const step3Content = document.getElementById('step3Content');
+  const step1Dot = document.getElementById('step1Dot');
+  const step2Dot = document.getElementById('step2Dot');
+  const step3Dot = document.getElementById('step3Dot');
+  const line1 = document.getElementById('line1');
+  const line2 = document.getElementById('line2');
+  const uploadArea = document.getElementById('uploadArea');
+  const reelFileInput = document.getElementById('reelFileInput');
+  const gridReelVideo = document.getElementById('gridReelVideo');
+  const gridCameraVideo = document.getElementById('gridCameraVideo');
+  const startRecordingBtn = document.getElementById('startRecordingBtn');
+  const stopRecordingBtn = document.getElementById('stopRecordingBtn');
+  const timerDisplay = document.getElementById('timerDisplay');
+  const step1Status = document.getElementById('step1Status');
+  const step2Status = document.getElementById('step2Status');
+  const step3Status = document.getElementById('step3Status');
+  const finalVideoPreview = document.getElementById('finalVideoPreview');
+  const zoomControl = document.getElementById('zoomControl');
+  const horizontalControl = document.getElementById('horizontalControl');
+  const verticalControl = document.getElementById('verticalControl');
+  const zoomValue = document.getElementById('zoomValue');
+  const horizontalValue = document.getElementById('horizontalValue');
+  const verticalValue = document.getElementById('verticalValue');
+
+  // Initialize camera with high quality
+  async function initCamera() {
+    try {
+      cameraStream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          width: { ideal: 1920 },
+          height: { ideal: 1080 },
+          aspectRatio: { ideal: 16/9 },
+          frameRate: { ideal: 60, max: 60 }
+        },
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          sampleRate: 48000
+        }
+      });
+      gridCameraVideo.srcObject = cameraStream;
+      step2Status.textContent = '🎥 Camera ready! Click "Start Recording" to begin';
+      return true;
+    } catch (error) {
+      console.error('Camera error:', error);
+      step2Status.textContent = '❌ Camera error: ' + error.message;
+      return false;
+    }
+  }
+
+  // Step navigation
+  function goToStep(step) {
+    currentStep = step;
+    step1Content.classList.remove('active');
+    step2Content.classList.remove('active');
+    step3Content.classList.remove('active');
+    step1Dot.classList.remove('active', 'completed');
+    step2Dot.classList.remove('active', 'completed');
+    step3Dot.classList.remove('active', 'completed');
+    line1.classList.remove('completed');
+    line2.classList.remove('completed');
+
+    if (step === 1) {
+      step1Content.classList.add('active');
+      step1Dot.classList.add('active');
+    } else if (step === 2) {
+      step2Content.classList.add('active');
+      step1Dot.classList.add('completed');
+      step2Dot.classList.add('active');
+      line1.classList.add('completed');
+      if (!cameraStream) {
+        initCamera();
+      }
+    } else if (step === 3) {
+      step3Content.classList.add('active');
+      step1Dot.classList.add('completed');
+      step2Dot.classList.add('completed');
+      step3Dot.classList.add('active');
+      line1.classList.add('completed');
+      line2.classList.add('completed');
+    }
+  }
+
+  // Upload area click handler
+  uploadArea.addEventListener('click', () => {
+    reelFileInput.click();
+  });
+
+  uploadArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadArea.classList.add('dragover');
+  });
+
+  uploadArea.addEventListener('dragleave', () => {
+    uploadArea.classList.remove('dragover');
+  });
+
+  uploadArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadArea.classList.remove('dragover');
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      handleReelFile(files[0]);
+    }
+  });
+
+  reelFileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+      handleReelFile(e.target.files[0]);
+    }
+  });
+
+  function handleReelFile(file) {
+    reelFile = file;
+    if (reelObjectURL) {
+      URL.revokeObjectURL(reelObjectURL);
+    }
+    reelObjectURL = URL.createObjectURL(file);
+    gridReelVideo.src = reelObjectURL;
+    gridReelVideo.load();
+    gridReelVideo.onloadeddata = () => {
+      step1Status.textContent = '✅ Reel video loaded! Proceeding to recording step...';
+      setTimeout(() => {
+        goToStep(2);
+      }, 500);
+    };
+    gridReelVideo.onerror = () => {
+      step1Status.textContent = '❌ Error loading video. Please try another file.';
+    };
+  }
+
+  // Update reel customization with smooth performance
+  function updateReelCustomization() {
+    const zoom = zoomControl.value / 100;
+    const horizontal = horizontalControl.value / 100;
+    const vertical = verticalControl.value / 100;
+    
+    zoomValue.textContent = Math.round(zoom * 100) + '%';
+    horizontalValue.textContent = horizontal * 100 + '%';
+    verticalValue.textContent = vertical * 100 + '%';
+    
+    // Apply transform to the video inside the grid reel section
+    gridReelVideo.style.transform = `scale(${zoom}) translate(${horizontal * 50}%, ${vertical * 50}%)`;
+    gridReelVideo.style.transformOrigin = 'center center';
+  }
+
+  zoomControl.addEventListener('input', updateReelCustomization);
+  horizontalControl.addEventListener('input', updateReelCustomization);
+  verticalControl.addEventListener('input', updateReelCustomization);
+
+  // Recording functions
+  function startRecording() {
+    if (!gridReelVideo.src || !gridReelVideo.duration) {
+      step2Status.textContent = '❌ Reel video not loaded properly';
+      return;
+    }
+    if (!cameraStream) {
+      step2Status.textContent = '❌ Camera not ready';
+      return;
+    }
+    if (isProcessing) {
+      step2Status.textContent = '❌ Please wait for processing to complete';
+      return;
+    }
+
+    recordedChunks = [];
+    recordingSeconds = 0;
+    timerDisplay.textContent = '00:00';
+
+    // Start camera recording with high quality settings
+    const options = {
+      mimeType: 'video/webm;codecs=vp9,opus',
+      videoBitsPerSecond: 8000000, // 8 Mbps for high quality
+      audioBitsPerSecond: 256000
+    };
+
+    try {
+      mediaRecorder = new MediaRecorder(cameraStream, options);
+    } catch (e) {
+      try {
+        mediaRecorder = new MediaRecorder(cameraStream, {
+          mimeType: 'video/webm;codecs=vp8,opus',
+          videoBitsPerSecond: 8000000,
+          audioBitsPerSecond: 256000
+        });
+      } catch (e2) {
+        try {
+          mediaRecorder = new MediaRecorder(cameraStream, { mimeType: 'video/webm' });
+        } catch (e3) {
+          step2Status.textContent = '❌ Recording not supported: ' + e3.message;
+          return;
+        }
+      }
+    }
+
+    mediaRecorder.ondataavailable = (event) => {
+      if (event.data.size > 0) {
+        recordedChunks.push(event.data);
+      }
+    };
+
+    mediaRecorder.onstop = () => {
+      const cameraBlob = new Blob(recordedChunks, { type: 'video/webm' });
+      processFinalVideo(cameraBlob);
+    };
+
+    // Start recording
+    mediaRecorder.start(1000); // Collect data every second for better performance
+    isRecording = true;
+
+    // Play reel video from start
+    gridReelVideo.currentTime = 0;
+    gridReelVideo.play().catch(() => {});
+
+    // Start timer
+    recordingTimer = setInterval(() => {
+      recordingSeconds++;
+      const minutes = Math.floor(recordingSeconds / 60).toString().padStart(2, '0');
+      const seconds = (recordingSeconds % 60).toString().padStart(2, '0');
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+
+      // Check if reel ended
+      if (gridReelVideo.duration && gridReelVideo.currentTime >= gridReelVideo.duration - 0.1) {
+        stopRecording();
+      }
+    }, 1000);
+
+    // Update UI
+    startRecordingBtn.textContent = '🔴 RECORDING...';
+    startRecordingBtn.disabled = true;
+    stopRecordingBtn.disabled = false;
+    step2Status.textContent = '🔴 Recording in progress...';
+  }
+
+  function stopRecording() {
+    if (!isRecording || !mediaRecorder) return;
+
+    isRecording = false;
+    mediaRecorder.stop();
+    gridReelVideo.pause();
+    clearInterval(recordingTimer);
+
+    startRecordingBtn.textContent = '🔴 START RECORDING';
+    startRecordingBtn.disabled = false;
+    stopRecordingBtn.disabled = true;
+    step2Status.innerHTML = '<span class="loading-spinner"></span>⏹️ Processing video in HD...';
+  }
+
+  // Process final video with smooth performance
+  async function processFinalVideo(cameraBlob) {
+    if (isProcessing) return;
+    isProcessing = true;
+
+    try {
+      step2Status.innerHTML = '<span class="loading-spinner"></span>🎬 Combining videos in HD quality...';
+
+      // Create video elements
+      const cameraVideoURL = URL.createObjectURL(cameraBlob);
+      const cameraVideo = document.createElement('video');
+      cameraVideo.src = cameraVideoURL;
+      cameraVideo.muted = true;
+      cameraVideo.playsInline = true;
+
+      const reelVideoCopy = document.createElement('video');
+      reelVideoCopy.src = reelObjectURL;
+      reelVideoCopy.muted = true;
+      reelVideoCopy.playsInline = true;
+
+      // Wait for videos to load
+      await Promise.all([
+        new Promise(resolve => {
+          cameraVideo.onloadeddata = resolve;
+          cameraVideo.load();
+        }),
+        new Promise(resolve => {
+          reelVideoCopy.onloadeddata = resolve;
+          reelVideoCopy.load();
+        })
+      ]);
+
+      // Create canvas for final 9:16 composition (1080x1920 for HD)
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 1920;
+      const ctx = canvas.getContext('2d');
+
+      // Create stream and recorder with maximum quality
+      const canvasStream = canvas.captureStream(30); // 30fps for smooth performance
+      const finalRecorder = new MediaRecorder(canvasStream, {
+        mimeType: 'video/webm;codecs=vp9,opus',
+        videoBitsPerSecond: 12000000, // 12 Mbps for high quality
+        audioBitsPerSecond: 320000
+      });
+
+      const finalChunks = [];
+      finalRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          finalChunks.push(event.data);
+        }
+      };
+
+      finalRecorder.onstop = () => {
+        finalVideoBlob = new Blob(finalChunks, { type: 'video/webm' });
+        finalVideoSize = finalVideoBlob.size;
+        finalVideoURL = URL.createObjectURL(finalVideoBlob);
+        finalVideoPreview.src = finalVideoURL;
+        
+        // Calculate file size in MB
+        const sizeMB = (finalVideoSize / (1024 * 1024)).toFixed(2);
+        step3Status.textContent = `✅ HD video processed! Size: ${sizeMB} MB`;
+        isProcessing = false;
+        goToStep(3);
+      };
+
+      // Get customization values
+      const zoom = zoomControl.value / 100;
+      const horizontal = horizontalControl.value / 100;
+      const vertical = verticalControl.value / 100;
+
+      // Start playing both videos
+      await Promise.all([
+        cameraVideo.play(),
+        reelVideoCopy.play()
+      ]);
+
+      // Start recording canvas
+      finalRecorder.start(1000); // Collect data every second for smooth performance
+
+      // Draw function with optimized rendering
+      const drawFrame = () => {
+        if (cameraVideo.ended || reelVideoCopy.ended) {
+          finalRecorder.stop();
+          return;
+        }
+
+        // Clear canvas
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw reel video in top section (70% of 9:16 canvas)
+        const reelDrawHeight = 1344; // 70% of 1920
+        const reelDrawWidth = 1080;
+        const reelX = 0;
+        const reelY = 0;
+
+        // Calculate source rectangle with customization
+        const reelAspect = reelVideoCopy.videoWidth / reelVideoCopy.videoHeight;
+        const targetAspect = reelDrawWidth / reelDrawHeight;
+        let sourceWidth, sourceHeight, sourceX, sourceY;
+
+        // Apply zoom
+        if (reelAspect > targetAspect) {
+          sourceHeight = reelVideoCopy.videoHeight / zoom;
+          sourceWidth = sourceHeight * targetAspect;
+        } else {
+          sourceWidth = reelVideoCopy.videoWidth / zoom;
+          sourceHeight = sourceWidth / targetAspect;
+        }
+
+        // Apply horizontal and vertical positioning
+        sourceX = (reelVideoCopy.videoWidth - sourceWidth) / 2 + (horizontal * sourceWidth / 2);
+        sourceY = (reelVideoCopy.videoHeight - sourceHeight) / 2 + (vertical * sourceHeight / 2);
+
+        // Clamp values to prevent blank areas
+        sourceX = Math.max(0, Math.min(sourceX, reelVideoCopy.videoWidth - sourceWidth));
+        sourceY = Math.max(0, Math.min(sourceY, reelVideoCopy.videoHeight - sourceHeight));
+
+        ctx.drawImage(reelVideoCopy, sourceX, sourceY, sourceWidth, sourceHeight, reelX, reelY, reelDrawWidth, reelDrawHeight);
+
+        // Draw camera video in bottom section (30% of 9:16 canvas)
+        const cameraDrawHeight = 576; // 30% of 1920
+        const cameraDrawWidth = 1080;
+        const cameraX = 0;
+        const cameraY = 1344;
+
+        const cameraAspect = cameraVideo.videoWidth / cameraVideo.videoHeight;
+        if (cameraAspect > targetAspect) {
+          sourceHeight = cameraVideo.videoHeight;
+          sourceWidth = sourceHeight * targetAspect;
+          sourceX = (cameraVideo.videoWidth - sourceWidth) / 2;
+          sourceY = 0;
+        } else {
+          sourceWidth = cameraVideo.videoWidth;
+          sourceHeight = sourceWidth / targetAspect;
+          sourceX = 0;
+          sourceY = (cameraVideo.videoHeight - sourceHeight) / 2;
+        }
+
+        ctx.drawImage(cameraVideo, sourceX, sourceY, sourceWidth, sourceHeight, cameraX, cameraY, cameraDrawWidth, cameraDrawHeight);
+
+        // Schedule next frame
+        requestAnimationFrame(drawFrame);
+      };
+
+      // Start drawing
+      drawFrame();
+
+    } catch (error) {
+      console.error('Error processing video:', error);
+      step2Status.textContent = '❌ Error: ' + error.message;
+      isProcessing = false;
+    }
+  }
+
+  // Download final video
+  function downloadFinalVideo() {
+    if (finalVideoURL && finalVideoBlob) {
+      const link = document.createElement('a');
+      link.href = finalVideoURL;
+      link.download = 'reaction_reel_9x16_hd.webm';
+      link.click();
+      
+      const sizeMB = (finalVideoSize / (1024 * 1024)).toFixed(2);
+      step3Status.textContent = `💾 Download started! File size: ${sizeMB} MB`;
+    }
+  }
+
+  // Restart process
+  function restartProcess() {
+    location.reload();
+  }
+
+  // Event listeners
+  startRecordingBtn.addEventListener('click', startRecording);
+  stopRecordingBtn.addEventListener('click', stopRecording);
+
+  // Initialize
+  console.log('Reaction Reel Studio Pro initialized');
+  console.log('Final output: 1080x1920 (9:16) HD quality');
+  console.log('Layout: 70% reel (top) + 30% camera (bottom)');
+  console.log('Performance optimized with requestAnimationFrame');
+</script>
+</body>
+</html>
